@@ -1,0 +1,150 @@
+Title: Ruin your childhood memory -- From Digimons to colonialism // 毁童年之后殖民数码宝贝
+Author: wechat-oxfordlit
+Category: thoughts
+Tags: external, chinese, thoughts
+Date: 2017-07-04 23:00
+
+原文来自：<a href="http://mp.weixin.qq.com/profile?src=3&timestamp=1499208439&ver=1&signature=W8L2NaGfEqNtX2Iy5bjarDYGtXbXvMjouGWwEFDg0yhVCxN7lbTKJ7*zCdLtyCf9D3Yt3fTKWiGd8dEr2NLofw==">我在牛津读文学</a>，微信号：oxfordlit
+
+前言：聪明的你，请猜猜“海文斯那可尔”是哪个数码宝贝的绝招呢？
+<div id="js_content" class="rich_media_content ">
+在学院内看各类文学经典，各大家名作，再以它们为原材料来学习和反思人文理论，大概就是文学专业学生在体制内要做的事。经典固然是一定要看的，因为它们是文化资本的<span style="color: red;">固体沉积物</span>，承载着联系人群和区分文化品位等重要作用。但是人文理论和文本分析的<span style="color: red;">能力</span>本身却是不必要限制在经典或者所谓的文艺文本中的，我反而更享受用它们去重新反思流行文化的过程。一方面，流行文化因为市场的需要的确容易暴露出社会的主流意识形态的种种倾向。另一方面，流行文化却也不是一味迎合市场才能“流行”起来，其中内容也许也经得起人文理论的抽丝剥茧，反映出不同社会思潮之间的碰撞。这篇闲文就想用数码宝贝（Digimonデジモン又，数码暴龙）这部我童年最喜欢的日本动画片为例，来讨论一下我们最习以为常的大众文本中暗藏着的複杂的<span style="color: #00b0f0;">权力关系</span>。
+
+<!--more-->
+
+
+<strong><span style="color: #7030a0;">1. </span><span style="color: #7030a0;">简要历史背景</span></strong>
+
+
+数码宝贝是跟神奇宝贝（又，Pokemonポケモン，精灵宝可梦，宠物小精灵等）一样，最初在1996年左右被日本公司构想成可以收集电子宠物的单机游戏，但是由其衍生出来的动画则是1999年才出现，比神奇宝贝晚了两年。那是一个属于日本的世纪末华丽年代，泡沫经济后的日本在文化产品开发和输出上大有作为，一下子垄断了大东亚地区的流行文化，在那个韩流还未兴起的年代，，日本流行文化也首先冲出了亚洲，七龙珠，神奇宝贝等动画片在欧美也掀起热潮，使得欧美对亚洲的“崇拜”第一次得以突破对古代的想象（如十九世纪英美的Chinoiserie, 法国的Japonism等等）开始看到<span style="color: #2e75b6;">现代亚洲</span>的可爱之处。
+
+
+<img class=" " style="width: auto !important; height: auto !important; visibility: visible !important;" src="http://newflaw.com/blog/wp-content/uploads/2017/07/640" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9QaG8cFzmY0Nsbs0E0mrYqJQfVJSDRIAI5BZZy84BolZiadibDGttakCg/0?wx_fmt=jpeg" data-ratio="0.5633333333333334" data-w="600" data-fail="0" />
+
+
+在华语世界，日本动画片一般首先是传到有后殖民联系的台湾岛，经过国语翻译和配音才通过（盗版）DVD的形式传到中国大陆。迄今为止中国大陆仍没有大的电视台播过数码宝贝，只有一些地方电视台偶尔会播。所以大多数中国大陆的青少年观众在2000年代是通过台湾配音的DVD看到数码宝贝的。这种从日本到港台到大陆的传播锁链，其实也印证了2000年代从日本到亚洲四小龙到中国大陆的<strong><span style="color: #385723;">逐级递减的东亚经济结构</span></strong>：以中国北方为中心的“本土”文化，如东北二人转，相声小品等，被认为是“土”的，落后的文化形式，而中国南方在1949年之后纵然已经失去文化创造力而沦为商业基地，却以“港台腔”的形式在改革开放之后逐渐还魂，台湾出品的中港台合作的南方文化产品中逐渐成为先进的现代性的指标，如《情深深雨濛濛》（民国上海）《新白娘子传奇》（南宋杭州）《蜡笔小新》（台湾国语配音）等等。这个配音和翻译的过程对我对数码宝贝的“殖民性”的反思尤其重要，会在最后讨论。
+
+
+<strong><span style="color: #7030a0;">2. </span><span style="color: #7030a0;">数码宝贝就是比神奇宝贝优</span></strong>
+
+
+我要开门见山得说，从意识形态的进步性层面看，数码宝贝是优胜神奇宝贝很多的。
+
+
+神奇宝贝是一部<strong><span style="color: red;">三观扭曲，殖民性极强</span></strong>的文化产品。神奇宝贝构建出的世界，其实是一种被现代科技包装过的古罗马角斗场：人类之间的相互竞争，是通过收集，奴役外表动物化，拥有神奇能力，灵魂层面却与人类能无障碍沟通的神奇宝贝来实现并且被评分的。人类和神奇宝贝之间的关係，是<strong><span style="color: #002060;">主人-奴隶/物件</span></strong>之间的关係，神奇宝贝是亟待人类去捕捉利用的自然资源，被捕捉之后必须待在精灵球监狱里，而一个主人也可以拥有无限个神奇宝贝，最后选择战斗力最强的几个参加比赛。可以说，<strong>神奇宝贝就是人类科技俘获自然资源并将其融入人类中心的游戏体制的象征</strong>，这个游戏的本质跟欧洲人俘获非洲黑奴送到美洲做苦力，比赛谁家出的农作物多没有本质差别。
+
+
+<img class=" " style="width: auto !important; height: auto !important; visibility: visible !important;" src="http://newflaw.com/blog/wp-content/uploads/2017/07/640(1)" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9H30f094whAicH998yDsseFiagFtibibAYfISSQPkgeow35wU5iaxOXvOhFg/0?wx_fmt=jpeg" data-ratio="0.7017543859649122" data-w="570" data-fail="0" />
+
+（小智馴服皮卡丘）
+
+
+而出于软化这种对立的尴尬关系的需要，动画片花了很多篇幅试图加入“友情”元素，构建（某些）人类的“<strong><span style="color: fuchsia;">善意威权性（benign authoritarianism）</span></strong>”来稀释人类与神奇宝贝之间的主僕殖民关係。所以动画编剧才要在一开始极力戏剧化小智和皮卡丘之间的相遇，来展现这段主僕关係的“不同”，好让观众对主人公小智产生强烈的认同感，方便日后的几百集中大家不断跟着他旅行并享受这个另类世界的光怪陆离。皮卡丘一开始就被设定为一个“有尊严，有个性”的奴隶：它不像其他实验室里已经被驯化的，乖乖等着被人使用的神奇宝贝一样，它展现出一种宁死不屈，要求被人类平等对待的精神。所以一开始皮卡丘就是一隻特别的神奇宝贝，可以召唤出观众极强的认同感：大家喜欢某个神奇宝贝大概是因为它外表可爱，能力奇特，抑或战斗力强这些表面因素，可是大家认同的皮卡丘从来都只有一个，皮卡丘与其他奴隶不同，它的个性让它被充分“人性化(humanised)”。但是皮卡丘的叛逆精神也是个人化而非革命性的，它本来有成为一个对抗殖民体制的领袖的潜质，但是它也很快被统治阶级收编为“<strong><span style="color: #00b0f0;">被重用的奴隶</span></strong>”。这个收编在动画片的最初几集是通过<strong><span style="color: #00b0f0;">“</span><span style="color: #00b0f0;">感化”和“晋升”</span></strong>两个手段来实现的：小智冒着生命危险保护了皮卡丘免受一群野生神奇宝贝的攻击，从而展现出自己不同于其他神奇宝贝主人的“善意威权”特质，在感动奏效以后，主人为了进一步收编奴隶来为其效忠特别破例“恩准”了皮卡丘可以成为唯一一隻不必待在精灵球监狱里的神奇宝贝，使其“晋升”为比其他被奴役的神奇宝贝更“高级”的存在。这样的通过“感化”与“晋升”来收编某一些奴隶阶级用以巩固整体殖民系统的手段，是十九世纪大英帝国得以昌盛的法宝：在印度，马来西亚等地英国白人殖民统治者向本地的商人，权贵，又或是某些具有革命潜质的反叛者释出善意，提供他们特殊待遇让他们自觉比他们的同类高出一等（成为买办阶级或者代理统治者），从而为了自己的既得利益而主动拥护殖民者策划好的体制。
+
+
+<img class=" img_loading" style="width: 670px !important; height: 374.381px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9ukna53CZFbQoIrMVNWpwsiaZkOSasxX6mtQA6ayP4ibicm0M26E6Fyusw/0?wx_fmt=jpeg" data-ratio="0.5587774294670846" data-w="1276" />
+
+（神奇宝贝的主线剧情就是由永无止境的格斗比赛撑起来的，神奇宝贝往往要被打倒受伤才可判定输赢，这跟古罗马的奴隶角斗场有什麽本质差别吗）
+
+
+反观数码宝贝的世界设定就要好太多。动画片一开始并没有像神奇宝贝一样直接跟观众秀出一个充满着各种神奇的，待征服生物的，科技高度发达又充满魔幻氛围的另类世界，而是以二十世纪末的当代东京为背景介绍一群普通的学生少男少女，为之后的情节铺设好一个<strong>现实主义的基底</strong>。动画片利用人类在世纪末对<strong><span style="color: #c00000;">电脑技术发展的幻想和恐惧</span></strong>造出人类世界，和数码世界两个平行空间，与神奇宝贝的美好新世界相比更像是一个<strong><span style="color: #c00000;">恶托邦（dystopia）</span></strong>：人类对数码技术的操控其实远远不像他们想的一样完美，网络病毒的蔓延滋生出邪恶的数码宝贝威胁着两个世界的边界与和平。不同于神奇宝贝中人们对科技发展的自信和对自然资源的掌控，数码宝贝中孩子们的旅程不是“<strong><span style="color: #0070c0;">征服性的竞赛”，而是“末日来临时的充满未知的冒险”。</span></strong>
+
+<strong><span style="color: #0070c0;"> </span></strong>
+
+<img class=" img_loading" style="width: 549px !important; height: 363px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A95vibdhEc4xiatUYfB4xnSFHzVd5KyORR7ib61ZMHcFbSlSIF9FEhghCwg/0?wx_fmt=jpeg" data-ratio="0.6612021857923497" data-w="549" />
+
+（数码宝贝第一部中，被选召的孩子被动地来到数码世界，最后也必须离开数码世界）
+
+
+与神奇宝贝中的训练师不同，数码宝贝中“被选召的孩子们”一开始就是<span style="color: #0070c0;">被动</span>的主角，他们是被未知的力量捲入了数码世界，也没有主动权选择跟自己一对一搭配的会说话的数码兽，他们的英雄气质是要在数码世界中一步一步被<span style="color: #0070c0;">锻炼</span>出来的，这也就是为什麽动画片要给每一个角色搭配一种“数码精神”（如诚实，勇气，光明，知识等等），而只有孩子们克服自己的性格弱点，数码精神得到激发和培养以后，数码兽才可以进化变强克服难关。换句话说，数码宝贝的主题是“<span style="color: red;">成长(Bildungsroman)”而不是“征服/竞赛</span>”，孩子们与数码兽之间的关係更像是伙伴而不是主僕。数码宝贝世界的反派（至少在第一部）都是数码兽，而神奇宝贝的反派基本都是人类，彷佛只有人类才有<span style="color: #7030a0;">主动性</span>，而神奇宝贝就只能是不同帮派的人类之间争斗的牺牲品。
+
+
+在基本的角色设定上，数码宝贝也完胜神奇宝贝。数码宝贝第一部中有八个被选召的孩子，五男三女，每个主角个性鲜明都有自己对应的数码精神，而且数码兽的<span style="color: #7030a0;">性别是不稳定的（genderqueer）</span>，不完全对应人类搭档的性别：如女主角之一的素娜的比丘兽在成长期是女生配音，进化为鸟型的巴多拉兽之后是中性动物，再进化为完全体的伽偻达兽之后就是一个男性配音，男性外形的鸟人。
+
+
+<img class=" img_loading" style="width: 514px !important; height: 310px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9KqeRg14dpMM3azb8nkRUXVVfKx5iaGLLgh27GxDw2DKxdrMqdMeuocA/0?wx_fmt=jpeg" data-ratio="0.603112840466926" data-w="514" />
+
+
+而第一部的剧情大致可以以每个阶段的大BOSS不同而分为三段：恶魔兽，吸血魔兽，最后的黑暗大BOSS。而前面两部分的BOSS都是由<strong><span style="color: #7030a0;">最小最弱</span></strong>的孩子（阿武和嘉儿）的数码兽（天使兽和天女兽）打败的，最后的黑暗大BOSS也是要靠全体孩子和数码兽的合作，可以说是非常彰显民主合作精神。反观神奇宝贝，三人行的模式总是设定一个可爱的女性角色（搭配水系女性化的神奇宝贝）和一个玩世不恭有点无厘头的男性角色（搭配石系的过度坚硬男性化的神奇宝贝）来衬托小智的<strong><span style="color: #bf9000;">完美男性主角光环</span></strong>。在神奇宝贝训练师竞赛的时候，也一定是小智比他的伙伴成绩好，但是在新自由主义强调的无穷尽的自我提升和相互竞争的逻辑中，小智也永远不能实现他当第一名的梦想，而他的神奇宝贝则要在此过程中不断被更换，抛弃，替代，成为一个长不大的<span style="color: #c00000;">少年逐梦的牺牲品</span>。
+
+
+<img class=" img_loading" style="width: 670px !important; height: 502.947px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9BCdyicGAFqhOyMlzAdF4xmSpY6ticuOjSN5UTXwnznltXWNib3LoDN9tA/0?wx_fmt=jpeg" data-ratio="0.7506666666666667" data-w="750" />
+
+（神奇宝贝的三人行既定模式，主角光环亮瞎眼）
+
+
+<strong><span style="color: #7030a0;">3. </span><span style="color: #7030a0;">数码宝贝中还是保留了日漫常见的殖民现代性</span></strong>
+
+
+虽然跟神奇宝贝比起来，我是非常赞赏数码宝贝的。但是作为流行文化产品，世纪末的日本动漫一般都是<strong><span style="color: #ffc000;">突破性和保守性并存</span></strong>的，突破性确保产品特质和竞争力，保守性则负责稳固市场面积以免跌入非主流领域。如上文指出的，数码宝贝的突破性在于它抓住了90年代日本科技腾飞后对网路技术的恐惧，还有它的成长冒险型叙事结构，而它的保守性则是体现在它强烈的<strong><span style="color: #00b0f0;">人类中心主义(anthropocentrism)和发展中心主义(developmentalism)</span></strong>上。
+
+
+首先，“被选召的孩子们”虽然是被动进入数码世界的，但是这个称谓和它携带的救世主心理（saviourcomplex）让人很难不想到英国殖民文学的经典，第一位获得诺贝尔文学奖的英语写作者RudyardKipling。他的着名诗篇“The White Man’s Burden”（白种男人的负担）就是在1900年代美国打败西班牙接手菲律宾殖民权的背景下写成，以基督教的口吻来叮嘱（与英国一脉相承的）美国白人好好履行他们作为“the chosen one”(被上帝选中的救世主)的责任。跟很多美国好莱坞的末日灾难片一样，数码宝贝的剧情也是以人类主角为中心宣扬<span style="color: #00b0f0;">英雄主义</span>的意识形态。数码兽的进化与强弱与人类主角的数码精神挂钩这自然是要胜过神奇宝贝裡面的主僕关係，但是从另一个角度来看也是一种人类对数码兽的<span style="color: #548235;">管控与限制</span>。在数码世界里，手无缚鸡之力的人类小孩其实分分钟都可以被随便一个数码兽杀死（动画片裡面的诸多情节是不合理的，比如第一部的尾声处小丑皇已经将多个孩子变成玩偶，那它干嘛不乾脆杀掉他们呢），所以他们必须要依赖具有战斗能力的数码兽来确保自身安全，于是数码兽还是必要性地成为了战争武器，与人类形成一种<strong><span style="color: red;">战斗的肉身+操控的精神的二元高下位阶</span></strong>（Binary hierarchy）。当人类小孩的精神出现偏差的时候，数码兽也失去自主性而变得黑暗不堪（例如在面对强敌悟空兽的几集中，主角八神太一好胜心太强逼迫暴龙兽超进化，却使得暴龙兽失去控制成为丧尸状态），让人不禁要问：为什么人类小孩犯下的错要由为他们出生入死的数码兽来承担？
+
+
+<img class=" img_loading" style="width: 324px !important; height: 240px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A991iarMbqucaGcw3ghWPficybpyoX81gnz5OX0jy2M7qlib55lclic261DA/0?wx_fmt=jpeg" data-ratio="0.7407407407407407" data-w="324" />
+
+（太一的心急让暴龙兽进化错误，虽然打败了悟空兽做出的假暴龙兽，但是也由于失去理智和力量耗尽退化为滚球兽）
+
+
+而数码宝贝系列最能体现人类中心主义(anthropocentrism)和发展中心主义(developmentalism)这两个意识形态的结合的地方，就要属数码兽的<span style="color: red;">进化</span>过程了。“进化”这个概念本来就与十九世纪末的殖民现代性有着不可分割的关係：启蒙精神激发出的社会达尔文主义思想（social Darwinism）强调优胜劣汰，将人类社会分为三六九等，并以城市化工业化的手段来促成人类历史的线性单一发展路径。在数码世界里，数码兽的等级都被分成幼儿期，成长期，成熟期，完全体，究极体等几个进化阶段，数码兽的形态也被大致分为人型和兽型两种，数码兽的等级越高战斗力越强。<span style="color: #c00000;">不难发现，数码兽进化的过程也大致是从兽到人，从自然到工业的过程：人和工业，就代表着力量。</span>第一部中最强的两隻数码宝贝是恐龙型的暴龙兽和狼型的加鲁鲁兽（也预设了恐龙，狼，鸟，海狮，昆虫，植物之间的力量/功能性高下）,他们从机械暴龙兽和兽人加鲁鲁到战斗暴龙兽和钢铁加鲁鲁的进化就很明显得演示了力量与人、工业之间的挂钩。不难发现，数码宝贝中最强的数码兽和黑暗BOSS几乎都是人型的，而且是人类和机器融合的超人类赛博格（superhumancyborg），<span style="color: #c00000;">用以满足人类借科技满足超越自身肉身限制的愿望</span>。
+
+
+<img class=" img_loading" style="width: 580px !important; height: 171px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9jC0cWyeuxv9aVwA4rialDrV1w0tAgQHlkiam9Av9VibWV3UldmibOgFOSA/0?wx_fmt=jpeg" data-ratio="0.29482758620689653" data-w="580" />
+
+（亚古兽进化呈现出工业至上的人类中心主义）
+
+
+而这种从西方殖民现代性中演化而来的日本进化观，也难免夹带了日本动画常见的“<span style="color: red;">白人优胜理念</span>”（white supremacy）。这裡的白人优胜我要加引号，因为它跟真正的西方白种人有关但又分离，是现代日本社会想象出来的。在第一部的前两部分中，两个最弱小的孩子的数码兽进化成了强大又神圣的天使型数码宝贝，打败了人型的邪恶数码宝贝。从天使兽和天女兽的金髮碧眼的外表不难发现，日本文化（甚至东亚文化）中天使作为西方宗教的舶来品是与白人形象相连的，即使动画的主角设定很清楚得交代了是东京的日本人，但是日本似乎还很难想象一个亚洲血统的天使形象。
+
+
+<img class=" img_loading" style="width: 594px !important; height: 372px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9eVzVXq9GRjHYUBZ2j1AVxLF3FGn5RBEic6ehgTa0uwEqdOEiaGbCV8ZQ/0?wx_fmt=jpeg" data-ratio="0.6262626262626263" data-w="594" />
+
+（天女獸是白人嗎？）
+
+
+也许有人会说，日本动画挪用西方白人天使形象不一定就是一种自我殖民和文化自卑感的体现，这当然也没有错，毕竟当这些文化产品兴盛起来传播到欧美的时候代表的还是日本的文化软实力和创造力。但是传播的成功与否，跟传播的内容的意识形态是两回事，带有白人优胜审美观的东亚文化产品传入欧美，还是会加固欧美白人的文化自信：在我看来这就是日本动漫和韩剧之间的差别，日本动漫充斥着各种金髮碧眼白皮肤的人物角色，使得欧美白人观众可以有很强烈的<span style="color: #c00000;">代入感和认同感把这些角色当做自己人而非文化异族</span>（语言层面更是如此，下面会讨论），而韩剧展现的则是真人男女的时尚现代性，无论这种现代性中强调的高鼻樑和美白是溷杂了多少欧美审美观念，也还是更能提升欧美观众对<span style="color: #548235;">韩国真人形象和时尚潮流的评价</span>，甚至是追捧和模彷。
+
+
+日本动漫中这些金髮碧眼白皮肤的正面人物形象是被常态化的，这些夸张的颜色配置的确是起到区分角色，塑造人物多样性的作用，但是我们也不能否认如果完全是为了区别角色，那为什么火影忍者裡面的鸣人金发碧眼，积极乐观（美国白人？），佐助黑发帅气，阴沉（日本人？）而八尾人柱力的BEE高大黝黑又擅长饶舌（国美黑人？）？动画这个媒介与现实生活的距离纵然可以是有解放性的，但是如果它的人物设置真的是如此脱离现实那为何不见更多红皮肤，黑皮肤，绿皮肤的主角？日本动漫角色的种族问题可以是非常敏感的议题，一旦提出来就会遭到大多数观众的反驳，因为大家都不会用真人种族的观念去类别化动漫人物，但是我们也不能不承认，这些角色的外型设置多多少少都受到现实世界中人们对于种族的刻板印象的影响，形成一种（被日本社会长期内化internalise的））白人至上的西方中心主义。
+
+
+<img class=" img_loading" style="width: 340px !important; height: 450px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9CPIyEd2wVdSPIm0Gia5ebib2KxpVYzjeMmJlVvye7LIWN5hhOLEwMR7g/0?wx_fmt=jpeg" data-ratio="1.3235294117647058" data-w="340" />
+
+（火影忍者里的奇拉比是美國黑人嗎？）
+
+
+我个人最不喜欢的是数码宝贝第二部最后对未来的交待：二十年后数码世界和现实世界已经融为一体，每个人都拥有自己的数码宝贝。第二部本来就比第一部差很多，搞出各种装甲进化的花样只是为了满足一个数码兽可以进化成多种属性和样式的幻想需要，而这样大同世界一般的结局彷佛在预告数码宝贝将变成神奇宝贝一般的存在，被人类主人拿来互相攀比也说不定。
+
+
+<strong><span style="color: #7030a0;">4. </span><span style="color: #7030a0;">数码宝贝翻译角力：英文现代性 VS 中文创造力</span></strong>
+
+
+其实我突然想谈数码宝贝的殖民性，最大的原因是前几天在YOUTUBE上看到日文版，英语字幕的数码宝贝片段，也就是迪路兽（Tailmon，迪路兽的尾巴上有神圣光环）进化成天女兽打败吸血魔兽的片段。这个片段的两种语言跟我小时候看的台湾中文配音和字幕的DVD版本的差别给了我很大的震撼：原来原版数码宝贝动画片中这麽多的名字都是<strong><span style="color: #7030a0;">片假名/英文！</span></strong>
+
+
+这些片假名被日语配音读出来，搭配英语字幕几乎就没有违和感，而我也会根据儿时的记忆自动把这些名词和我知道的中文版本连上号。在这个片段中，天女兽出现并且集结所有完全体数码兽的绝招打败了吸血魔兽，所以看这个片段我第一次意识到原来数码宝贝（就像它的日文名字デジモン）这个名词本身就是英语Digimon(Digital Monster): 天使兽是エンジェモン/Angemon(Angel Monster), 绝招是ヘブンズナックル（Hebunzu Nakkuru，Heaven's Knuckle，中文译名为天堂之拳），天女兽是エンジェウーモン（Angewomon）,绝招是ホーリーアロー（Hōrī Arō，Holy Arrow,中文译名为神圣之箭），祖顿兽的绝招重锤火花（ハンマースパーク——HammerSpark），伽偻达兽的绝招影翼斩(シャドーウィング——ShadowWing)，超比多兽的绝招超大角炮(ホーンバスター)(Horn Buster)等等居然都是片假名表示的英语。其实细心的观众在数码兽进化时的动画中就可以发现，进化画面的背景总是伴随着数码兽名字的片假名和英文名字一起出现（如下图）。
+
+
+<img class=" img_loading" style="width: 480px !important; height: 360px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A95bFQsQibDXvAYkia87VGqY3quDdQhcE1GSePNDIoTpx5ibTQ4vic6Bmhcg/0?wx_fmt=jpeg" data-ratio="0.75" data-w="480" />
+
+（天使獸超進化為神聖天使獸，背景效果出現Holyangemon的英文字）
+
+
+所以数码宝贝的日文原版发音配上英文字幕观看，对在中文世界第一次接触此动画的观众来说是不是会造成一种震撼的观感呢？对英语世界的观众又会造成怎麽样的感觉？日文本来就是一种充斥着汉字和英语片假名的混种语言，但是在数码宝贝中的特有名词的创造使用过程中是否有意无意暴露了<strong><span style="color: fuchsia;">现代日本文化想象中语言的高下位阶</span></strong>呢？在没有做受众调查的基础上，我也只能表达一下自己的猜测。日文中喜欢用片假名来“音译”英语词彙的现象很常见，通常可以藉此达到本土化外来词，同时又凸显外来词的<strong><span style="color: #548235;">异域现代性（exotic modernity）</span></strong>的双重效果，但是如果以此类推把此法搬到中文世界，那天使兽就要变成安吉尔兽（与伽偻达兽和比多兽一样变成音译名词），天堂之拳就变成“海文丝那可儿”，天女兽就变成安吉武兽，神圣之箭就变成“侯丽阿罗“，如果配音员在中文配音版本中读出这些奇怪的中文词彙来，相信大部分的观众都会不知所云一时间无法接受。但是我们的无法接受，是不是只是出于一种对中文意译的<strong><span style="color: #00b050;">习惯</span></strong>而不是真的对音译外来词有更深的反殖民抗拒呢？就好比“电话”这个中文词，其实是由日本根据他们对汉字的理解发明出来翻译西方传来的“telephone”的，在民国时期音译的“德律风”其实也风行一时。<strong><span style="color: black;">既然电话和德律风都是外来词，也无所谓哪个比哪个更加“本土”和“反殖民“了吗？</span></strong>
+
+
+还有一种让我有点毛骨悚然的假设就是，既然中文世界也可以用“侯丽阿罗”这样的词来替代“神圣之箭”，那么当中文世界的观众学会了英文再去看英文字幕日语配音的原版的时候会是什么观感的？会不会有<strong><span style="color: #ed7d31;">一种被蒙在鼓里好多年才豁然开朗的“生气的感觉”</span></strong>？以此类推，我不觉得一般的日本人的英语能够好到把ヘブンズナックル（Hebunzu Nakkuru天堂之拳）跟英语的原词Heaven's Knuckle对上号，ヘブンズナックル对很多观众来说应该也只是一个听起来非常异域现代性的声音词汇而已，但是假设他们到美国留学后重看英语字幕的数码宝贝，他们是不是会想问自己<strong><span style="color: red;">国家的文化工作者为什么要用英文词创造出这些片假名</span></strong>呢？他会不会想问，数码宝贝的创作团队怎么就这么肯定这些让人半懂不懂的片假名英文词就会让不懂英文的青少年观众喜爱和追捧呢？当他终于把自己童年的日语印象跟成年后习得的英语词对上号，会不会有一些<strong><span style="color: #7c7c7c;">后殖民式的民族主义情绪</span></strong>呢？对英语世界的观众来说，观看日语配音英语字幕的数码宝贝时，他们会不会诧异为什么人物说着<strong><span style="color: #ffc000;">日语但绝招都必须要用“不标准的日式英语”念出来呢</span></strong>？他们是否会诧异日本人为何如此迷恋自己的语言呢？
+
+
+这一部分提出的问题都非常敏感，因为创作者的想法（比如想要借英语达到某种异域现代性效果），观众的想法（比如终于习得英文后后知后觉）和观众理想中应该有的想法（比如中文配音翻译体现了汉字独特的创造力）这三者是很难达成统一。但是我会坚持说，数码宝贝的绝招多采用音译自英语的片假名这一现象，是和日本长期浸淫在西方现代性的阴影中脱不了干系的，而动画片从日本到台湾到中国大陆的传播路径也是脱离不了经济文化势力的不平等结构，即使我们可以承认，在这样的结构中，本土文化对外来文化的吸纳即是被压迫的结果，也是主动与其协商的过程。但是你能想象哪一天会有一部日本动漫，主角绝招全是用对日本人来说是胡乱拼凑的汉字表示，而从小用英语观看此片的美国观众学习中文以后才恍然大悟其中的意思吗？<strong><span style="color: red;">如此换位思考一下，语言文化的高下位阶似乎不是那么容易用所谓的“世界主义（cosmopolitanism）”“混杂性(hybridity)”就可以掩盖过去的，这个混杂一开始就是文化经济不平等的结果。</span></strong>
+
+
+（本文图片来自网络，欢迎转载并关注作者公众号oxfordlit，联系作者请在公众号留言即可）
+
+
+<strong>
+作者简介：</strong>
+施东来，Flair，牛津大学英文系博士在读,研究范围为现代中西比较文学，后殖民文学，文学中的女权主义和种族形象。致力于将更多华语文化产品带到。文章发表于国内外报纸和学术期刊。
+
+</div>

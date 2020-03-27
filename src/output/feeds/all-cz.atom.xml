@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Newflaw</title><link href="http://www.newflaw.com/blog/" rel="alternate"></link><link href="http://www.newflaw.com/blog/feeds/all-cz.atom.xml" rel="self"></link><id>http://www.newflaw.com/blog/</id><updated>2014-09-15T00:00:00+01:00</updated><subtitle>Nature is never flawless</subtitle><entry><title>Přeložený článek</title><link href="http://www.newflaw.com/blog/translated-article-cz.html" rel="alternate"></link><published>2014-09-15T00:00:00+01:00</published><updated>2014-09-15T00:00:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2014-09-15:/blog/translated-article-cz.html</id><content type="html">&lt;p&gt;Jednoduchý článek s překlady.
+Zde je odkaz na &lt;a class="reference external" href="{filename}/images/img.png"&gt;nějaký obrázek&lt;/a&gt;.&lt;/p&gt;
+</content><category term="misc"></category></entry></feed>

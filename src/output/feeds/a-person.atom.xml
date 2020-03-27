@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Newflaw - A. Person</title><link href="http://www.newflaw.com/blog/" rel="alternate"></link><link href="http://www.newflaw.com/blog/feeds/a-person.atom.xml" rel="self"></link><id>http://www.newflaw.com/blog/</id><updated>2017-12-03T00:00:00+00:00</updated><subtitle>Nature is never flawless</subtitle><entry><title>test generic config tag</title><link href="http://www.newflaw.com/blog/articles/misc/test-generic-config-tag/" rel="alternate"></link><published>2017-12-03T00:00:00+00:00</published><updated>2017-12-03T00:00:00+00:00</updated><author><name>A. Person</name></author><id>tag:www.newflaw.com,2017-12-03:/blog/articles/misc/test-generic-config-tag/</id><summary type="html">&lt;p&gt;This post is written by 
+{% generic config author %}
+if all goes well the blog post author (from settings, not from the post) shows up one …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post is written by 
+{% generic config author %}
+if all goes well the blog post author (from settings, not from the post) shows up one line above&lt;/p&gt;</content><category term="misc"></category></entry></feed>

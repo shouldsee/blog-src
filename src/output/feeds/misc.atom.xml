@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Newflaw - misc</title><link href="http://www.newflaw.com/blog/" rel="alternate"></link><link href="http://www.newflaw.com/blog/feeds/misc.atom.xml" rel="self"></link><id>http://www.newflaw.com/blog/</id><updated>3000-07-09T00:00:00+00:00</updated><subtitle>Nature is never flawless</subtitle><entry><title>Testing</title><link href="http://www.newflaw.com/blog/articles/misc/plugin-test/" rel="alternate"></link><published>3000-07-09T00:00:00+00:00</published><updated>3000-07-09T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,3000-07-09:/blog/articles/misc/plugin-test/</id><summary type="html">&lt;p&gt;Testeando un poco la cosa&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.example.com"&gt;Normal boring link&lt;/a&gt;. But this is a &lt;a href="this&amp;gt;"&gt;cool link&lt;/a&gt; that links to this site.&lt;/p&gt;
+&lt;p&gt;Search in &lt;a href="wikipedia_en&amp;gt;python"&gt;Wikipedia&lt;/a&gt;, (&lt;a href="wikipedia_es&amp;gt;python"&gt;here&lt;/a&gt; in spanish …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Testeando un poco la cosa&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.example.com"&gt;Normal boring link&lt;/a&gt;. But this is a &lt;a href="this&amp;gt;"&gt;cool link&lt;/a&gt; that links to this site.&lt;/p&gt;
+&lt;p&gt;Search in &lt;a href="wikipedia_en&amp;gt;python"&gt;Wikipedia&lt;/a&gt;, (&lt;a href="wikipedia_es&amp;gt;python"&gt;here&lt;/a&gt; in spanish). Also can &lt;a href="ddg&amp;gt;python"&gt;search&lt;/a&gt; it.&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>Math formulas</title><link href="http://www.newflaw.com/blog/articles/misc/math-formulas/" rel="alternate"></link><published>2019-09-10T00:00:00+01:00</published><updated>2019-09-10T00:00:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2019-09-10:/blog/articles/misc/math-formulas/</id><summary type="html">&lt;p class="first last"&gt;&lt;span class="formula"&gt;&lt;i&gt;A&lt;/i&gt;&lt;sub&gt;&lt;span class="text"&gt;c&lt;/span&gt;&lt;/sub&gt; = (&lt;i&gt;π&lt;/i&gt; ⁄ 4)&lt;i&gt;d&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;The area of a circle is &lt;span class="formula"&gt;&lt;i&gt;A&lt;/i&gt;&lt;sub&gt;&lt;span class="text"&gt;c&lt;/span&gt;&lt;/sub&gt; = (&lt;i&gt;π&lt;/i&gt; ⁄ 4)&lt;i&gt;d&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="formula"&gt;
+&lt;i&gt;α&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sub&gt;(&lt;i&gt;i&lt;/i&gt;) = &lt;i&gt;P&lt;/i&gt;(&lt;i&gt;O&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt;, &lt;i&gt;O&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt;, …&lt;i&gt;O&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sub&gt;, &lt;i&gt;q&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sub&gt; = &lt;i&gt;S&lt;/i&gt;&lt;sub&gt;&lt;i&gt;i&lt;/i&gt;&lt;/sub&gt;&lt;i&gt;λ&lt;/i&gt;)
+&lt;/div&gt;
+&lt;div class="formula"&gt;
+&lt;i&gt;A&lt;/i&gt; = &lt;span class="environment"&gt;&lt;span class="arrayrow"&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;11&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;12&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;13&lt;/sub&gt;&lt;span class="unknown"&gt;\
+&lt;/span&gt;&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;21&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;22&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;23&lt;/sub&gt;&lt;span class="unknown"&gt;\
+&lt;/span&gt;&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;31&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;32&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;33&lt;/sub&gt;
+&lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+</content><category term="misc"></category></entry><entry><title>Math formulas</title><link href="http://www.newflaw.com/blog/articles/misc/math-formulas/" rel="alternate"></link><published>2019-09-10T00:00:00+01:00</published><updated>2019-09-10T00:00:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2019-09-10:/blog/articles/misc/math-formulas/</id><summary type="html">&lt;p class="first last"&gt;&lt;span class="formula"&gt;&lt;i&gt;A&lt;/i&gt;&lt;sub&gt;&lt;span class="text"&gt;c&lt;/span&gt;&lt;/sub&gt; = (&lt;i&gt;π&lt;/i&gt; ⁄ 4)&lt;i&gt;d&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;The area of a circle is &lt;span class="formula"&gt;&lt;i&gt;A&lt;/i&gt;&lt;sub&gt;&lt;span class="text"&gt;c&lt;/span&gt;&lt;/sub&gt; = (&lt;i&gt;π&lt;/i&gt; ⁄ 4)&lt;i&gt;d&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="formula"&gt;
+&lt;i&gt;α&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sub&gt;(&lt;i&gt;i&lt;/i&gt;) = &lt;i&gt;P&lt;/i&gt;(&lt;i&gt;O&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt;, &lt;i&gt;O&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt;, …&lt;i&gt;O&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sub&gt;, &lt;i&gt;q&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sub&gt; = &lt;i&gt;S&lt;/i&gt;&lt;sub&gt;&lt;i&gt;i&lt;/i&gt;&lt;/sub&gt;&lt;i&gt;λ&lt;/i&gt;)
+&lt;/div&gt;
+&lt;div class="formula"&gt;
+&lt;i&gt;A&lt;/i&gt; = &lt;span class="environment"&gt;&lt;span class="arrayrow"&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;11&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;12&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;13&lt;/sub&gt;&lt;span class="unknown"&gt;\
+&lt;/span&gt;&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;21&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;22&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;23&lt;/sub&gt;&lt;span class="unknown"&gt;\
+&lt;/span&gt;&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;31&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;32&lt;/sub&gt;
+&lt;/span&gt;
+&lt;span class="arraycell align-l"&gt;
+&lt;i&gt;a&lt;/i&gt;&lt;sub&gt;33&lt;/sub&gt;
+&lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+</content><category term="misc"></category></entry><entry><title>Article with no category</title><link href="http://www.newflaw.com/blog/articles/misc/article-with-no-category/" rel="alternate"></link><published>2018-11-04T00:00:00+00:00</published><updated>2018-11-04T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2018-11-04:/blog/articles/misc/article-with-no-category/</id><content type="html">&lt;p&gt;This is an article with no category&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>test generic config tag</title><link href="http://www.newflaw.com/blog/articles/misc/test-generic-config-tag/" rel="alternate"></link><published>2017-12-03T00:00:00+00:00</published><updated>2017-12-03T00:00:00+00:00</updated><author><name>A. Person</name></author><id>tag:www.newflaw.com,2017-12-03:/blog/articles/misc/test-generic-config-tag/</id><summary type="html">&lt;p&gt;This post is written by 
+{% generic config author %}
+if all goes well the blog post author (from settings, not from the post) shows up one …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post is written by 
+{% generic config author %}
+if all goes well the blog post author (from settings, not from the post) shows up one line above&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>About Me</title><link href="http://www.newflaw.com/blog/articles/misc/about-me/" rel="alternate"></link><published>2016-11-25T00:00:00+00:00</published><updated>2016-11-25T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2016-11-25:/blog/articles/misc/about-me/</id><summary type="html">&lt;h3&gt;Overview&lt;/h3&gt;
+&lt;p&gt;I am a computational biologist interested in applying machine learning to functional genomics datasets. Using Python2 as my primary language, I developed a expectation-maximisation …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Overview&lt;/h3&gt;
+&lt;p&gt;I am a computational biologist interested in applying machine learning to functional genomics datasets. Using Python2 as my primary language, I developed a expectation-maximisation program to auto-classify genes into synergistic groups.&lt;/p&gt;
+&lt;p&gt;I am also broadly interested in structural biology and molecular dynamics, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cellular automata&lt;/li&gt;
+&lt;li&gt;renormalisation / coarse-graining&lt;/li&gt;
+&lt;li&gt;inverse-ising problem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On days outside coding, I spend my time playing music and building electronic devices. My favourite creation so far is a dispersive spectrometer.&lt;/p&gt;
+&lt;p&gt;Email: feng.geng.14@ucl.ac.uk&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>test ipython notebook nb format 3</title><link href="http://www.newflaw.com/blog/articles/misc/test-ipython-notebook-nb-format-3/" rel="alternate"></link><published>2015-03-03T00:00:00+00:00</published><updated>2015-03-03T00:00:00+00:00</updated><author><name>Testing Man</name></author><id>tag:www.newflaw.com,2015-03-03:/blog/articles/misc/test-ipython-notebook-nb-format-3/</id><summary type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+&lt;h1&gt;Loading an entire notebook nbformat = 3.0&lt;/h1&gt;
+&lt;p&gt;{% notebook test_nbformat3.ipynb %}&lt;/p&gt;
+&lt;h1&gt;Loading selected cells from a notebook nbformat = 3.0&lt;/h1&gt;
+&lt;p&gt;{% notebook test_nbformat3.ipynb cells[1:5] %}&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>test ipython notebook nb format 4</title><link href="http://www.newflaw.com/blog/articles/misc/test-ipython-notebook-nb-format-4/" rel="alternate"></link><published>2015-03-03T00:00:00+00:00</published><updated>2015-03-03T00:00:00+00:00</updated><author><name>Testing Man</name></author><id>tag:www.newflaw.com,2015-03-03:/blog/articles/misc/test-ipython-notebook-nb-format-4/</id><summary type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+&lt;h1&gt;Loading an entire notebook nbformat = 4.0&lt;/h1&gt;
+&lt;p&gt;{% notebook test_nbformat4.ipynb %}&lt;/p&gt;
+&lt;h1&gt;Loading selected cells from a notebook nbformat = 4.0&lt;/h1&gt;
+&lt;p&gt;{% notebook test_nbformat4.ipynb cells[1:5] %}&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>A translated article</title><link href="http://www.newflaw.com/blog/articles/misc/translated-article/" rel="alternate"></link><published>2014-09-13T00:00:00+01:00</published><updated>2014-09-13T00:00:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2014-09-13:/blog/articles/misc/translated-article/</id><content type="html">&lt;p&gt;A simple article with a translation.
+Here is a link to &lt;a class="reference external" href="{filename}/images/img.png"&gt;some image&lt;/a&gt;.&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>An untranslated article</title><link href="http://www.newflaw.com/blog/articles/misc/an-untranslated-article/" rel="alternate"></link><published>2014-07-14T00:00:00+01:00</published><updated>2014-07-14T00:00:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2014-07-14:/blog/articles/misc/an-untranslated-article/</id><content type="html">&lt;p&gt;An article without a translation.
+Here is a link to an &lt;a class="reference external" href="{filename}/pages/untranslated-page.rst"&gt;untranslated page&lt;/a&gt;&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>Images Test</title><link href="http://www.newflaw.com/blog/articles/misc/images-test/" rel="alternate"></link><published>2013-04-23T15:59:39+01:00</published><updated>2013-04-23T15:59:39+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2013-04-23:/blog/articles/misc/images-test/</id><summary type="html">&lt;div class="figure"&gt;
+&lt;img alt="" src="/static/images/dummy-800x300.png" /&gt;
+&lt;p class="caption"&gt;This is the caption of the figure (a simple paragraph).&lt;/p&gt;
+&lt;div class="legend"&gt;
+The legend consists of all elements after the caption.  In this
+case, the legend consists …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="figure"&gt;
+&lt;img alt="" src="/static/images/dummy-800x300.png" /&gt;
+&lt;p class="caption"&gt;This is the caption of the figure (a simple paragraph).&lt;/p&gt;
+&lt;div class="legend"&gt;
+The legend consists of all elements after the caption.  In this
+case, the legend consists of this paragraph.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="map to buried treasure" src="/static/images/dummy-200x200.png" /&gt;
+&lt;p class="caption"&gt;This is the caption of the figure (a simple paragraph).&lt;/p&gt;
+&lt;div class="legend"&gt;
+The legend consists of all elements after the caption.  In this
+case, the legend consists of this paragraph.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;div class="figure align-right"&gt;
+&lt;img alt="map to buried treasure 2" src="/static/images/dummy-250x300.png" /&gt;
+&lt;p class="caption"&gt;This is the second image caption.&lt;/p&gt;
+&lt;div class="legend"&gt;
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;img alt="" src="/static/images/dummy-200x200.png" /&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;img alt="" class="align-right" src="/static/images/dummy-250x300.png" /&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+</content><category term="misc"></category><category term="images"></category><category term="test"></category></entry><entry><title>Override url/save_as</title><link href="http://www.newflaw.com/blog/override/" rel="alternate"></link><published>2012-12-07T00:00:00+00:00</published><updated>2012-12-07T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2012-12-07:/blog/override/</id><content type="html">&lt;p&gt;Test page which overrides save_as and url so that this page will be generated
+at a custom location.&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>FILENAME_METADATA example</title><link href="http://www.newflaw.com/blog/articles/misc/filename_metadata-example/" rel="alternate"></link><published>2012-11-30T00:00:00+00:00</published><updated>2012-11-30T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2012-11-30:/blog/articles/misc/filename_metadata-example/</id><content type="html">&lt;p&gt;Some cool stuff!&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>Second article</title><link href="http://www.newflaw.com/blog/articles/misc/second-article/" rel="alternate"></link><published>2012-02-29T00:00:00+00:00</published><updated>2012-02-29T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2012-02-29:/blog/articles/misc/second-article/</id><content type="html">&lt;p&gt;This is some article, in english&lt;/p&gt;
+</content><category term="misc"></category><category term="foo"></category><category term="bar"></category><category term="baz"></category></entry><entry><title>A markdown powered article</title><link href="http://www.newflaw.com/blog/articles/misc/a-markdown-powered-article/" rel="alternate"></link><published>2011-04-20T00:00:00+01:00</published><updated>2011-04-20T00:00:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2011-04-20:/blog/articles/misc/a-markdown-powered-article/</id><content type="html">&lt;p&gt;You're mutually oblivious.&lt;/p&gt;
+&lt;p&gt;&lt;a href="|filename|/unbelievable.rst"&gt;a root-relative link to unbelievable&lt;/a&gt;
+&lt;a href="http://www.newflaw.com/blog/articles/misc/unbelievable/"&gt;a file-relative link to unbelievable&lt;/a&gt;&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>Article 1</title><link href="http://www.newflaw.com/blog/articles/misc/article-1/" rel="alternate"></link><published>2011-02-17T00:00:00+00:00</published><updated>2011-02-17T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2011-02-17:/blog/articles/misc/article-1/</id><content type="html">&lt;p&gt;Article 1&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>Article 2</title><link href="http://www.newflaw.com/blog/articles/misc/article-2/" rel="alternate"></link><published>2011-02-17T00:00:00+00:00</published><updated>2011-02-17T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2011-02-17:/blog/articles/misc/article-2/</id><content type="html">&lt;p&gt;Article 2&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>Article 3</title><link href="http://www.newflaw.com/blog/articles/misc/article-3/" rel="alternate"></link><published>2011-02-17T00:00:00+00:00</published><updated>2011-02-17T00:00:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2011-02-17:/blog/articles/misc/article-3/</id><content type="html">&lt;p&gt;Article 3&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>Unbelievable !</title><link href="http://www.newflaw.com/blog/articles/misc/unbelievable/" rel="alternate"></link><published>2010-10-15T20:30:00+01:00</published><updated>2010-10-15T20:30:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2010-10-15:/blog/articles/misc/unbelievable/</id><content type="html">&lt;p&gt;Or completely awesome. Depends the needs.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="|filename|/cat1/markdown-article.md"&gt;a root-relative link to markdown-article&lt;/a&gt;
+&lt;a class="reference external" href="http://www.newflaw.com/blog/articles/misc/a-markdown-powered-article/"&gt;a file-relative link to markdown-article&lt;/a&gt;&lt;/p&gt;
+</content><category term="misc"></category></entry></feed>

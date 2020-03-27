@@ -1,0 +1,39 @@
+version: "3.2"
+services:
+  pelican:
+    container_name: pelican
+#    depends_on: 
+#      - jupyter
+    ports:
+      - 9000:8000
+    build:
+      context: '.'
+      args:
+       PHP_VERSION: ${PHP_VERSION}
+#    networks:
+#      - backend
+#    volumes:
+#      - ${PROJECT_ROOT}/:/var/www/html/
+
+  jupyter:
+    user: "1000:100"
+    ports:
+      - 8001:8888
+    volumes:
+      - "./src:/home/jovyan/src:rw"
+    environment:
+#      NB_USER: root
+#      NB_UID: 0
+      USE_HTTPS: "yes"
+      PASSWORD: "YOURPASS"
+    container_name: jupyter
+    command: 
+      ["start-notebook.sh",
+  "--NotebookApp.password='sha1:c20c0a8fb92a:3041e850b9c4c65ae06286dce5c4acf4b688b645'",
+  "--NotebookApp.password='sha1:d28fed4908df:6e133e054d89011337b3855d8d6951aa82f4ca6d'",
+]
+    build:
+      context: './jupyter'
+      args: 
+       JU_PASSWORD: "u'sha1:c20c0a8fb92a:3041e850b9c4c65ae06286dce5c4acf4b688b645'"
+#    ports: 

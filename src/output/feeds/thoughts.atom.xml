@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Newflaw - thoughts</title><link href="http://www.newflaw.com/blog/" rel="alternate"></link><link href="http://www.newflaw.com/blog/feeds/thoughts.atom.xml" rel="self"></link><id>http://www.newflaw.com/blog/</id><updated>2017-09-27T22:39:00+01:00</updated><subtitle>Nature is never flawless</subtitle><entry><title>风城纪事·渣渣</title><link href="http://www.newflaw.com/blog/articles/thoughts/feng-cheng-ji-shi-zha-zha/" rel="alternate"></link><published>2017-09-27T22:39:00+01:00</published><updated>2017-09-27T22:39:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-09-27:/blog/articles/thoughts/feng-cheng-ji-shi-zha-zha/</id><summary type="html">&lt;p&gt;“我到底是不是一个渣渣？”&lt;/p&gt;</summary><content type="html">&lt;p&gt;“我到底是不是一个渣渣？”&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1021" align="alignnone" width="548"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set2-1024x768.jpg" alt="" width="548" class="size-large wp-image-1021" /&gt; 简单的交集操作："我 &amp;amp; 你"[/caption]&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h1&gt;
+前言：
+&lt;/h1&gt;
+
+&lt;p&gt;通过比较来下定义是一个通用的办法，想象我们有两个集合，“我”集和“你”集。可以抽象的认为，“我”集包含了个体“我”具有的所有品质，相应地可以定义“你”集。接下来我们讨论几个逻辑上存疑的推断，以支持论点”不要因为别人的看似强大而自卑，也不要因为自己的看似渊博而自负。“：
+&lt;li&gt;
+自卑推断&lt;/li&gt;
+&lt;li&gt;
+自负推断&lt;/li&gt;
+&lt;li&gt;
+联合自卑推断&lt;/li&gt;&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1019" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set1-1024x768.jpg" alt="" width="584" height="438" class="alignnone size-large wp-image-1019" /&gt; 初始韦恩图[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1021" align="alignnone" width="548"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set2-1024x768.jpg" alt="" width="548" class="size-large wp-image-1021" /&gt; 简单的交集操作："我 &amp;amp; 你"[/caption]&lt;/p&gt;
+&lt;h2&gt;
+1.自负推断：“你看，我有的这些，他都没有！（看我多厉害！）”
+&lt;/h2&gt;
+
+&lt;h3&gt;
+注： "&amp;"指交集操作，“|x|”指“x”的度量/大小。"+"指并集操作， ”-“ 指差集操作
+&lt;/h3&gt;
+
+&lt;p&gt;在“我”被清楚定义而“你”的定义不明时，我们通过“我”和"你"的交集来估算“你”的大小，也就是通俗意义上的“攀比”。&lt;/p&gt;
+&lt;p&gt;也就是说基于假设： |你| 正比于 |我 &amp;amp; 你|，我们可以实现推断： f:|我 &amp;amp; 你| --&amp;gt; |你|， &lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1025" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set7-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1025" /&gt; 通过交集逆推”你“集[/caption]&lt;/p&gt;
+&lt;p&gt;又因为 |我 &amp;amp; 你| = |我| - |我 - 你|， 所以实际操作中我们常常直接从 |我 - 你| 出发，实现对 |你| 的估算。&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1028" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set10-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1028" /&gt; | 我 - 你 | 可以导出 | 我 &amp;amp; 你 |[/caption]&lt;/p&gt;
+&lt;p&gt;但是事实上，这个估算不一定成立。因为我们的假设是没有任何保证的（一厢情愿），实际情况中 |我 &amp;amp; 你| 和 |你| 不一定有相关性。&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1026" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set8-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1026" /&gt; 情景一： ”你“集的确很小&lt;br /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1027" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set9-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1027" /&gt; 情景二： 尽管交集很小，但”你“集其实很大[/caption]&lt;/p&gt;
+&lt;h2&gt;
+2.自卑推断:“你看，你有的这些，我都没有！（看我多渣！）”
+&lt;/h2&gt;
+
+&lt;h3&gt;
+注：“正比”是一个可逆关系
+&lt;/h3&gt;
+
+&lt;p&gt;自卑推断基本上是自负推断的对偶，可以表示为 g:|你 - 我| -&amp;gt; |我|。换句话说，是对“我”的度量不确定的情况下，用“交集”来估算自身的大小。
+[caption id="attachment_1030" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set11-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1030" /&gt; 既可以用交集估算[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1031" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set12-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1031" /&gt; 也可以用差集估算[/caption]&lt;/p&gt;
+&lt;p&gt;由于同样的原因，自卑推断也受限于假设 |我 &amp;amp; 你| 正比于 |我|。&lt;/p&gt;
+&lt;h2&gt;
+3.联合自卑推断：“你看，这些东西，我们都没有！（在座的各位都是渣渣！）”
+&lt;/h2&gt;
+
+&lt;p&gt;这个时候我们的注意力在 “(我 + 你)” 的补集上，亦即"全集 - (我 + 你)"，此时我们对”全集“，”我“，”你“三者的大小都没有准确的信息(”全集“包含了所有已知)，但是我们知道”我 + 你“ 所不具备的那些元素。&lt;/p&gt;
+&lt;p&gt;可以把该推断写成 u: | 全集 - （我 + 你) | --&amp;gt; ( | 我 | ， | 你 | )&lt;/p&gt;
+&lt;p&gt;这个推断利用了以下等式： |全集| = | 全集 - （我 + 你) |  +  |我 + 你|&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1032" align="alignnone" width="584"]&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/09/set13-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1032" /&gt; 差集常常是我们认识世界的直觉[/caption]&lt;/p&gt;
+&lt;p&gt;按理说没有地方可以出问题了，但是如果|全集|和 |我 + 你| 同时变大或者变小， 中间的差集大小是可以不变的。也就是说， | 全集 - （我 + 你) | 无法对 |我 + 你| 的大小作出任何保证。&lt;/p&gt;
+&lt;h2&gt;
+总结： 基于单一指标的观察，尤其是差集的大小(如： |我 - 你| )，常常会导出不可靠的结论。时刻警惕从相对度量”差距“中导出绝对度量的推断。
+&lt;/h2&gt;
+
+&lt;h2&gt;
+说人话： 不要因为别人的看似强大而自卑，也不要因为自己的看似渊博而自负。只有将注意力合理分配在多个个体上，才能做出可靠的判断。
+&lt;/h2&gt;
+
+&lt;p&gt;这篇文章的灵感是来自于ISS项目中对交集运算的使用，更一般说是来自于对 "Sensitivity" 和 "Specificity" 两个指标的理解。通俗的讲，就是基于”攀比/对比“生成的”长处“和”短处“进行的一些常见推断，和常见潜在假设（Implicit Assumption）的梳理。&lt;/p&gt;
+&lt;h2&gt;
+后记 (胡言乱语)：
+&lt;/h2&gt;
+
+&lt;p&gt;有时候会碰上很奇怪的谈话，言语间分明感到“我不想和你说话，你个渣渣”，但是对方又没有主动停下的意思。。。这个时候就很尴尬了。考虑发送者(sender)和接收者(receiver)&lt;/p&gt;
+&lt;p&gt;这种情况呢，一般伴随着接收者的莫名其妙。也就是说，接收者完全不相信发送者的“渣渣声明”，但是又不愿意花太多力气去停止这个“渣渣声明”，毕竟如果不是渣渣，谁会在乎是否被声明成了渣渣。换句话说，接收者相信“渣渣声明”与自己是无关的，尽管在表面这个声明是指向自己的。...&lt;/p&gt;
+&lt;p&gt;2017年9月26日
+剑桥&lt;/p&gt;</content><category term="thoughts"></category><category term="chinese"></category><category term="thoughts"></category></entry><entry><title>DoReMiDo // 哆来咪哆</title><link href="http://www.newflaw.com/blog/articles/thoughts/doremido-chi-lai-mi-chi/" rel="alternate"></link><published>2017-08-09T11:52:00+01:00</published><updated>2017-08-09T11:52:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-08-09:/blog/articles/thoughts/doremido-chi-lai-mi-chi/</id><summary type="html">&lt;p&gt;Probably the first proper song I made so far.&lt;/p&gt;</summary><content type="html">&lt;iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/337129762&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Probably the first proper song I made so far.&lt;/p&gt;
+&lt;p&gt;Please suggest a name by commenting if you are inspired! XD&lt;/p&gt;
+&lt;p&gt;//&lt;/p&gt;
+&lt;p&gt;应给是比较正式的第一首歌。&lt;/p&gt;
+&lt;p&gt;有什么好名字记得留言！XD&lt;/p&gt;</content><category term="thoughts"></category><category term="music"></category><category term="thoughts"></category></entry><entry><title>风城纪事·偶遇</title><link href="http://www.newflaw.com/blog/articles/thoughts/feng-cheng-ji-shi-ou-yu/" rel="alternate"></link><published>2017-07-16T21:30:00+01:00</published><updated>2017-07-16T21:30:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-07-16:/blog/articles/thoughts/feng-cheng-ji-shi-ou-yu/</id><summary type="html">&lt;p&gt;艾玛正气定神闲地坐在维多利亚式复古电车里欣赏着窗外的云雾，不巧恶魔闯了进来。&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="http://www.newflaw.com/blog/wp-content/uploads/2017/07/doodles1-1024x703.jpg" alt="" width="584" height="401" class="alignnone size-large wp-image-975" /&gt;
+&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&amp;id=39227637&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt;
+&lt;iframe width="100%" height="80" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226899942&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;艾玛正气定神闲地坐在维多利亚式复古电车里欣赏着窗外的云雾，不巧恶魔闯了进来。&lt;/p&gt;
+&lt;p&gt;恶魔：艾玛，你在哪里？
+艾玛：我在曼恩岛上的火车里
+恶魔：再好好想想，你在哪里？
+艾玛：我在一节摇晃的维多利亚式的复古车厢里。
+恶魔：真的吗？你到底在哪里呀？&lt;!--more--&gt;
+艾玛：我在开始暑期实习前的短暂放松里？
+恶魔：很好，可是你真的在那嘛？
+艾玛：我刚刚在SNAEFELL呼啸的寒风和露水笼罩下的餐厅里。
+恶魔：是吗？可那是哪里呢？
+艾玛：那是一个可以看到七大王国的地方。
+恶魔：可那又是哪里？
+艾玛：那是我的思绪停留之地。
+恶魔：说到这个，你怎么会在这里。
+艾玛：因为我在旅行。
+恶魔：那我又为什么在这里？
+艾玛：因为我在听你写的这首《BATTLE AGAINST A TRUE HERO》。&lt;/p&gt;
+&lt;p&gt;F拍完照，我突然想起，这些照片除了被传到社交网站上发个朋友圈，然后就会被尘封起来了。F说，在回忆往昔的时候会翻出来看，但是又在什么时候才会回忆往昔呢？&lt;/p&gt;
+&lt;p&gt;究竟，什么东西会被记忆下来呢？此时，此刻；彼时，彼地。前段时间我翻出了小学时候的照片，翻看了几段春游秋游时的视频，其中我的粗口和言语简直匪夷所思不忍直视。更不能忍的是想要偷拍女同学时欲盖弥彰的声明和顾左右而言他。可是，假若这视频没有被翻出，那么这段记忆，又属于谁呢？&lt;/p&gt;
+&lt;p&gt;2017年6月23日
+曼恩岛&lt;/p&gt;</content><category term="thoughts"></category><category term="chinese"></category><category term="thoughts"></category></entry><entry><title>Ruin your childhood memory -- From Digimons to colonialism // 毁童年之后殖民数码宝贝</title><link href="http://www.newflaw.com/blog/articles/thoughts/ruin-your-childhood-memory-from-digimons-to-colonialism-hui-tong-nian-zhi-hou-zhi-min-shu-ma-bao-bei/" rel="alternate"></link><published>2017-07-04T23:00:00+01:00</published><updated>2017-07-04T23:00:00+01:00</updated><author><name>wechat-oxfordlit</name></author><id>tag:www.newflaw.com,2017-07-04:/blog/articles/thoughts/ruin-your-childhood-memory-from-digimons-to-colonialism-hui-tong-nian-zhi-hou-zhi-min-shu-ma-bao-bei/</id><summary type="html">&lt;p&gt;原文来自：&lt;a href="http://mp.weixin.qq.com/profile?src=3&amp;timestamp=1499208439&amp;ver=1&amp;signature=W8L2NaGfEqNtX2Iy5bjarDYGtXbXvMjouGWwEFDg0yhVCxN7lbTKJ7*zCdLtyCf9D3Yt3fTKWiGd8dEr2NLofw=="&gt;我在牛津读文学&lt;/a&gt;，微信号：oxfordlit&lt;/p&gt;
+&lt;p&gt;前言：聪明的你，请猜猜“海文斯那可尔”是哪个数码宝贝的绝招呢？
+&lt;div id="js_content" class="rich_media_content "&gt;
+在学院内看各类文学经典，各大家名作，再以它们为原材料来学习和反思人文理论，大概就是文学专业学生在体制内要做的事。经典固然是一定要看的，因为它们是文化资本的&lt;span style="color: red;"&gt;固体沉积物&lt;/span&gt;，承载着联系人群和区分文化品位等重要作用。但是人文理论和文本分析的&lt;span style="color: red;"&gt;能力&lt;/span&gt;本身却是不必要限制在经典或者所谓的文艺文本中的，我反而更享受用它们去重新反思流行文化的过程。一方面，流行文化因为市场的需要的确容易暴露出社会的主流意识形态的种种倾向。另一方面，流行文化却也不是一味迎合市场才能 …&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;原文来自：&lt;a href="http://mp.weixin.qq.com/profile?src=3&amp;timestamp=1499208439&amp;ver=1&amp;signature=W8L2NaGfEqNtX2Iy5bjarDYGtXbXvMjouGWwEFDg0yhVCxN7lbTKJ7*zCdLtyCf9D3Yt3fTKWiGd8dEr2NLofw=="&gt;我在牛津读文学&lt;/a&gt;，微信号：oxfordlit&lt;/p&gt;
+&lt;p&gt;前言：聪明的你，请猜猜“海文斯那可尔”是哪个数码宝贝的绝招呢？
+&lt;div id="js_content" class="rich_media_content "&gt;
+在学院内看各类文学经典，各大家名作，再以它们为原材料来学习和反思人文理论，大概就是文学专业学生在体制内要做的事。经典固然是一定要看的，因为它们是文化资本的&lt;span style="color: red;"&gt;固体沉积物&lt;/span&gt;，承载着联系人群和区分文化品位等重要作用。但是人文理论和文本分析的&lt;span style="color: red;"&gt;能力&lt;/span&gt;本身却是不必要限制在经典或者所谓的文艺文本中的，我反而更享受用它们去重新反思流行文化的过程。一方面，流行文化因为市场的需要的确容易暴露出社会的主流意识形态的种种倾向。另一方面，流行文化却也不是一味迎合市场才能“流行”起来，其中内容也许也经得起人文理论的抽丝剥茧，反映出不同社会思潮之间的碰撞。这篇闲文就想用数码宝贝（Digimonデジモン又，数码暴龙）这部我童年最喜欢的日本动画片为例，来讨论一下我们最习以为常的大众文本中暗藏着的複杂的&lt;span style="color: #00b0f0;"&gt;权力关系&lt;/span&gt;。&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style="color: #7030a0;"&gt;1. &lt;/span&gt;&lt;span style="color: #7030a0;"&gt;简要历史背景&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;数码宝贝是跟神奇宝贝（又，Pokemonポケモン，精灵宝可梦，宠物小精灵等）一样，最初在1996年左右被日本公司构想成可以收集电子宠物的单机游戏，但是由其衍生出来的动画则是1999年才出现，比神奇宝贝晚了两年。那是一个属于日本的世纪末华丽年代，泡沫经济后的日本在文化产品开发和输出上大有作为，一下子垄断了大东亚地区的流行文化，在那个韩流还未兴起的年代，，日本流行文化也首先冲出了亚洲，七龙珠，神奇宝贝等动画片在欧美也掀起热潮，使得欧美对亚洲的“崇拜”第一次得以突破对古代的想象（如十九世纪英美的Chinoiserie, 法国的Japonism等等）开始看到&lt;span style="color: #2e75b6;"&gt;现代亚洲&lt;/span&gt;的可爱之处。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" " style="width: auto !important; height: auto !important; visibility: visible !important;" src="http://newflaw.com/blog/wp-content/uploads/2017/07/640" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9QaG8cFzmY0Nsbs0E0mrYqJQfVJSDRIAI5BZZy84BolZiadibDGttakCg/0?wx_fmt=jpeg" data-ratio="0.5633333333333334" data-w="600" data-fail="0" /&gt;&lt;/p&gt;
+&lt;p&gt;在华语世界，日本动画片一般首先是传到有后殖民联系的台湾岛，经过国语翻译和配音才通过（盗版）DVD的形式传到中国大陆。迄今为止中国大陆仍没有大的电视台播过数码宝贝，只有一些地方电视台偶尔会播。所以大多数中国大陆的青少年观众在2000年代是通过台湾配音的DVD看到数码宝贝的。这种从日本到港台到大陆的传播锁链，其实也印证了2000年代从日本到亚洲四小龙到中国大陆的&lt;strong&gt;&lt;span style="color: #385723;"&gt;逐级递减的东亚经济结构&lt;/span&gt;&lt;/strong&gt;：以中国北方为中心的“本土”文化，如东北二人转，相声小品等，被认为是“土”的，落后的文化形式，而中国南方在1949年之后纵然已经失去文化创造力而沦为商业基地，却以“港台腔”的形式在改革开放之后逐渐还魂，台湾出品的中港台合作的南方文化产品中逐渐成为先进的现代性的指标，如《情深深雨濛濛》（民国上海）《新白娘子传奇》（南宋杭州）《蜡笔小新》（台湾国语配音）等等。这个配音和翻译的过程对我对数码宝贝的“殖民性”的反思尤其重要，会在最后讨论。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style="color: #7030a0;"&gt;2. &lt;/span&gt;&lt;span style="color: #7030a0;"&gt;数码宝贝就是比神奇宝贝优&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我要开门见山得说，从意识形态的进步性层面看，数码宝贝是优胜神奇宝贝很多的。&lt;/p&gt;
+&lt;p&gt;神奇宝贝是一部&lt;strong&gt;&lt;span style="color: red;"&gt;三观扭曲，殖民性极强&lt;/span&gt;&lt;/strong&gt;的文化产品。神奇宝贝构建出的世界，其实是一种被现代科技包装过的古罗马角斗场：人类之间的相互竞争，是通过收集，奴役外表动物化，拥有神奇能力，灵魂层面却与人类能无障碍沟通的神奇宝贝来实现并且被评分的。人类和神奇宝贝之间的关係，是&lt;strong&gt;&lt;span style="color: #002060;"&gt;主人-奴隶/物件&lt;/span&gt;&lt;/strong&gt;之间的关係，神奇宝贝是亟待人类去捕捉利用的自然资源，被捕捉之后必须待在精灵球监狱里，而一个主人也可以拥有无限个神奇宝贝，最后选择战斗力最强的几个参加比赛。可以说，&lt;strong&gt;神奇宝贝就是人类科技俘获自然资源并将其融入人类中心的游戏体制的象征&lt;/strong&gt;，这个游戏的本质跟欧洲人俘获非洲黑奴送到美洲做苦力，比赛谁家出的农作物多没有本质差别。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" " style="width: auto !important; height: auto !important; visibility: visible !important;" src="http://newflaw.com/blog/wp-content/uploads/2017/07/640(1)" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9H30f094whAicH998yDsseFiagFtibibAYfISSQPkgeow35wU5iaxOXvOhFg/0?wx_fmt=jpeg" data-ratio="0.7017543859649122" data-w="570" data-fail="0" /&gt;&lt;/p&gt;
+&lt;p&gt;（小智馴服皮卡丘）&lt;/p&gt;
+&lt;p&gt;而出于软化这种对立的尴尬关系的需要，动画片花了很多篇幅试图加入“友情”元素，构建（某些）人类的“&lt;strong&gt;&lt;span style="color: fuchsia;"&gt;善意威权性（benign authoritarianism）&lt;/span&gt;&lt;/strong&gt;”来稀释人类与神奇宝贝之间的主僕殖民关係。所以动画编剧才要在一开始极力戏剧化小智和皮卡丘之间的相遇，来展现这段主僕关係的“不同”，好让观众对主人公小智产生强烈的认同感，方便日后的几百集中大家不断跟着他旅行并享受这个另类世界的光怪陆离。皮卡丘一开始就被设定为一个“有尊严，有个性”的奴隶：它不像其他实验室里已经被驯化的，乖乖等着被人使用的神奇宝贝一样，它展现出一种宁死不屈，要求被人类平等对待的精神。所以一开始皮卡丘就是一隻特别的神奇宝贝，可以召唤出观众极强的认同感：大家喜欢某个神奇宝贝大概是因为它外表可爱，能力奇特，抑或战斗力强这些表面因素，可是大家认同的皮卡丘从来都只有一个，皮卡丘与其他奴隶不同，它的个性让它被充分“人性化(humanised)”。但是皮卡丘的叛逆精神也是个人化而非革命性的，它本来有成为一个对抗殖民体制的领袖的潜质，但是它也很快被统治阶级收编为“&lt;strong&gt;&lt;span style="color: #00b0f0;"&gt;被重用的奴隶&lt;/span&gt;&lt;/strong&gt;”。这个收编在动画片的最初几集是通过&lt;strong&gt;&lt;span style="color: #00b0f0;"&gt;“&lt;/span&gt;&lt;span style="color: #00b0f0;"&gt;感化”和“晋升”&lt;/span&gt;&lt;/strong&gt;两个手段来实现的：小智冒着生命危险保护了皮卡丘免受一群野生神奇宝贝的攻击，从而展现出自己不同于其他神奇宝贝主人的“善意威权”特质，在感动奏效以后，主人为了进一步收编奴隶来为其效忠特别破例“恩准”了皮卡丘可以成为唯一一隻不必待在精灵球监狱里的神奇宝贝，使其“晋升”为比其他被奴役的神奇宝贝更“高级”的存在。这样的通过“感化”与“晋升”来收编某一些奴隶阶级用以巩固整体殖民系统的手段，是十九世纪大英帝国得以昌盛的法宝：在印度，马来西亚等地英国白人殖民统治者向本地的商人，权贵，又或是某些具有革命潜质的反叛者释出善意，提供他们特殊待遇让他们自觉比他们的同类高出一等（成为买办阶级或者代理统治者），从而为了自己的既得利益而主动拥护殖民者策划好的体制。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 670px !important; height: 374.381px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9ukna53CZFbQoIrMVNWpwsiaZkOSasxX6mtQA6ayP4ibicm0M26E6Fyusw/0?wx_fmt=jpeg" data-ratio="0.5587774294670846" data-w="1276" /&gt;&lt;/p&gt;
+&lt;p&gt;（神奇宝贝的主线剧情就是由永无止境的格斗比赛撑起来的，神奇宝贝往往要被打倒受伤才可判定输赢，这跟古罗马的奴隶角斗场有什麽本质差别吗）&lt;/p&gt;
+&lt;p&gt;反观数码宝贝的世界设定就要好太多。动画片一开始并没有像神奇宝贝一样直接跟观众秀出一个充满着各种神奇的，待征服生物的，科技高度发达又充满魔幻氛围的另类世界，而是以二十世纪末的当代东京为背景介绍一群普通的学生少男少女，为之后的情节铺设好一个&lt;strong&gt;现实主义的基底&lt;/strong&gt;。动画片利用人类在世纪末对&lt;strong&gt;&lt;span style="color: #c00000;"&gt;电脑技术发展的幻想和恐惧&lt;/span&gt;&lt;/strong&gt;造出人类世界，和数码世界两个平行空间，与神奇宝贝的美好新世界相比更像是一个&lt;strong&gt;&lt;span style="color: #c00000;"&gt;恶托邦（dystopia）&lt;/span&gt;&lt;/strong&gt;：人类对数码技术的操控其实远远不像他们想的一样完美，网络病毒的蔓延滋生出邪恶的数码宝贝威胁着两个世界的边界与和平。不同于神奇宝贝中人们对科技发展的自信和对自然资源的掌控，数码宝贝中孩子们的旅程不是“&lt;strong&gt;&lt;span style="color: #0070c0;"&gt;征服性的竞赛”，而是“末日来临时的充满未知的冒险”。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style="color: #0070c0;"&gt; &lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 549px !important; height: 363px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A95vibdhEc4xiatUYfB4xnSFHzVd5KyORR7ib61ZMHcFbSlSIF9FEhghCwg/0?wx_fmt=jpeg" data-ratio="0.6612021857923497" data-w="549" /&gt;&lt;/p&gt;
+&lt;p&gt;（数码宝贝第一部中，被选召的孩子被动地来到数码世界，最后也必须离开数码世界）&lt;/p&gt;
+&lt;p&gt;与神奇宝贝中的训练师不同，数码宝贝中“被选召的孩子们”一开始就是&lt;span style="color: #0070c0;"&gt;被动&lt;/span&gt;的主角，他们是被未知的力量捲入了数码世界，也没有主动权选择跟自己一对一搭配的会说话的数码兽，他们的英雄气质是要在数码世界中一步一步被&lt;span style="color: #0070c0;"&gt;锻炼&lt;/span&gt;出来的，这也就是为什麽动画片要给每一个角色搭配一种“数码精神”（如诚实，勇气，光明，知识等等），而只有孩子们克服自己的性格弱点，数码精神得到激发和培养以后，数码兽才可以进化变强克服难关。换句话说，数码宝贝的主题是“&lt;span style="color: red;"&gt;成长(Bildungsroman)”而不是“征服/竞赛&lt;/span&gt;”，孩子们与数码兽之间的关係更像是伙伴而不是主僕。数码宝贝世界的反派（至少在第一部）都是数码兽，而神奇宝贝的反派基本都是人类，彷佛只有人类才有&lt;span style="color: #7030a0;"&gt;主动性&lt;/span&gt;，而神奇宝贝就只能是不同帮派的人类之间争斗的牺牲品。&lt;/p&gt;
+&lt;p&gt;在基本的角色设定上，数码宝贝也完胜神奇宝贝。数码宝贝第一部中有八个被选召的孩子，五男三女，每个主角个性鲜明都有自己对应的数码精神，而且数码兽的&lt;span style="color: #7030a0;"&gt;性别是不稳定的（genderqueer）&lt;/span&gt;，不完全对应人类搭档的性别：如女主角之一的素娜的比丘兽在成长期是女生配音，进化为鸟型的巴多拉兽之后是中性动物，再进化为完全体的伽偻达兽之后就是一个男性配音，男性外形的鸟人。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 514px !important; height: 310px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9KqeRg14dpMM3azb8nkRUXVVfKx5iaGLLgh27GxDw2DKxdrMqdMeuocA/0?wx_fmt=jpeg" data-ratio="0.603112840466926" data-w="514" /&gt;&lt;/p&gt;
+&lt;p&gt;而第一部的剧情大致可以以每个阶段的大BOSS不同而分为三段：恶魔兽，吸血魔兽，最后的黑暗大BOSS。而前面两部分的BOSS都是由&lt;strong&gt;&lt;span style="color: #7030a0;"&gt;最小最弱&lt;/span&gt;&lt;/strong&gt;的孩子（阿武和嘉儿）的数码兽（天使兽和天女兽）打败的，最后的黑暗大BOSS也是要靠全体孩子和数码兽的合作，可以说是非常彰显民主合作精神。反观神奇宝贝，三人行的模式总是设定一个可爱的女性角色（搭配水系女性化的神奇宝贝）和一个玩世不恭有点无厘头的男性角色（搭配石系的过度坚硬男性化的神奇宝贝）来衬托小智的&lt;strong&gt;&lt;span style="color: #bf9000;"&gt;完美男性主角光环&lt;/span&gt;&lt;/strong&gt;。在神奇宝贝训练师竞赛的时候，也一定是小智比他的伙伴成绩好，但是在新自由主义强调的无穷尽的自我提升和相互竞争的逻辑中，小智也永远不能实现他当第一名的梦想，而他的神奇宝贝则要在此过程中不断被更换，抛弃，替代，成为一个长不大的&lt;span style="color: #c00000;"&gt;少年逐梦的牺牲品&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 670px !important; height: 502.947px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9BCdyicGAFqhOyMlzAdF4xmSpY6ticuOjSN5UTXwnznltXWNib3LoDN9tA/0?wx_fmt=jpeg" data-ratio="0.7506666666666667" data-w="750" /&gt;&lt;/p&gt;
+&lt;p&gt;（神奇宝贝的三人行既定模式，主角光环亮瞎眼）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style="color: #7030a0;"&gt;3. &lt;/span&gt;&lt;span style="color: #7030a0;"&gt;数码宝贝中还是保留了日漫常见的殖民现代性&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;虽然跟神奇宝贝比起来，我是非常赞赏数码宝贝的。但是作为流行文化产品，世纪末的日本动漫一般都是&lt;strong&gt;&lt;span style="color: #ffc000;"&gt;突破性和保守性并存&lt;/span&gt;&lt;/strong&gt;的，突破性确保产品特质和竞争力，保守性则负责稳固市场面积以免跌入非主流领域。如上文指出的，数码宝贝的突破性在于它抓住了90年代日本科技腾飞后对网路技术的恐惧，还有它的成长冒险型叙事结构，而它的保守性则是体现在它强烈的&lt;strong&gt;&lt;span style="color: #00b0f0;"&gt;人类中心主义(anthropocentrism)和发展中心主义(developmentalism)&lt;/span&gt;&lt;/strong&gt;上。&lt;/p&gt;
+&lt;p&gt;首先，“被选召的孩子们”虽然是被动进入数码世界的，但是这个称谓和它携带的救世主心理（saviourcomplex）让人很难不想到英国殖民文学的经典，第一位获得诺贝尔文学奖的英语写作者RudyardKipling。他的着名诗篇“The White Man’s Burden”（白种男人的负担）就是在1900年代美国打败西班牙接手菲律宾殖民权的背景下写成，以基督教的口吻来叮嘱（与英国一脉相承的）美国白人好好履行他们作为“the chosen one”(被上帝选中的救世主)的责任。跟很多美国好莱坞的末日灾难片一样，数码宝贝的剧情也是以人类主角为中心宣扬&lt;span style="color: #00b0f0;"&gt;英雄主义&lt;/span&gt;的意识形态。数码兽的进化与强弱与人类主角的数码精神挂钩这自然是要胜过神奇宝贝裡面的主僕关係，但是从另一个角度来看也是一种人类对数码兽的&lt;span style="color: #548235;"&gt;管控与限制&lt;/span&gt;。在数码世界里，手无缚鸡之力的人类小孩其实分分钟都可以被随便一个数码兽杀死（动画片裡面的诸多情节是不合理的，比如第一部的尾声处小丑皇已经将多个孩子变成玩偶，那它干嘛不乾脆杀掉他们呢），所以他们必须要依赖具有战斗能力的数码兽来确保自身安全，于是数码兽还是必要性地成为了战争武器，与人类形成一种&lt;strong&gt;&lt;span style="color: red;"&gt;战斗的肉身+操控的精神的二元高下位阶&lt;/span&gt;&lt;/strong&gt;（Binary hierarchy）。当人类小孩的精神出现偏差的时候，数码兽也失去自主性而变得黑暗不堪（例如在面对强敌悟空兽的几集中，主角八神太一好胜心太强逼迫暴龙兽超进化，却使得暴龙兽失去控制成为丧尸状态），让人不禁要问：为什么人类小孩犯下的错要由为他们出生入死的数码兽来承担？&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 324px !important; height: 240px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A991iarMbqucaGcw3ghWPficybpyoX81gnz5OX0jy2M7qlib55lclic261DA/0?wx_fmt=jpeg" data-ratio="0.7407407407407407" data-w="324" /&gt;&lt;/p&gt;
+&lt;p&gt;（太一的心急让暴龙兽进化错误，虽然打败了悟空兽做出的假暴龙兽，但是也由于失去理智和力量耗尽退化为滚球兽）&lt;/p&gt;
+&lt;p&gt;而数码宝贝系列最能体现人类中心主义(anthropocentrism)和发展中心主义(developmentalism)这两个意识形态的结合的地方，就要属数码兽的&lt;span style="color: red;"&gt;进化&lt;/span&gt;过程了。“进化”这个概念本来就与十九世纪末的殖民现代性有着不可分割的关係：启蒙精神激发出的社会达尔文主义思想（social Darwinism）强调优胜劣汰，将人类社会分为三六九等，并以城市化工业化的手段来促成人类历史的线性单一发展路径。在数码世界里，数码兽的等级都被分成幼儿期，成长期，成熟期，完全体，究极体等几个进化阶段，数码兽的形态也被大致分为人型和兽型两种，数码兽的等级越高战斗力越强。&lt;span style="color: #c00000;"&gt;不难发现，数码兽进化的过程也大致是从兽到人，从自然到工业的过程：人和工业，就代表着力量。&lt;/span&gt;第一部中最强的两隻数码宝贝是恐龙型的暴龙兽和狼型的加鲁鲁兽（也预设了恐龙，狼，鸟，海狮，昆虫，植物之间的力量/功能性高下）,他们从机械暴龙兽和兽人加鲁鲁到战斗暴龙兽和钢铁加鲁鲁的进化就很明显得演示了力量与人、工业之间的挂钩。不难发现，数码宝贝中最强的数码兽和黑暗BOSS几乎都是人型的，而且是人类和机器融合的超人类赛博格（superhumancyborg），&lt;span style="color: #c00000;"&gt;用以满足人类借科技满足超越自身肉身限制的愿望&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 580px !important; height: 171px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9jC0cWyeuxv9aVwA4rialDrV1w0tAgQHlkiam9Av9VibWV3UldmibOgFOSA/0?wx_fmt=jpeg" data-ratio="0.29482758620689653" data-w="580" /&gt;&lt;/p&gt;
+&lt;p&gt;（亚古兽进化呈现出工业至上的人类中心主义）&lt;/p&gt;
+&lt;p&gt;而这种从西方殖民现代性中演化而来的日本进化观，也难免夹带了日本动画常见的“&lt;span style="color: red;"&gt;白人优胜理念&lt;/span&gt;”（white supremacy）。这裡的白人优胜我要加引号，因为它跟真正的西方白种人有关但又分离，是现代日本社会想象出来的。在第一部的前两部分中，两个最弱小的孩子的数码兽进化成了强大又神圣的天使型数码宝贝，打败了人型的邪恶数码宝贝。从天使兽和天女兽的金髮碧眼的外表不难发现，日本文化（甚至东亚文化）中天使作为西方宗教的舶来品是与白人形象相连的，即使动画的主角设定很清楚得交代了是东京的日本人，但是日本似乎还很难想象一个亚洲血统的天使形象。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 594px !important; height: 372px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9eVzVXq9GRjHYUBZ2j1AVxLF3FGn5RBEic6ehgTa0uwEqdOEiaGbCV8ZQ/0?wx_fmt=jpeg" data-ratio="0.6262626262626263" data-w="594" /&gt;&lt;/p&gt;
+&lt;p&gt;（天女獸是白人嗎？）&lt;/p&gt;
+&lt;p&gt;也许有人会说，日本动画挪用西方白人天使形象不一定就是一种自我殖民和文化自卑感的体现，这当然也没有错，毕竟当这些文化产品兴盛起来传播到欧美的时候代表的还是日本的文化软实力和创造力。但是传播的成功与否，跟传播的内容的意识形态是两回事，带有白人优胜审美观的东亚文化产品传入欧美，还是会加固欧美白人的文化自信：在我看来这就是日本动漫和韩剧之间的差别，日本动漫充斥着各种金髮碧眼白皮肤的人物角色，使得欧美白人观众可以有很强烈的&lt;span style="color: #c00000;"&gt;代入感和认同感把这些角色当做自己人而非文化异族&lt;/span&gt;（语言层面更是如此，下面会讨论），而韩剧展现的则是真人男女的时尚现代性，无论这种现代性中强调的高鼻樑和美白是溷杂了多少欧美审美观念，也还是更能提升欧美观众对&lt;span style="color: #548235;"&gt;韩国真人形象和时尚潮流的评价&lt;/span&gt;，甚至是追捧和模彷。&lt;/p&gt;
+&lt;p&gt;日本动漫中这些金髮碧眼白皮肤的正面人物形象是被常态化的，这些夸张的颜色配置的确是起到区分角色，塑造人物多样性的作用，但是我们也不能否认如果完全是为了区别角色，那为什么火影忍者裡面的鸣人金发碧眼，积极乐观（美国白人？），佐助黑发帅气，阴沉（日本人？）而八尾人柱力的BEE高大黝黑又擅长饶舌（国美黑人？）？动画这个媒介与现实生活的距离纵然可以是有解放性的，但是如果它的人物设置真的是如此脱离现实那为何不见更多红皮肤，黑皮肤，绿皮肤的主角？日本动漫角色的种族问题可以是非常敏感的议题，一旦提出来就会遭到大多数观众的反驳，因为大家都不会用真人种族的观念去类别化动漫人物，但是我们也不能不承认，这些角色的外型设置多多少少都受到现实世界中人们对于种族的刻板印象的影响，形成一种（被日本社会长期内化internalise的））白人至上的西方中心主义。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 340px !important; height: 450px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A9CPIyEd2wVdSPIm0Gia5ebib2KxpVYzjeMmJlVvye7LIWN5hhOLEwMR7g/0?wx_fmt=jpeg" data-ratio="1.3235294117647058" data-w="340" /&gt;&lt;/p&gt;
+&lt;p&gt;（火影忍者里的奇拉比是美國黑人嗎？）&lt;/p&gt;
+&lt;p&gt;我个人最不喜欢的是数码宝贝第二部最后对未来的交待：二十年后数码世界和现实世界已经融为一体，每个人都拥有自己的数码宝贝。第二部本来就比第一部差很多，搞出各种装甲进化的花样只是为了满足一个数码兽可以进化成多种属性和样式的幻想需要，而这样大同世界一般的结局彷佛在预告数码宝贝将变成神奇宝贝一般的存在，被人类主人拿来互相攀比也说不定。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style="color: #7030a0;"&gt;4. &lt;/span&gt;&lt;span style="color: #7030a0;"&gt;数码宝贝翻译角力：英文现代性 VS 中文创造力&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;其实我突然想谈数码宝贝的殖民性，最大的原因是前几天在YOUTUBE上看到日文版，英语字幕的数码宝贝片段，也就是迪路兽（Tailmon，迪路兽的尾巴上有神圣光环）进化成天女兽打败吸血魔兽的片段。这个片段的两种语言跟我小时候看的台湾中文配音和字幕的DVD版本的差别给了我很大的震撼：原来原版数码宝贝动画片中这麽多的名字都是&lt;strong&gt;&lt;span style="color: #7030a0;"&gt;片假名/英文！&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这些片假名被日语配音读出来，搭配英语字幕几乎就没有违和感，而我也会根据儿时的记忆自动把这些名词和我知道的中文版本连上号。在这个片段中，天女兽出现并且集结所有完全体数码兽的绝招打败了吸血魔兽，所以看这个片段我第一次意识到原来数码宝贝（就像它的日文名字デジモン）这个名词本身就是英语Digimon(Digital Monster): 天使兽是エンジェモン/Angemon(Angel Monster), 绝招是ヘブンズナックル（Hebunzu Nakkuru，Heaven's Knuckle，中文译名为天堂之拳），天女兽是エンジェウーモン（Angewomon）,绝招是ホーリーアロー（Hōrī Arō，Holy Arrow,中文译名为神圣之箭），祖顿兽的绝招重锤火花（ハンマースパーク——HammerSpark），伽偻达兽的绝招影翼斩(シャドーウィング——ShadowWing)，超比多兽的绝招超大角炮(ホーンバスター)(Horn Buster)等等居然都是片假名表示的英语。其实细心的观众在数码兽进化时的动画中就可以发现，进化画面的背景总是伴随着数码兽名字的片假名和英文名字一起出现（如下图）。&lt;/p&gt;
+&lt;p&gt;&lt;img class=" img_loading" style="width: 480px !important; height: 360px !important;" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/xVDslbb3AiamnHcY3RsibwKzV0pUBWP2A95bFQsQibDXvAYkia87VGqY3quDdQhcE1GSePNDIoTpx5ibTQ4vic6Bmhcg/0?wx_fmt=jpeg" data-ratio="0.75" data-w="480" /&gt;&lt;/p&gt;
+&lt;p&gt;（天使獸超進化為神聖天使獸，背景效果出現Holyangemon的英文字）&lt;/p&gt;
+&lt;p&gt;所以数码宝贝的日文原版发音配上英文字幕观看，对在中文世界第一次接触此动画的观众来说是不是会造成一种震撼的观感呢？对英语世界的观众又会造成怎麽样的感觉？日文本来就是一种充斥着汉字和英语片假名的混种语言，但是在数码宝贝中的特有名词的创造使用过程中是否有意无意暴露了&lt;strong&gt;&lt;span style="color: fuchsia;"&gt;现代日本文化想象中语言的高下位阶&lt;/span&gt;&lt;/strong&gt;呢？在没有做受众调查的基础上，我也只能表达一下自己的猜测。日文中喜欢用片假名来“音译”英语词彙的现象很常见，通常可以藉此达到本土化外来词，同时又凸显外来词的&lt;strong&gt;&lt;span style="color: #548235;"&gt;异域现代性（exotic modernity）&lt;/span&gt;&lt;/strong&gt;的双重效果，但是如果以此类推把此法搬到中文世界，那天使兽就要变成安吉尔兽（与伽偻达兽和比多兽一样变成音译名词），天堂之拳就变成“海文丝那可儿”，天女兽就变成安吉武兽，神圣之箭就变成“侯丽阿罗“，如果配音员在中文配音版本中读出这些奇怪的中文词彙来，相信大部分的观众都会不知所云一时间无法接受。但是我们的无法接受，是不是只是出于一种对中文意译的&lt;strong&gt;&lt;span style="color: #00b050;"&gt;习惯&lt;/span&gt;&lt;/strong&gt;而不是真的对音译外来词有更深的反殖民抗拒呢？就好比“电话”这个中文词，其实是由日本根据他们对汉字的理解发明出来翻译西方传来的“telephone”的，在民国时期音译的“德律风”其实也风行一时。&lt;strong&gt;&lt;span style="color: black;"&gt;既然电话和德律风都是外来词，也无所谓哪个比哪个更加“本土”和“反殖民“了吗？&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;还有一种让我有点毛骨悚然的假设就是，既然中文世界也可以用“侯丽阿罗”这样的词来替代“神圣之箭”，那么当中文世界的观众学会了英文再去看英文字幕日语配音的原版的时候会是什么观感的？会不会有&lt;strong&gt;&lt;span style="color: #ed7d31;"&gt;一种被蒙在鼓里好多年才豁然开朗的“生气的感觉”&lt;/span&gt;&lt;/strong&gt;？以此类推，我不觉得一般的日本人的英语能够好到把ヘブンズナックル（Hebunzu Nakkuru天堂之拳）跟英语的原词Heaven's Knuckle对上号，ヘブンズナックル对很多观众来说应该也只是一个听起来非常异域现代性的声音词汇而已，但是假设他们到美国留学后重看英语字幕的数码宝贝，他们是不是会想问自己&lt;strong&gt;&lt;span style="color: red;"&gt;国家的文化工作者为什么要用英文词创造出这些片假名&lt;/span&gt;&lt;/strong&gt;呢？他会不会想问，数码宝贝的创作团队怎么就这么肯定这些让人半懂不懂的片假名英文词就会让不懂英文的青少年观众喜爱和追捧呢？当他终于把自己童年的日语印象跟成年后习得的英语词对上号，会不会有一些&lt;strong&gt;&lt;span style="color: #7c7c7c;"&gt;后殖民式的民族主义情绪&lt;/span&gt;&lt;/strong&gt;呢？对英语世界的观众来说，观看日语配音英语字幕的数码宝贝时，他们会不会诧异为什么人物说着&lt;strong&gt;&lt;span style="color: #ffc000;"&gt;日语但绝招都必须要用“不标准的日式英语”念出来呢&lt;/span&gt;&lt;/strong&gt;？他们是否会诧异日本人为何如此迷恋自己的语言呢？&lt;/p&gt;
+&lt;p&gt;这一部分提出的问题都非常敏感，因为创作者的想法（比如想要借英语达到某种异域现代性效果），观众的想法（比如终于习得英文后后知后觉）和观众理想中应该有的想法（比如中文配音翻译体现了汉字独特的创造力）这三者是很难达成统一。但是我会坚持说，数码宝贝的绝招多采用音译自英语的片假名这一现象，是和日本长期浸淫在西方现代性的阴影中脱不了干系的，而动画片从日本到台湾到中国大陆的传播路径也是脱离不了经济文化势力的不平等结构，即使我们可以承认，在这样的结构中，本土文化对外来文化的吸纳即是被压迫的结果，也是主动与其协商的过程。但是你能想象哪一天会有一部日本动漫，主角绝招全是用对日本人来说是胡乱拼凑的汉字表示，而从小用英语观看此片的美国观众学习中文以后才恍然大悟其中的意思吗？&lt;strong&gt;&lt;span style="color: red;"&gt;如此换位思考一下，语言文化的高下位阶似乎不是那么容易用所谓的“世界主义（cosmopolitanism）”“混杂性(hybridity)”就可以掩盖过去的，这个混杂一开始就是文化经济不平等的结果。&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（本文图片来自网络，欢迎转载并关注作者公众号oxfordlit，联系作者请在公众号留言即可）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;
+作者简介：&lt;/strong&gt;
+施东来，Flair，牛津大学英文系博士在读,研究范围为现代中西比较文学，后殖民文学，文学中的女权主义和种族形象。致力于将更多华语文化产品带到。文章发表于国内外报纸和学术期刊。&lt;/p&gt;
+&lt;/div&gt;</content><category term="thoughts"></category><category term="external"></category><category term="chinese"></category><category term="thoughts"></category></entry><entry><title>风城纪事·取代</title><link href="http://www.newflaw.com/blog/articles/thoughts/feng-cheng-ji-shi-qu-dai/" rel="alternate"></link><published>2017-07-02T21:33:00+01:00</published><updated>2017-07-02T21:33:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-07-02:/blog/articles/thoughts/feng-cheng-ji-shi-qu-dai/</id><summary type="html">&lt;p&gt;多少次我们以为自己的世界是唯一的，多少次我们领悟到他人的世界却可以和我们的一样丰满。可是这些之于我们又有多大的意义？&lt;/p&gt;
+&lt;p&gt;我们怕不怕自己被取代？猫做老虎的老师时，留了一手没教他上树。这个寓言极形象地刻画了对于被取代的恐惧。“彼可取而代之！”不可取代性，看来是建构身份的一条途径。联想物理中的对易性，在很多的操作下，一个特定元素的某些性质是无关紧要的，但是在另一些操作下，该元素的某些状态会影响操作的结果。例子包括手性等。又比如说取平方这个操作，其结果是不取决于输入的正负号的，也就是说，正号负号可以相互被取代。
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;用系统论的语言讲，不可取代性依赖于从某些输出反向传导来的约束，因为这个输出是依赖于某个特定性质的，所以这个性质是不可取代的。但是 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;多少次我们以为自己的世界是唯一的，多少次我们领悟到他人的世界却可以和我们的一样丰满。可是这些之于我们又有多大的意义？&lt;/p&gt;
+&lt;p&gt;我们怕不怕自己被取代？猫做老虎的老师时，留了一手没教他上树。这个寓言极形象地刻画了对于被取代的恐惧。“彼可取而代之！”不可取代性，看来是建构身份的一条途径。联想物理中的对易性，在很多的操作下，一个特定元素的某些性质是无关紧要的，但是在另一些操作下，该元素的某些状态会影响操作的结果。例子包括手性等。又比如说取平方这个操作，其结果是不取决于输入的正负号的，也就是说，正号负号可以相互被取代。
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;用系统论的语言讲，不可取代性依赖于从某些输出反向传导来的约束，因为这个输出是依赖于某个特定性质的，所以这个性质是不可取代的。但是，这里讨论的不可取代性充其量只是一种约束条件，比如说一个数必须比一大比二小。为了更好地理解“取代”，我们设想有不同个体，在竞争一个联系/地位，这个地位对个体的某些性质提出了约束（通过前述的方式）。这个约束不一定是一成不变的，甚至可以任意复杂，也可以是其他元素的一个函数。&lt;/p&gt;
+&lt;p&gt;那么，对“被取代”的恐惧，首先要基于对该地位的愿望。在与该地位的交互中，个体可以猜测约束的具体形式，如果他判断其他个体也满足这个约束，那么即可理性推断自己被取代是可行的。为了不被取代，该个体必然寻求改变约束的形式，或者干涉取代的过程本身，暂不加展开。
+考虑特殊情况：该个体如若判断其他个体和自己是完全相同的，则无法推算约束的形式，也就无法否定“取代”的可行性，也就很难避免恐惧。&lt;/p&gt;
+&lt;p&gt;一七年六月九日
+失眠
+于伦敦&lt;/p&gt;</content><category term="thoughts"></category><category term="thoughts"></category><category term="chinese"></category></entry><entry><title>轨迹，签证，熵</title><link href="http://www.newflaw.com/blog/articles/thoughts/gui-ji-qian-zheng-shang/" rel="alternate"></link><published>2017-06-30T21:37:00+01:00</published><updated>2017-06-30T21:37:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-06-30:/blog/articles/thoughts/gui-ji-qian-zheng-shang/</id><summary type="html">&lt;p&gt;想来我需要写一点成块的文章，光罗列点可不行，这样取出的永远是语义*的（semantic）碎片。&lt;/p&gt;
+&lt;p&gt;人的生命大概可以用轨迹（trajectory）来很好地描述，轨迹是经典物理的经典概念，考虑一个决定性的经典粒子，其轨迹可以完全被上一时刻的条件所预测。建模与预测，这是物理学的发源之地（天文学以预测为基石）。（另，量子力学对薛定谔方程的解释方法不能完全满足定域性，决定性，因果性。也就是说，不存在一个定域的，决定性的，因果的理论能介绍薛定谔方程（但是薛定谔方程不可能是“错 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;想来我需要写一点成块的文章，光罗列点可不行，这样取出的永远是语义*的（semantic）碎片。&lt;/p&gt;
+&lt;p&gt;人的生命大概可以用轨迹（trajectory）来很好地描述，轨迹是经典物理的经典概念，考虑一个决定性的经典粒子，其轨迹可以完全被上一时刻的条件所预测。建模与预测，这是物理学的发源之地（天文学以预测为基石）。（另，量子力学对薛定谔方程的解释方法不能完全满足定域性，决定性，因果性。也就是说，不存在一个定域的，决定性的，因果的理论能介绍薛定谔方程（但是薛定谔方程不可能是“错”的）。）&lt;/p&gt;
+&lt;p&gt;讲讲今天签证的事儿吧，周五晚上本想打印一份学生证明，跑到办公室时却刚好到下班时间，有两位顾客走出门外我却忘记鼓起勇气冲进去麻烦工作人员。当他把门锁上时我知道已经晚了。签证的问题其实还不在这，等我认认真真准备了材料，跑到法签中心排完队，刚开始过第一关，前台就告诉我，由于两次入境国家不一样，且第一入境国不是法国，法签不能受理我的申请。她告诉我两个补救措施：1.去意大利领馆申请 2.把行程改成连续的 被吓懵的我选择了第二条路，跑到网咖里做了个伪（Pseudo）行程，花掉了25EUR+22EUR+(70EUR，可能还可以退)。还好网咖不远，环境也好，老板也有风度，倒让我有一种写论文的冲动（对比法签中心，简直人山人海，纸醉金迷，胆战心惊，人云亦云，气氛实在不对）。&lt;/p&gt;
+&lt;p&gt;说到底，申根签的审核就是个笑话，根据木桶原理，最短的那根板是限制因素（limiting process）：最松的申根国家就贡献了最大的流量。申根的怪圈就在于，其他国家越严，签证过程价值就越高，于是木桶的短板就漏过更多的漏网之鱼。边境管制是一句空话，申根牺牲了安全性换取了流动性。但我最想吐槽的是，我想要老老实实申报真实行程，却遭到简简单单一句“不予受理”，最后虚报行程，反而顺风顺水。这使得我严重怀疑申根签证的逻辑——事实上，这种官僚体制会逼迫人们说假话，做假事。我今天突然理解了小时候经常看到的“办证”广告，那是因为在官僚体制的逻辑下，价值可以独立于真相存在——“我不在乎这句话是对是错，我只在乎这句话是谁说的。”&lt;/p&gt;
+&lt;p&gt;最近人好像变得越来越犹豫，一方面觉得自信的生活不应该游移，一方面为了最大化回报的期望又苦苦思索最优解。正如神经网络的Explore-Exploit难题，一方面需要最小化消耗函数，一方面又要考虑时间本身的价值，真是难上加难。其实回到轨迹的类比上来，哪会有什么最优解（尽管这回导致我会被学过优化的人们喷死）。隐性地说，人的决策是不可能找到一个最优解的，因为计算最优解的过程常常是一个停机程序/不可计算程序。身处动态的世界里，哪有什么不变的测度（尽管不变性是物理的一个基本直觉）。如果想要走到那条最为宽阔的坦途上（回报率最高），就必然要抛弃大量的计算资源，因而造成时间的流逝，然而时间一旦流逝，坦途的宽度就又得重新计算了，如此往复，好似会走上流数/微积分的思路，但我仍然不认为这个迭代操作会给出一个最优化的解。或者也可以这样说，最优解轨迹往往伴随着熵的降低，从玻尔兹曼热动力学的角度来讲，是极小概率的事件;若想要按照最优解行进，就必然需要耦合一个熵增/放热过程，以符合热力学第二定律的约束。所以反过来推，就像测不准定律一样，人对自己的轨迹只能施加有限的约束，而不能保证绝对的服从，这和熵增定律是类似的。&lt;/p&gt;
+&lt;p&gt;当然也会有一些奇妙的情况，也就是不能用热力学第二定律理解的情况——复杂性的涌现。或者说，尽管在微观上人不可能完全约束自己的轨迹，整个世界的宏观轨迹却反而诡异的紧——约束并没有显得更少，或者说，大系统并不显现出缺乏约束的特质，而是反而显现出能被很好预测的轨迹，也就是说，一群被热二限制住的不能走最优轨迹的粒子，反而组成了一个总是走最优轨迹的系统。这种诡异的涌现特质，使得整个世界根本不可能陷入热寂。当然我们可以强调这个大系统以摄取能量/排出熵的代价降低了自己的熵（普利高津的结论），但这走的是隔离法的路线了（也是热学的经典直觉），但是我更想考虑这个熵的减少是不是耦合在了从微观映射到宏观这个过程本身，也就是说，是不是尺度的变化本身导致了熵的显变化？&lt;/p&gt;
+&lt;p&gt;最后让我们讨论一下隐性的（Implicit）含义，譬如我现在要写这篇文章，我会假设一个隐性的语境（比如中文就是一个隐性假设），在许许多多个隐性假设下，我才能够有效地传达一些信息。如果抛弃各个隐性假设，那么文章将变得不可接受的冗长，于是反推可得，隐性假设起到的是压缩信息的作用，这些被压缩的信息于是可以获得更快的传播速度，但同时也不再通用（Universal）。比如说一篇科研论文就会假设读者拥有相当多的储备知识，再比如政治喜剧会假设听众有一定的政治常识，再比如一篇假文凭/假行程会假设采信机构......是个傻逼。显然，假行程不是通用的，但是在官僚体制这个隐性假设下，它很有效地传达了递签者迫切的求签心态和端正的求签态度。“见人说人话，见鬼说鬼话”也是一个道理，采用恰当的隐性假设，就能最大化信息的传输效率。&lt;/p&gt;
+&lt;p&gt;12/12/2016
+圣瓶&lt;/p&gt;
+&lt;p&gt;*： 一些语义性陈述（Semantic Statements）：&lt;/p&gt;
+&lt;p&gt;1.医生的无能令病人恼怒。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;回忆（Reflection）令人笑。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;梦是快乐的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;4.新西兰和机器人是遥远的过去。&lt;/p&gt;
+&lt;p&gt;5.过去是美的。&lt;/p&gt;
+&lt;p&gt;6.现在是混乱的。&lt;/p&gt;
+&lt;p&gt;7.回头是不可能的。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;少年是低熵的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;纯洁是困难的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;理想是碎的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;理想是需要拼死拼活拼起来的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;君子需要慎独。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;电脑不能过量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;君子+电脑游戏=病毒&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数学是深奥的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数学是简单的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实验是主观的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模拟是耗脑的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;胜利是不存在的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;故事是需要整理的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;人际鸿沟是深的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;低级趣味不是低级的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Thoughts"></category><category term="chinese"></category><category term="thoughts"></category></entry><entry><title>风城纪事·偏见</title><link href="http://www.newflaw.com/blog/articles/thoughts/feng-cheng-ji-shi-pian-jian/" rel="alternate"></link><published>2017-06-28T22:21:00+01:00</published><updated>2017-06-28T22:21:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-06-28:/blog/articles/thoughts/feng-cheng-ji-shi-pian-jian/</id><summary type="html">&lt;p&gt;“便使我千刀万剐，永劫不复，又有谁会在意呢？”我猜这句话应该符合一个抑郁患者的语气。&lt;/p&gt;
+&lt;p&gt;中心化的下一阶段，是与他者共同构成一个更大的中心，其核心前提在于相互的评价和影响。这种评价，即是这里所谓的“偏见”。最简单的偏见，当然是主体对主体自身的偏见。前述的弥赛亚态，就可以认为是一种自指的偏见。&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;由于评价必然有一个发出者，因此评价不可避免地带有评价者的价值判断，我们由此可以推断所有评价都是一种偏见。偏见不必是负面的，这么命名主要是彰显其发出者。譬如，学生向黎曼请教积分的问题，黎曼随手甩了自己的论文给他，并且在多处复杂的推论处使用了“显然”、“易证 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;“便使我千刀万剐，永劫不复，又有谁会在意呢？”我猜这句话应该符合一个抑郁患者的语气。&lt;/p&gt;
+&lt;p&gt;中心化的下一阶段，是与他者共同构成一个更大的中心，其核心前提在于相互的评价和影响。这种评价，即是这里所谓的“偏见”。最简单的偏见，当然是主体对主体自身的偏见。前述的弥赛亚态，就可以认为是一种自指的偏见。&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;由于评价必然有一个发出者，因此评价不可避免地带有评价者的价值判断，我们由此可以推断所有评价都是一种偏见。偏见不必是负面的，这么命名主要是彰显其发出者。譬如，学生向黎曼请教积分的问题，黎曼随手甩了自己的论文给他，并且在多处复杂的推论处使用了“显然”、“易证”，但是每一个命题，实际上都需要一个专业数学家认真推导才能得出。由此可知，“易证”这个词是带有很强主观判断的。&lt;/p&gt;
+&lt;p&gt;虽然不是必然，但是弥赛亚态下的人常常对自己有着极大的偏见，&lt;/p&gt;
+&lt;p&gt;从执行的角度看，偏见是一种方向的度量——我们期望塑造或是消解某种偏见。与之相对的，是不以偏见为转移的行为，也就是前述的心流态——任何人的价值判断都与此时的行为无关，行为不再以偏见为导向，而是完全由人的潜意识和弥赛亚式的精神状态。这种基于自我的“无我”，源于偏见，但却又高于偏见。&lt;/p&gt;
+&lt;p&gt;譬如弹琴练习一首曲子，如若要考虑曲子的欣赏性，那么任何一个杂音都是不可接受的失误，但如若只是为了抒发脑海中的旋律，那么一两个杂音并不应该阻挠抒发的进程。可以看到，为了欣赏性的演奏是以偏见为导向的，而抒发性的演奏不以欣赏性为目标，而是尽可能完好地保存和表达灵感为目标，我们可以说，对灵感的保存，是一种“无我”的行为。尽管从长远看，可以猜测这隐含了“灵感是将具有欣赏性的”这种先验的信念，因而驱动了记录灵感的这个过程，但是我们也可以说对灵感的记录并不必导出“具有欣赏性”这个结果，所以记录灵感可以看成有一个独立动机的行为。这种动机在最开始可能依赖于偏见而存在，但是在偏见消失以后，这种动机找到了自己独立的意义。&lt;/p&gt;
+&lt;p&gt;前两天看了“动机在杭州”老师关于批判的讨论，他指出了人们习惯的用自己的框架来中和外部现象的习惯（“批判”），而不是放下成见去倾听，感受并尝试理解这个外部现象（“感应”）。显然的是，成见的存在允许将注意力导向最有价值的目标，简化了需要处理的信息，但是其副作用就是沟通质量的下降——倾诉者没有享受到被理解的快感，反而被倒打一耙而陷入了更加不利的境地——“你说的这些都很正常啊 ，发生在你身上也没什么不对的呀？你没有受到什么不公平嘛！”（简言之，你是自作自受）。我们可以尝试穷举倾诉的结果：&lt;/p&gt;
+&lt;p&gt;1.倾听者对倾诉者的叙述和归因表示理解并赞同。
+2.倾听者对倾诉者的归因表示理解但不赞同
+3.倾听者对倾诉者的归因表示不理解和不赞同
+4.倾听者对倾诉者的归因表示不理解但是赞同&lt;/p&gt;
+&lt;p&gt;可以看到，倾诉的第一个要素是是否理解倾诉者的情感和逻辑，第二个是在道德层面上是否支持这种情感和逻辑。当然，不排除这种支持是暂时的，容易叛变的。&lt;/p&gt;
+&lt;p&gt;2017年6月4日
+伦敦&lt;/p&gt;</content><category term="thoughts"></category><category term="chinese"></category><category term="thoughts"></category></entry><entry><title>风城纪事·骤雨</title><link href="http://www.newflaw.com/blog/articles/thoughts/feng-cheng-ji-shi-zou-yu/" rel="alternate"></link><published>2017-06-02T15:56:00+01:00</published><updated>2017-06-02T15:56:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-06-02:/blog/articles/thoughts/feng-cheng-ji-shi-zou-yu/</id><summary type="html">&lt;p align="left"&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;刚坐下来，黑压压的云就下起了毫无情面的大雨。还好我出门前备了雨披，不然可真是“问君能有几多愁”了。我在伦敦大学学院（&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;UCL&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;）图书馆的会员还有七天就要到期了，要归还的书还真是不少，不过如若明年仍在这里读书，那么这次离别也就没那么真诚。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p align="left"&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;雨是一样极神奇的东西。当然，我指的是不会落到我身上的那种雨——落到我身上，我也就无心欣赏了。这雨打万物的声音我是熟悉的，它让我想起某次在横店的一个半夜，我孤身一人在一个诡异的情侣酒店里听着热水器的噪音无法入眠。那噪音不知疲倦，纵使我改换房间仍逃不出它的魔爪。不禁恨恨地想：来这旅店下榻的情侣，大概都因为半夜睡不着而闹别扭分散了吧 …&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p align="left"&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;刚坐下来，黑压压的云就下起了毫无情面的大雨。还好我出门前备了雨披，不然可真是“问君能有几多愁”了。我在伦敦大学学院（&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;UCL&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;）图书馆的会员还有七天就要到期了，要归还的书还真是不少，不过如若明年仍在这里读书，那么这次离别也就没那么真诚。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p align="left"&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;雨是一样极神奇的东西。当然，我指的是不会落到我身上的那种雨——落到我身上，我也就无心欣赏了。这雨打万物的声音我是熟悉的，它让我想起某次在横店的一个半夜，我孤身一人在一个诡异的情侣酒店里听着热水器的噪音无法入眠。那噪音不知疲倦，纵使我改换房间仍逃不出它的魔爪。不禁恨恨地想：来这旅店下榻的情侣，大概都因为半夜睡不着而闹别扭分散了吧，也难怪它的生意这样的冷清，才需要从公车站靠黑车拉客来生存。我走在楼道里，建筑的结构显然是农家宅基地的构造，所以隔音效果才那样差。我越发地确定这是一个陷阱，于是查了最近的落脚点，理了行李到前台退了房，在半夜一点离开了这诡异的地方。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p align="left"&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;再住下的一个旅馆，窗外是潺潺的小溪，那小溪的声音便和这雨声相似，有一种安抚人心的力量。奇怪的是，我一点也不觉得它嘈杂，睡得很深，很沉。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p align="left"&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;窗外，隆隆的雷声正在思忖下一刻的天气。滴答作响的雨，从不停歇。它一会儿细，一会儿密，哗啦啦地撞在一切暴露的平面曲面之上。它宣示着自然对此地的占领，宣示着对一切生物的驱逐。没有情感，没有欲望，没有对未来的期待，它只是静静地下着。也因此，它大概是有生命的。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p align="left"&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;伦敦大学学院科学图书馆
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="color: #262626;"&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;2017&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;年&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;6&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;月&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;2&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;日&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</content><category term="thoughts"></category><category term="chinese"></category><category term="thoughs"></category></entry><entry><title>风城纪事·中心</title><link href="http://www.newflaw.com/blog/articles/thoughts/feng-cheng-ji-shi-zhong-xin/" rel="alternate"></link><published>2017-05-30T10:58:00+01:00</published><updated>2017-05-30T10:58:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-05-30:/blog/articles/thoughts/feng-cheng-ji-shi-zhong-xin/</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;我常常迷惑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;, &lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;偏见和思想的区别到底在哪里呢&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;? &lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;如王小波所言：&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #262626;"&gt;“&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;。……我觉得自己会永远生猛下去，什么也锤不了我。”（《黄金时代》）&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;这种唯我独尊的，弥赛亚式的自觉，大家大概都熟悉。在这种精神状态下，人是不会质疑自己的判断和选择的，让我们暂且称这种状态为“弥赛亚”态。与之比较流行的相关概念，大概是“中二”症侯，不过 …&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;我常常迷惑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;, &lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;偏见和思想的区别到底在哪里呢&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;? &lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;如王小波所言：&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #262626;"&gt;“&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;。……我觉得自己会永远生猛下去，什么也锤不了我。”（《黄金时代》）&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;这种唯我独尊的，弥赛亚式的自觉，大家大概都熟悉。在这种精神状态下，人是不会质疑自己的判断和选择的，让我们暂且称这种状态为“弥赛亚”态。与之比较流行的相关概念，大概是“中二”症侯，不过&lt;/span&gt;&lt;span style="color: #262626;"&gt;“中二”的贬义和偏见太强，就不直接拿来了。但是弥赛亚和中二的共同之处，就是自我的中心化&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span style="color: #262626;"&gt;(Centralisation)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;。这种中心化，不必是糟糕的，甚至可能是人极为基本的&lt;/span&gt;&lt;span style="color: #262626;"&gt;一种性质。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;中心化，最突出的效果就是确定了“我”。这就好像在物理中一旦选取了一个坐标系&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;/&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;参照系，世间一切万物就突然都有了度量（当然还需要确定一个单位长度）。从实用的角度来说，中心化为归纳提供了一个前提（“归纳”此处指对万物的分类和组织），在这种前提下生成的认识和推论，是不能离开这个前提而存在的。允许高效的归纳和处理，自然就成了中心化的一大优势（此处表述模糊）。我想把这个概念和“心流”（&lt;/span&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;Mind Flow&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;）联系起来，也就是说在心流状态下，中心化是一个本质。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;然而中心化在中二现象中&lt;/span&gt;&lt;span style="color: #262626;"&gt;显然是造成了负面效果的。这是为什么呢？中二者被诟病，大多是因为它不能考虑别人的处境和想法，一意孤行，唯我独尊，顺我者昌逆我者亡（这些词带了点帝王气，但是注意这里只讨论国中二年级现象，帝王不在范围内）。要解释中心化和这个效果的关系，我们需要引入“决策”。在中二者的决策中，他者的利益是全然不在考虑范围内的，只有中心的利益是重要的，这里利益可以是各个方面的，如经济利益，社交利益，心理&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span style="color: #262626;"&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;情感利益。当然，鉴于中二时常伴随价值观的紊乱，我们有理由怀疑有些中二现象实际上源于对他对利益的定义迥异于主流，所以尽管他们考虑决策时会考虑他者的利益（有同理心），但是他所考虑的利益并不符合他者所考虑的利益。无论如何，我们认为中二现象并不是中心化的必然产物，但中心化是中二现象的前提。只要主体在中二的基础上改进其决策准则并考虑他者的利益，那么中二就自然&lt;/span&gt;&lt;/span&gt;&lt;span style="color: #262626;"&gt;消失了，但这并不伴随中心化的消失。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;刚刚讨论到了中心化和心流之间的关系，那先聊一下我所了解的心流吧。心流有这样三个特征：&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;第一是其连续性：一旦中途被打断，需要很长时间恢复。比如大家所熟知的学术写作或者阅读过程，如果你读文献的时候断断续续，一会儿回回邮件，一会儿刷刷社交，那么进展将是缓慢的，反复多了人就容易沮丧并且放弃。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;第二是全神贯注：进入心流态的人是不怎么注意时间的流逝的。这点在沉浸于游戏中的玩家，沉浸于音乐中的乐手（包括演奏者或者作曲家），沉浸于推导中的数学家，沉浸于博弈中的商人政客，都是存在的。在沉浸状态中，人从来不会感到无聊，也不会为等待而感到焦急，常常是“山中方一日，世上已千年”，这也导致了前述的连续性。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;第三是无我性：心流态下的人很少关注自己的生理或者社交（心理）需求。所以玩家和乐手们常常一玩起来就忘记了睡觉，推导者忘记了走路和吃饭，博弈者忘记了对道德的遵守，也就导致了表象的废寝忘食和礼崩乐坏。需要注意，无我性可以视作中心化的一种特例，这时中心化对归纳的加成是被保留了的，但是在决策上被心流的目标所取代，也就显现出了无我的状态。无我也是全神贯注的一个结果。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;讨论到这里，中心化的基本效果大致明了了，那么又是怎么联系到“偏见”和“思想”上面的呢&lt;/span&gt;&lt;span style="color: #262626;"&gt;？这时候，我们需要切换到“他者”的视角&lt;/span&gt;&lt;span style="color: #262626;"&gt;，来评价“主体”的一切决策和言论。这种评价和互动的能力，是形成一&lt;/span&gt;&lt;span style="color: #262626;"&gt;个更大的思维共同体的基础。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Helvetica, sans-serif;"&gt;&lt;span style="font-size: medium;"&gt;&lt;span lang="zh-CN"&gt;&lt;span style="color: #262626;"&gt;这时候的中心&lt;/span&gt;&lt;span style="color: #262626;"&gt;，就更庞大了。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</content><category term="thoughts"></category><category term="chinese"></category><category term="thoughts"></category></entry><entry><title>What is Information in biology?// 生物中的信息是什么</title><link href="http://www.newflaw.com/blog/articles/thoughts/what-is-information-in-biology-sheng-wu-zhong-de-xin-xi-shi-shi-yao/" rel="alternate"></link><published>2017-03-08T01:46:00+00:00</published><updated>2017-03-08T01:46:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-03-08:/blog/articles/thoughts/what-is-information-in-biology-sheng-wu-zhong-de-xin-xi-shi-shi-yao/</id><summary type="html">&lt;p&gt;写这篇文章的起因是：失眠，想了太多。主要在想密度涨落如何能够应用到实际生物研究中&lt;/p&gt;
+&lt;p&gt;有几个点：
+&lt;ol&gt;
+    &lt;li&gt;能不能对CA建构一个自指，或者说，能不能建造出一个能够改变自身规则的CA？ CA规则的一个有趣之处就在于，两个东西之间的互动是完全由这两个东西自身决定的。也就是说，它们的互动不需要借助一个更加基础的规则(Fundmental Law，典型的还原论)，而仅仅取决于这两个东西自身的性质。往宽了讲，两个蛋白质的相互作用，也不应该取决于其结构内部的细节，而应该取决于这两个蛋白质本身所蕴含的信息。&lt;/li&gt;
+    &lt;li&gt;基于我目前的实验，我想做一个比较宽泛的陈述：信息存在于时空的涨落/不均匀性。这个命题还可以换种方式陈述 …&lt;/li&gt;&lt;/ol&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;写这篇文章的起因是：失眠，想了太多。主要在想密度涨落如何能够应用到实际生物研究中&lt;/p&gt;
+&lt;p&gt;有几个点：
+&lt;ol&gt;
+    &lt;li&gt;能不能对CA建构一个自指，或者说，能不能建造出一个能够改变自身规则的CA？ CA规则的一个有趣之处就在于，两个东西之间的互动是完全由这两个东西自身决定的。也就是说，它们的互动不需要借助一个更加基础的规则(Fundmental Law，典型的还原论)，而仅仅取决于这两个东西自身的性质。往宽了讲，两个蛋白质的相互作用，也不应该取决于其结构内部的细节，而应该取决于这两个蛋白质本身所蕴含的信息。&lt;/li&gt;
+    &lt;li&gt;基于我目前的实验，我想做一个比较宽泛的陈述：信息存在于时空的涨落/不均匀性。这个命题还可以换种方式陈述：一个完全均匀的时空是不包任何含信息的。 虽然说科学界公认的遗传物质是DNA，但是很难说这个论点对我们解释生命起到了多大帮助。相反的，越来越多的非DNA调控方式正在被发现，以至于到了需要修改中心法则的时候。&lt;/li&gt;
+    &lt;li&gt;我比较期待的一些事：
+&lt;ol&gt;
+    &lt;li&gt;RNA生命的复活：也就是说不使用蛋白质进行新陈代谢，而是只使用RNA和DNA作为工具传宗接代。&lt;/li&gt;
+    &lt;li&gt;更加高效且逼真的生命模拟器：这需要我们把生命行为的信息组分高度抽象出来。&lt;/li&gt;
+    &lt;li&gt;以信息交流为基础的新医疗模式：因为生命的本质其实是信息的传递，任何化学组分或者蛋白质都仅仅是信息的载体，那么任何疾病都可以看作是信息处理的结果，那么也应当通过建构适当的信息载体进行干涉。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+    &lt;li&gt;死或生？
+&lt;ol&gt;
+    &lt;li&gt;生命的本征特性是什么？ 什么样的东西是死的？什么样的东西是活的？我给出的答案仍然基于我对CA的理解：不能接受外界信息的东西是死的，能对外界信息作出反应的是活的。考虑这样一个思想实验：你手上有一个细菌，现在让你杀死它，你有哪些方法可以达成这个目标？(a)在细胞膜上打个洞（可以是用Ampicillin），细菌因物质泄漏而死 (b) 给细菌吃点毒素，阻挠它的蛋白质生产，细菌失去自我调控能力而死 (c) 将细菌加温到1000摄氏度，细菌因细胞膜破裂而死（其实这个死法比较难分析）。（注意这里我们可以重新定义生命：生命就是，可以死去的东西，这个定义可以和信息定义做一个比较）&lt;/li&gt;
+    &lt;li&gt;我最喜欢的方法其实是（b）喂毒药。原因是这样的，你只能给生命喂毒药。比如说石头没有生命，我让你给石头喂毒药，你就算拿石头砸自己的脑袋也想不出来。毒药之所以为毒，是因为它具备调控这个系统的信息。 也就是说，毒药是能和生命进行有趣的互动的，而进行这种互动的能力本身，就是生命的一个特征。我想把这种互动能力看作是这个生命系统的记忆（注意我这里引入了两个新的概念：系统和记忆）。 那么现在问题就好办多了，生命的定义就是，能对特定刺激作出特定反应的东西，更特定地说，是这个从“刺激”到“反应”的映射。&lt;/li&gt;
+    &lt;li&gt;虽然这个定义看起来真的一点都不起眼，但我想提它所隐含的内容：这个映射是由某种时空不均性所刻画的。比如说一个细菌想要分裂增殖，怎么分裂呢？它得去查自己的DNA，然后按照DNA合成出mRNA，再转录成蛋白质，然后这些蛋白质在合适的信号调节下可以组织出一场分裂增殖事件。着眼于这个过程，信息都在哪里呢？&lt;/li&gt;
+    &lt;li&gt;DNA的序列铁定是信息没错了，但是细胞又怎么知道如何翻译DNA呢？这有点像鸡和蛋的问题，但我想简单地回答：翻译方法蕴含在RNA合成酶里（RNAP,负责把DNA翻译成RNA）。也就是说，RNAP本身蕴含了把DNA翻译成RNA的方法。而这个方法是有一定限制的：RNAP只知道在原料充足，信号正常的情况下翻译传统的DNA，如果我们把DNA换成XNA，RNAP是不知道怎么翻译它的。类似的，核糖体也只知道如何把mRNA翻译成蛋白质，而不知道怎么把mRNA做成核糖酶(Ribozyme)以建构RNA生命。&lt;/li&gt;
+    &lt;li&gt;回到毒药问题，显然核糖体和RNAP的工作都需要大量调控，因为在不同的情况下细胞会需要用不同的方式读取不同的信息。 这些信息大部分是要通过化学信号的方式传递的。那么毒素起的作用大概是：给这些玩意儿传递错误的信息。（如何定义“错误”又是一个大题目）&lt;/li&gt;
+    &lt;li&gt;那么究竟如何定义毒药所蕴含的信息呢？显然我们最好不要用毒药对生命的结果作为定义毒药的方法，因为这将导致循环论证。当今的结构/分子生物学认为，毒药可以结合到某些受体上，使它们失去原本的生物学活性。这相当于在说，毒药会阻断信息流，比如毒药结合到了核糖体上，使它稳定在了关闭状态，我们就可以说，毒药阻断了核糖体对启动信息作出反应的能力。&lt;/li&gt;
+    &lt;li&gt;鉴于目前分子生物学是完全基于分子结构的，接下来的问题就是，如何通过毒药的共性推导出信息的形式？这就要提到涨落问题了，因为涨落其实是信息的一种基本表现形式，我猜想，毒药阻断信息流的过程在某种程度上改变了某个涨落的性质，而这应该是可以被观测到的。&lt;/li&gt;
+    &lt;li&gt;我不喜欢用化学平衡来解释生物现象，尤其是用平衡来解释毒药和核糖体的结合，因为取平衡态的过程显然是丢失了信息的，然而自然选择告诉我们，生命必然会尽一切机会构造各种信息流。但是把涨落加进来也不是件容易的事，我们可以考虑核糖体浓度的涨落，也可以考虑单个核糖体电子密度的涨落。现在问题的关键，就在于建立一个通用的联系涨落和信息的办法，而我相信这正是元胞自动机存在的意义。更具体的，什么样的涨落系统可以储存和沟通更多的信息？涨落在哪些方面上是脆弱的？毒药有没有改变涨落的这些性质？&lt;/li&gt;
+    &lt;li&gt;在这个过程中，我们或许还可以顺带解决生命的不确定性。或者说我们可以预测任何操作成功的概率，因为这应该是涨落最擅长处理的。&lt;/li&gt;
+    &lt;li&gt;待续&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+    &lt;li&gt;发现这个问题前人稍微有探讨过 &lt;a href="https://www.quantamagazine.org/20170126-information-theory-and-the-foundation-of-life/"&gt;QuantaMag&lt;/a&gt;/&lt;a href="http://www.huanqiukexue.com/a/qianyan/shengwu__yixue/2017/0221/26978.html"&gt;环球科学译文&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/p&gt;</content><category term="thoughts"></category><category term="bioinformatics"></category><category term="thoughts"></category><category term="chinese"></category></entry><entry><title>重整化，基态， 黑帆</title><link href="http://www.newflaw.com/blog/articles/thoughts/zhong-zheng-hua-ji-tai-hei-fan/" rel="alternate"></link><published>2017-02-08T23:38:00+00:00</published><updated>2017-02-08T23:38:00+00:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-02-08:/blog/articles/thoughts/zhong-zheng-hua-ji-tai-hei-fan/</id><summary type="html">&lt;p&gt;-Don't deem a paper incorrect just because you don't understand it.&lt;/p&gt;
+&lt;p&gt;-讨论了《黑帆》里的一些寓意&lt;/p&gt;
+&lt;p&gt;-讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。&lt;/p&gt;
+&lt;p&gt;最近的娱乐活动主要是在看黑帆(Black Sails)这部剧，亚马逊Prime上有免费看所以追的很勤快。对比权利的游戏和西部世界 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;-Don't deem a paper incorrect just because you don't understand it.&lt;/p&gt;
+&lt;p&gt;-讨论了《黑帆》里的一些寓意&lt;/p&gt;
+&lt;p&gt;-讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。&lt;/p&gt;
+&lt;p&gt;最近的娱乐活动主要是在看黑帆(Black Sails)这部剧，亚马逊Prime上有免费看所以追的很勤快。对比权利的游戏和西部世界，黑帆的叙事更加古典，加之海盗的叙事线对我比较新颖，所以看得异常入迷。这部剧的好处在于张力极强，在一个极小的格局中浓缩进了高强度的冲突。与权利的游戏随意杀主角形成对比的是，黑帆的人物有明显的层级性，随之赋予了一定的英雄主义情节。但这不妨碍它呈现人性的冲突——是取岛屿的整体大义，还是取报仇的一己之快？是领导船员走一条风险大的道路，还是做一些稳稳当当但是不会亏本的买卖？当船员与船长的目标相脱节，矛盾冲突又将如何调和？短线和长线相互博弈，期望和务实前后矛盾。黑帆给我们展现是一个赤裸裸的罗生门，在这里所有人都自以为掌控着命运，最终又陷入冲突而失去一切反抗的资源。&lt;/p&gt;
+&lt;p&gt;这些道理被巧妙地隐藏在黑帆的叙事里：第一季Flint船长在追击Andromache时与Billy进行的讨论尤其精要：我们以为猎物是在北边的，所以我们朝着北边前进以期猎杀，但是猎物的选择我们是不知道的，它甚至可能调转航向以其与我们错身而过;它甚至也可能不在北边，到时候我们将面对一片空荡荡的海面。（大意）当然最后这些更差的情况都没有发生，而Andromache确实走了最普通的一个选择。但Flint作为船长，其远见和策划的能力都是远高于当时的Billy的，但这个能力也需要有船员来执行，否则再多的推断也无法保证Flint自己的生存。换句话说，仓禀足而知礼节，但知礼节本身不能解决吃饭问题，随时面临挨饿的危险。但知礼节者之所以不再陷入挨饿的困境，是因为他能够调控饿肚子人的行为来解决自己的吃饭问题，而一旦饿肚子的人顿悟了礼节的重要性，那么两者必然陷入权利的争夺。&lt;/p&gt;
+&lt;p&gt;&lt;img width="45%" src="http://www.newflaw.com/blog/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-40-53.png" alt="Pictures from Black Sails"&gt;&lt;/img&gt;
+&lt;img width="45%" src="http://www.newflaw.com/blog/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-41-08.png" alt="Pictures from Black Sails"&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;(Pictures from "Black Sails")&lt;/p&gt;
+&lt;p&gt;道理说起来都是简单的，家家却都有本难念的经。冲突来自于各个琐碎的方面而不遵从任一统一的名字。每个人会基于自己的背景作出自己的判断，却又被迫与他人协调以取得成果。没有任何判断是准确且必然的，人们所能控制的仅仅是尽量减少前后矛盾的判断。然而，每个人对待矛盾的态度又是由其背景决定的。&lt;/p&gt;
+&lt;p&gt;剧中还用到了一些有意思的叙事手法。在Flint还在海军服役的时候，有一件意外极大地影响了他的前程：Nassau的执政官被当地民众颠覆了，导致Flint和Hamilton赦免Nassau的计划彻底泡汤。然而，当Flint自己执掌海盗的时候，他与执政者的关系也是糟糕得丝毫不容赦免的可能。这个循环的叙事导致Flint既是颠覆的实施者（之后）又是颠覆的受难者（之前）。滴水不漏的叙事硬生生地刻画出了生存的艰难，文明的艰难。赦免的初衷是好的，但却失去了支配的力量。文明的初衷是好的，但代价是拱手让出那些更现实的利益，并承担更大的风险，而这风险只有通过必要的恶才能解除。&lt;/p&gt;
+&lt;p&gt;学术方面在接触作为一种数值模拟方法的DMRG，糟糕的是几乎所有的文献都是用bra-ket和线性代数写就的，对于只会用偏微分处理热力学模型的我是一个比较大的挑战。DMRG的最大应用在于寻找系统在大尺度上的一个基态，而且其效果和蒙特卡洛有得一拼。这应该是我第一次实战接触统计物理了，希望在解决这个问题后能够把微观-&amp;gt;宏观的这套哲学运用到其他的问题上。&lt;/p&gt;
+&lt;p&gt;简要介绍一下DMRG，多体系统可以用一个波函数（即一个联合概率分布）来描述，概率最大的那个波函数即是系统的基态。但是与其NRG直接寻找子系统的基态不同的是，DMRG寻找 子系统+少量微观元素 的联合系统的一个基态，再将原来的子系统投射到这个基态中占主导的那些子系统波函数组分上。具体的算法还在钻研，希望能够尽快重复出Nishino_1995做出的2D伊辛的结果。&lt;/p&gt;
+&lt;p&gt;&lt;img class="alignnone size-full wp-image-176" src="http://www.newflaw.com/blog/wp-content/uploads/2017/02/dmrg_nishino1995.png" alt="dmrg_nishino1995.png" width="599" height="449" /&gt;&lt;/p&gt;
+&lt;p&gt;（摘自Nishino 1995, DMRG method for 2D classical Models）&lt;/p&gt;
+&lt;p&gt;这个由小见大的过程真的是很有意思。还需要注意的是，在相变临界点附近，DMRG的精度会下降很多，因为这个时候很难找到占“主导”的子系统波函数，也就是说，几乎所有波函数都是可能的。或许可以通过某些数学来解出这种本征值均等的状况何时出现，以期严格解出相变点，但是这要等到彻底理解算法以后了。&lt;/p&gt;
+&lt;p&gt;一些别的碎碎念：两个蛋白质结合，是否意味着他们降落到一个基态上了呢？那么在结合之前，他们岂不是在亚稳态？如何用DMRG处理生物中明显的层级特征呢？蛋白质相互作用能不能用算符来建模呢？更确切地说，如何建模才能收集不同层次的信息？在缺乏对称性的情况下，如何改良原来的方法呢？&lt;/p&gt;
+&lt;p&gt;路漫漫其修远兮，但这不成为停下脚步的理由。&lt;/p&gt;
+&lt;p&gt;2017/02/08
+瓶子&lt;/p&gt;
+&lt;p&gt;PS: 有一个跟生物研究相关的小游戏&lt;a href="http://phylo.cs.mcgill.ca/"&gt;Phylo&lt;/a&gt;，觉得好玩的可以在楼下讨论。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</content><category term="thoughts"></category><category term="chinese"></category><category term="thoughts"></category></entry></feed>

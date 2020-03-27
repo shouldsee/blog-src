@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Newflaw - program</title><link href="http://www.newflaw.com/blog/" rel="alternate"></link><link href="http://www.newflaw.com/blog/feeds/program.atom.xml" rel="self"></link><id>http://www.newflaw.com/blog/</id><updated>2017-07-10T18:55:00+01:00</updated><subtitle>Nature is never flawless</subtitle><entry><title>How to fail your deadline? - Starting learning MySQL thinking you can master it in one day! // 想超时完成任务？来学MySQL就好！</title><link href="http://www.newflaw.com/blog/articles/program/how-to-fail-your-deadline-starting-learning-mysql-thinking-you-can-master-it-in-one-day-xiang-chao-shi-wan-cheng-ren-wu-lai-xue-mysqljiu-hao/" rel="alternate"></link><published>2017-07-10T18:55:00+01:00</published><updated>2017-07-10T18:55:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-07-10:/blog/articles/program/how-to-fail-your-deadline-starting-learning-mysql-thinking-you-can-master-it-in-one-day-xiang-chao-shi-wan-cheng-ren-wu-lai-xue-mysqljiu-hao/</id><summary type="html">&lt;p&gt;First published &lt;a href="http://orengogroup.info/2017/07/10/how-to-fail-your-deadline-starting-learning-mysql-and-think-you-can-master-it-in-one-day/"&gt;here&lt;/a&gt;.
+[#### 1. How to fail your deadline? - Starting learning MySQL thinking you can master it in one day!]&lt;/p&gt;
+&lt;p&gt;Recently, I touched upon MySQL …&lt;/p&gt;</summary><content type="html">&lt;p&gt;First published &lt;a href="http://orengogroup.info/2017/07/10/how-to-fail-your-deadline-starting-learning-mysql-and-think-you-can-master-it-in-one-day/"&gt;here&lt;/a&gt;.
+[#### 1. How to fail your deadline? - Starting learning MySQL thinking you can master it in one day!]&lt;/p&gt;
+&lt;p&gt;Recently, I touched upon MySQL because I wanted it to be the backend for my incoming Django-based data browser. After 4 days of prolonged fiddling I finally manage to make some notes of its functionality. It is very fast, but equally importantly, very different from Python! The other lesson is that one should allocate enough time for learning when starting a new language (depending on &lt;a href="https://en.wikipedia.org/wiki/Single-linkage_clustering"&gt;single linkage distance&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Today's blog will go through:
+1. Loading a table into MySQL, be it fixed-width or regularly delimited.
+2. Create relations between entries.
+3. How to deal with errors, and fix your relationship:&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h4&gt;Overview:&lt;/h4&gt;
+&lt;p&gt;MySQL is a SQL(standard query language), that is specialised for:
+1. database management: To create and maintain the structure of a database&lt;br&gt;
+2. Data I/O: Retrieval and deposition of data.&lt;/p&gt;
+&lt;p&gt;These functions all look good, so I went on firing a "&lt;code&gt;mysql&lt;/code&gt;" shell to try out all different commands it provides, including &lt;code&gt;SELECT&lt;/code&gt;, &lt;code&gt;SHOW&lt;/code&gt;, &lt;code&gt;DROP&lt;/code&gt;, &lt;code&gt;LOAD DATA&lt;/code&gt;. &lt;/p&gt;
+&lt;h4&gt;1. Loading a table into MySQL.&lt;/h4&gt;
+&lt;p&gt;The original goal was to load a fixed-width flatfile into MySQL to form the original dataset. I used regex to transform the flatfile into a delimited form and load it with the command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;## Engage a database before doing anything&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;DATABASE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;TEST&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;USE&lt;/span&gt; &lt;span class="n"&gt;TEST&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;## Reset the table&lt;/span&gt;
+&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="nf"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+   &lt;span class="n"&gt;domain_id&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+   &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;## Note Capital &amp;quot;C&amp;quot; is used to avoid clash with python &amp;quot;class()&amp;quot; keyword&lt;/span&gt;
+   &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s35&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s60&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s95&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s100&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s100_seqcnt&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;domain_length&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;resolution&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;#### For a regularly delimited file.&lt;/span&gt;
+&lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="n"&gt;LOCAL&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/home/shouldsee/Documents/repos/cathdb/cath-domain-list-S35.txt&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+&lt;span class="n"&gt;FIELDS&lt;/span&gt; &lt;span class="k"&gt;TERMINATED&lt;/span&gt; &lt;span class="k"&gt;by&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;     &amp;#39;&lt;/span&gt; &lt;span class="k"&gt;lines&lt;/span&gt; &lt;span class="k"&gt;terminated&lt;/span&gt; &lt;span class="k"&gt;by&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;#### If however you got fixed-width CATH CLF.&lt;/span&gt;
+&lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="n"&gt;LOCAL&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/home/shouldsee/Documents/repos/cathdb/cath-domain-list-S35-v4_1_0.txt&amp;#39;&lt;/span&gt; 
+&lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="nf"&gt;s35&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;arch&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;topo&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s35&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;37&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s60&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;38&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;43&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s95&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;44&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s100&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s100_seqcnt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;domain_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;62&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;67&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;resolution&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;68&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;73&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;limit&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;limit&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+&lt;span class="o"&gt;+----------+-------+------+------+-------+------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+----------+-------+------+------+-------+------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;oaiA00&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;frhA01&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;oksA00&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="n"&gt;un2B00&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;cukA03&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+----------+-------+------+------+-------+------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Note that raw &lt;a href="http://download.cathdb.info/cath/releases/latest-release/cath-classification-data/README-cath-list-file-format.txt"&gt;CATH CLF files&lt;/a&gt; are fixed-width.&lt;/li&gt;
+&lt;li&gt;In case you are not familiar with the organisation of CATH, each "Class" node branches into "Architecture(arch)" children nodes, which in turn branches into "Topology(topo)" children nodes, so on and so forth. &lt;a href="http://wiki.cathdb.info/wiki-beta/doku.php?id=faq"&gt;CATH FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Original "cath-domain-list-S35.txt" can be downloaded from &lt;a href="http://download.cathdb.info/cath/releases/all-releases/v4_1_0/cath-classification-data/cath-domain-list-S35-v4_1_0.txt"&gt;CATH&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now we have a MySQL table containing all S35 representative structures (S35rep), which allows me to filter the table with some criteria. such as:
+1. "&lt;code&gt;SELECT * FROM s35 WHERE Class=1;&lt;/code&gt;" : This will give you all Class 1 S35rep's (You should get 4645 rows).
+2. "&lt;code&gt;SELECT * FROM s35 WHERE resolution&amp;lt;1.0;&lt;/code&gt;" : This should give all s35rep with a structual resolution &amp;lt; 1.0 (183 rows)&lt;/p&gt;
+&lt;h4&gt;2. Create relations between entries.&lt;/h4&gt;
+&lt;p&gt;But there is something I can not fulfill using this structure: Some homologous family (homsf) will have a large number of s35rep (&amp;gt;100) whereas most homsf's will only have several (&amp;lt;5). So it is desirable to filter out the big homsf's only. For example, to count the s35rep in 1.10.8.10, just issue &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And it should return a table saying you got 53 entries, which should all be s35rep's. The problem is: &lt;strong&gt;where should we store this number?&lt;/strong&gt; We can certainly add a "s35_seqcnt" column into the "s35" table and set all s35rep in (1,10,8,10) to have a "s35_seqcnt" of 53, but careful readers must feel dangerous with this approach, reasons are:
+1. All entries in "s35" table represent s35rep nodes. From this perspective, any s35rep should only have a s35_count of 1, which refers to itself. 
+2. Every time this number changes, (say one s35rep is removed), we will need to update all ~50 entries with the new value (say 52).&lt;/p&gt;
+&lt;p&gt;Think about it, s35seq_cnt is a property of homsf, not s35rep itself. If we had a homsf node representing (1,10,8,10), we could have easily set its s35seq_cnt field to be 53, solving both problems at once. Luckily, MySQL is also known as relational database, which means it is built to store relationship. In other words, we can store not only values (e.g: integers,floats,strings), but also cursors to other entries. For this hypothetical homsf node (1,10,8,10), we can actually store a list of cursors pointing to all 53 s35rep's contained within it. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="kt"&gt;INT&lt;/span&gt; &lt;span class="kp"&gt;AUTO_INCREMENT&lt;/span&gt; &lt;span class="k"&gt;PRIMARY&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;### Set an index for cursor in the future&lt;/span&gt;
+  &lt;span class="n"&gt;s35_count&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;## This is new!&lt;/span&gt;
+  &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="c1"&gt;### For homsf, we don&amp;#39;t need index from s35 onwards, but we keep these fields to allow for easier manipulation.&lt;/span&gt;
+  &lt;span class="n"&gt;s35&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;s60&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;s95&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;s100&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;domain_length&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;resolution&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;
+  &lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Insert distinct entries into homsf.&lt;/span&gt;
+&lt;span class="c1"&gt;### Since we set &amp;quot;id&amp;quot; to be AUTO_INCREMENT, we don&amp;#39;t need to assign it since it will be auto-generated&lt;/span&gt;
+&lt;span class="k"&gt;INSERT&lt;/span&gt; &lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we would have a table containing all 2737 homsf's, but we have yet to establish the relation between 'homsf' and 's35'. We will use the "id" column of homsf since it is the indexed primary key, which allows for fast lookup. We will:
+1. Create a "homsf_id" column in s35 to store its parental homsf node's id.
+2. Fill this "homsf_id" using a for loop.
+3. Add a foreign key constraint to this column. &lt;/p&gt;
+&lt;p&gt;In fact, step 1,2 would suffice to specify the relation. Doing step 3 is only for maintainence purpose and constrain any future modification towards the tables, which is essentially a built-in test that every furture version of database has to pass. Though at beginning constraints is very annoying and throws many errors like:
+1. ERROR 1215 (HY000): Cannot add foreign key constraint  (Oh gosh I want to add a constraint!!! Please let me do it!!! Plz!!!)
+2. Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (Oh you evil constraint! Let go of my table!!! I need to modify it!!! I need to drop it!!! Now!!! Here!!!)
+3. ...&lt;/p&gt;
+&lt;h4&gt;3. How to deal with errors, and fix your relationship:&lt;/h4&gt;
+&lt;p&gt;Errors can be very, very annoying and could ruin hours and hours. However, once you understand how it works, these errors suddenly become useful indications that alert you of the potential hazard within commands you've just thrown upon MySQL. This is strictly speaking not a TDD example, since the test is not written for development but merely for maintaining the integrity of the database. Nevertheless, to understand the conept of "Test" on its own is essential to move on to the idea of TDD.&lt;/p&gt;
+&lt;p&gt;Now let's implement the stated operations in MySQL.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;### We split these ADD COLUMN commands since they might throw error if homsf_id already exists, but it would require custom procedure to avert so is not included here.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;COLUMN&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="kt"&gt;INT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;### Fill s35.homsf_id with correct cursors to homsf.id&lt;/span&gt;
+&lt;span class="c1"&gt;### This should only be executed if every s35 can find a homsf. One way to ensure this condition is to create a fresh homsf table from s35. Other approaches with INSERT should be possible.&lt;/span&gt;
+
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="k"&gt;LEFT&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; 
+  &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Impose the foreign key constraint.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;
+   &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; 
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nf"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;### Confirm homsf does not change size&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is useful to simulate a 1452 error to illustrate how to debug a foreign key.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;### Temporarily remove the foreign key.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;### Artificially damage the table&lt;/span&gt;
+&lt;span class="k"&gt;DELETE&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;###&lt;/span&gt;
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;### NEVER do this to a productive database!!&lt;/span&gt;
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234567&lt;/span&gt;
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Attempt to impose the foreign key constraint.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;
+   &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Commands above should throw a 1452:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ERROR&lt;/span&gt; &lt;span class="mi"&gt;1452&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;23000&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="n"&gt;Cannot&lt;/span&gt; &lt;span class="k"&gt;add&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;child&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="k"&gt;foreign&lt;/span&gt; &lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="k"&gt;constraint&lt;/span&gt; &lt;span class="nf"&gt;fails&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;`TEST`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;`#sql-78c0_66a`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="ss"&gt;`homsf_fk`&lt;/span&gt; &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;`homsf_id`&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="ss"&gt;`homsf`&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;`id`&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We can find out which key is missing with SELECT ... WHERE ...NOT IN. But note this will NOT report that homsf_id=2 has been redirected to homsf_id=1234 !!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="k"&gt;LEFT&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; 
+  &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;        &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;1234567&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;By inspection, we found homsf_id 1 and 1234567 is not referring to any existing homsf.id, perventing us from installing a constraint. So we might consider create new homsf to accommodate these s35 entries. But wait a minute, we don't want to create new homsf that coincide with an existing homsf! We can ensure this by trying to update homsf_id according to existing homsf table.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#### Save the sub-table with failed keys to a temp table.&lt;/span&gt;
+&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;temp&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;temp&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;#### Dump the proposed fix into a table `temp_fix`&lt;/span&gt;
+&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;fixed_homsf_id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;temp&lt;/span&gt; &lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="k"&gt;LEFT&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; 
+  &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="c1"&gt;####&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We can see that MySQL proposed a valid change for 58th s35 but NULL for the rest. We can apply the proposed update, and reinstall the foreign key constraint.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+  &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixed_homsf_id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;
+   &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;  
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;At first glance, one would expect foreign key to fail agian, because we know some homsf_id was updated to NULL, which is not withinse homsf.id. However, a NULL does not constitue a violation to foregin key constraint. To illustrate in more detail:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nf"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;## returns 53&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nf"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;IS&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt; 
+  &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;## Returns 0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We see that homsf_id=NULL is indeed not considered within the homsf.id. We conclude foreign key constraint allows exception only if the expcetion is NULL.&lt;/p&gt;
+&lt;p&gt;Recall that we redirected homsf_id=2 to homsf_id=1234 when destroying the database. Note this was not fixed during the procedure above. We can compare entries from s35 and from homsf&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;
+   &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;
+   &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Result:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;
+    &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;    &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;54&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;55&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;56&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;57&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;1330&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;7906&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+------+----------+&lt;/span&gt;
+&lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;
+    &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;    &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;1330&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;01&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Some homsf_id is clearly pointing to the wrong homsf entry, without breaking the foregin key constraint, which render the foregin key meaningless. Think about it, if we want to access the homsf_index of a given s35 (id=54), should we:
+    1. query the s35 table at (Class,arch,topo,homsf) or
+    2. query the homsf entry as specified homsf_id '1234' ?  &lt;/p&gt;
+&lt;p&gt;With the first approach , query returns 1.10.8.20, whereas with the second approach, query returns 2.60.40.1330. How should we resolve such conflict? Obviously, if we were to enjoy the privlege of foreign key, we should keep the result from second approach. Why? Because we don't even need foreign key in the first approach! &lt;/p&gt;
+&lt;p&gt;In reality, however, one would prefer to avoid generating such conflict in the first place, which can be achieved by dropping the (Class, arch, topo, homsf) columns from s35 table, effectively rendering first approach inviable and forcing the second approach. We will not expand the full implementation here and please feel free to practice it.&lt;/p&gt;
+&lt;h4&gt;Sidenotes:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;NULL or NOT NULL, this is a question:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​Recall we updated some homsf_id to NULL in s35 when attempting the fix. This is only possible if the homsf_id column is nullable. We can check the column property by calling
+  &lt;code&gt;sql
+  SHOW COLUMNS FROM s35;&lt;/code&gt;
+  And check the "Null" column of the output.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DROP TABLE IF NOT EXISTS: 
+  This command may not work on some version of SQL. It is quite handy to append "if not exists" to avoid error, but unfortunately it is not available for commands like ADD COLUMN, DROP COLUMN.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cross database FOREIGN KEY error:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When attempting to drop a database that is referred by other database, one would raise ERROR 1217 (23000)[markdown]&lt;/p&gt;
+&lt;p&gt;[#### 1. How to fail your deadline? - Starting learning MySQL thinking you can master it in one day!]&lt;/p&gt;
+&lt;p&gt;Recently, I touched upon MySQL because I wanted it to be the backend for my incoming Django-based data browser. After 4 days of prolonged fiddling I finally manage to make some notes of its functionality. It is very fast, but equally importantly, very different from Python! The other lesson is that one should allocate enough time for learning when starting a new language (depending on &lt;a href="https://en.wikipedia.org/wiki/Single-linkage_clustering"&gt;single linkage distance&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Today's blog will go through:
+1. Loading a table into MySQL, be it fixed-width or regularly delimited.
+2. Create relations between entries.
+3. How to deal with errors, and fix your relationship:&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h4&gt;Overview:&lt;/h4&gt;
+&lt;p&gt;MySQL is a SQL(standard query language), that is specialised for:
+1. database management: To create and maintain the structure of a database&lt;br&gt;
+2. Data I/O: Retrieval and deposition of data.&lt;/p&gt;
+&lt;p&gt;These functions all look good, so I went on firing a "&lt;code&gt;mysql&lt;/code&gt;" shell to try out all different commands it provides, including &lt;code&gt;SELECT&lt;/code&gt;, &lt;code&gt;SHOW&lt;/code&gt;, &lt;code&gt;DROP&lt;/code&gt;, &lt;code&gt;LOAD DATA&lt;/code&gt;. &lt;/p&gt;
+&lt;h4&gt;1. Loading a table into MySQL.&lt;/h4&gt;
+&lt;p&gt;The original goal was to load a fixed-width flatfile into MySQL to form the original dataset. I used regex to transform the flatfile into a delimited form and load it with the command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;## Engage a database before doing anything&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;DATABASE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;TEST&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;USE&lt;/span&gt; &lt;span class="n"&gt;TEST&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;## Reset the table&lt;/span&gt;
+&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="nf"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+   &lt;span class="n"&gt;domain_id&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+   &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;## Note Capital &amp;quot;C&amp;quot; is used to avoid clash with python &amp;quot;class()&amp;quot; keyword&lt;/span&gt;
+   &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s35&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s60&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s95&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s100&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;s100_seqcnt&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;domain_length&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;resolution&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;#### For a regularly delimited file.&lt;/span&gt;
+&lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="n"&gt;LOCAL&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/home/shouldsee/Documents/repos/cathdb/cath-domain-list-S35.txt&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+&lt;span class="n"&gt;FIELDS&lt;/span&gt; &lt;span class="k"&gt;TERMINATED&lt;/span&gt; &lt;span class="k"&gt;by&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;     &amp;#39;&lt;/span&gt; &lt;span class="k"&gt;lines&lt;/span&gt; &lt;span class="k"&gt;terminated&lt;/span&gt; &lt;span class="k"&gt;by&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;#### If however you got fixed-width CATH CLF.&lt;/span&gt;
+&lt;span class="k"&gt;LOAD&lt;/span&gt; &lt;span class="n"&gt;DATA&lt;/span&gt; &lt;span class="n"&gt;LOCAL&lt;/span&gt; &lt;span class="k"&gt;INFILE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/home/shouldsee/Documents/repos/cathdb/cath-domain-list-S35-v4_1_0.txt&amp;#39;&lt;/span&gt; 
+&lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="nf"&gt;s35&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;arch&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;topo&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s35&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;37&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s60&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;38&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;43&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s95&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;44&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s100&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;s100_seqcnt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;56&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;domain_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;62&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;67&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;resolution&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;TRIM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;SUBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;68&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;73&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;limit&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;limit&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+&lt;span class="o"&gt;+----------+-------+------+------+-------+------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;domain_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+----------+-------+------+------+-------+------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;oaiA00&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;frhA01&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;oksA00&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="n"&gt;un2B00&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;cukA03&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+----------+-------+------+------+-------+------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Note that raw &lt;a href="http://download.cathdb.info/cath/releases/latest-release/cath-classification-data/README-cath-list-file-format.txt"&gt;CATH CLF files&lt;/a&gt; are fixed-width.&lt;/li&gt;
+&lt;li&gt;In case you are not familiar with the organisation of CATH, each "Class" node branches into "Architecture(arch)" children nodes, which in turn branches into "Topology(topo)" children nodes, so on and so forth. &lt;a href="http://wiki.cathdb.info/wiki-beta/doku.php?id=faq"&gt;CATH FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Original "cath-domain-list-S35.txt" can be downloaded from &lt;a href="http://download.cathdb.info/cath/releases/all-releases/v4_1_0/cath-classification-data/cath-domain-list-S35-v4_1_0.txt"&gt;CATH&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now we have a MySQL table containing all S35 representative structures (S35rep), which allows me to filter the table with some criteria. such as:
+1. "&lt;code&gt;SELECT * FROM s35 WHERE Class=1;&lt;/code&gt;" : This will give you all Class 1 S35rep's (You should get 4645 rows).
+2. "&lt;code&gt;SELECT * FROM s35 WHERE resolution&amp;lt;1.0;&lt;/code&gt;" : This should give all s35rep with a structual resolution &amp;lt; 1.0 (183 rows)&lt;/p&gt;
+&lt;h4&gt;2. Create relations between entries.&lt;/h4&gt;
+&lt;p&gt;But there is something I can not fulfill using this structure: Some homologous family (homsf) will have a large number of s35rep (&amp;gt;100) whereas most homsf's will only have several (&amp;lt;5). So it is desirable to filter out the big homsf's only. For example, to count the s35rep in 1.10.8.10, just issue &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And it should return a table saying you got 53 entries, which should all be s35rep's. The problem is: &lt;strong&gt;where should we store this number?&lt;/strong&gt; We can certainly add a "s35_seqcnt" column into the "s35" table and set all s35rep in (1,10,8,10) to have a "s35_seqcnt" of 53, but careful readers must feel dangerous with this approach, reasons are:
+1. All entries in "s35" table represent s35rep nodes. From this perspective, any s35rep should only have a s35_count of 1, which refers to itself. 
+2. Every time this number changes, (say one s35rep is removed), we will need to update all ~50 entries with the new value (say 52).&lt;/p&gt;
+&lt;p&gt;Think about it, s35seq_cnt is a property of homsf, not s35rep itself. If we had a homsf node representing (1,10,8,10), we could have easily set its s35seq_cnt field to be 53, solving both problems at once. Luckily, MySQL is also known as relational database, which means it is built to store relationship. In other words, we can store not only values (e.g: integers,floats,strings), but also cursors to other entries. For this hypothetical homsf node (1,10,8,10), we can actually store a list of cursors pointing to all 53 s35rep's contained within it. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="kt"&gt;INT&lt;/span&gt; &lt;span class="kp"&gt;AUTO_INCREMENT&lt;/span&gt; &lt;span class="k"&gt;PRIMARY&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;### Set an index for cursor in the future&lt;/span&gt;
+  &lt;span class="n"&gt;s35_count&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;## This is new!&lt;/span&gt;
+  &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="c1"&gt;### For homsf, we don&amp;#39;t need index from s35 onwards, but we keep these fields to allow for easier manipulation.&lt;/span&gt;
+  &lt;span class="n"&gt;s35&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;s60&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;s95&lt;/span&gt;  &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;s100&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;domain_length&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;resolution&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;
+  &lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Insert distinct entries into homsf.&lt;/span&gt;
+&lt;span class="c1"&gt;### Since we set &amp;quot;id&amp;quot; to be AUTO_INCREMENT, we don&amp;#39;t need to assign it since it will be auto-generated&lt;/span&gt;
+&lt;span class="k"&gt;INSERT&lt;/span&gt; &lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we would have a table containing all 2737 homsf's, but we have yet to establish the relation between 'homsf' and 's35'. We will use the "id" column of homsf since it is the indexed primary key, which allows for fast lookup. We will:
+1. Create a "homsf_id" column in s35 to store its parental homsf node's id.
+2. Fill this "homsf_id" using a for loop.
+3. Add a foreign key constraint to this column. &lt;/p&gt;
+&lt;p&gt;In fact, step 1,2 would suffice to specify the relation. Doing step 3 is only for maintainence purpose and constrain any future modification towards the tables, which is essentially a built-in test that every furture version of database has to pass. Though at beginning constraints is very annoying and throws many errors like:
+1. ERROR 1215 (HY000): Cannot add foreign key constraint  (Oh gosh I want to add a constraint!!! Please let me do it!!! Plz!!!)
+2. Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (Oh you evil constraint! Let go of my table!!! I need to modify it!!! I need to drop it!!! Now!!! Here!!!)
+3. ...&lt;/p&gt;
+&lt;h4&gt;3. How to deal with errors, and fix your relationship:&lt;/h4&gt;
+&lt;p&gt;Errors can be very, very annoying and could ruin hours and hours. However, once you understand how it works, these errors suddenly become useful indications that alert you of the potential hazard within commands you've just thrown upon MySQL. This is strictly speaking not a TDD example, since the test is not written for development but merely for maintaining the integrity of the database. Nevertheless, to understand the conept of "Test" on its own is essential to move on to the idea of TDD.&lt;/p&gt;
+&lt;p&gt;Now let's implement the stated operations in MySQL.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;### We split these ADD COLUMN commands since they might throw error if homsf_id already exists, but it would require custom procedure to avert so is not included here.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;COLUMN&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="kt"&gt;INT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;### Fill s35.homsf_id with correct cursors to homsf.id&lt;/span&gt;
+&lt;span class="c1"&gt;### This should only be executed if every s35 can find a homsf. One way to ensure this condition is to create a fresh homsf table from s35. Other approaches with INSERT should be possible.&lt;/span&gt;
+
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="k"&gt;LEFT&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; 
+  &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Impose the foreign key constraint.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;
+   &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; 
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nf"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;### Confirm homsf does not change size&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is useful to simulate a 1452 error to illustrate how to debug a foreign key.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;### Temporarily remove the foreign key.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;### Artificially damage the table&lt;/span&gt;
+&lt;span class="k"&gt;DELETE&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;###&lt;/span&gt;
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;### NEVER do this to a productive database!!&lt;/span&gt;
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234567&lt;/span&gt;
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Attempt to impose the foreign key constraint.&lt;/span&gt;
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;
+   &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Commands above should throw a 1452:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ERROR&lt;/span&gt; &lt;span class="mi"&gt;1452&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;23000&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="n"&gt;Cannot&lt;/span&gt; &lt;span class="k"&gt;add&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;child&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="k"&gt;foreign&lt;/span&gt; &lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="k"&gt;constraint&lt;/span&gt; &lt;span class="nf"&gt;fails&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;`TEST`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="ss"&gt;`#sql-78c0_66a`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="ss"&gt;`homsf_fk`&lt;/span&gt; &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;`homsf_id`&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="ss"&gt;`homsf`&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;`id`&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We can find out which key is missing with SELECT ... WHERE ...NOT IN. But note this will NOT report that homsf_id=2 has been redirected to homsf_id=1234 !!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="k"&gt;LEFT&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; 
+  &lt;span class="k"&gt;ON&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;        &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;1234567&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;By inspection, we found homsf_id 1 and 1234567 is not referring to any existing homsf.id, perventing us from installing a constraint. So we might consider create new homsf to accommodate these s35 entries. But wait a minute, we don't want to create new homsf that coincide with an existing homsf! We can ensure this by trying to update homsf_id according to existing homsf table.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#### Save the sub-table with failed keys to a temp table.&lt;/span&gt;
+&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;temp&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;temp&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;#### Dump the proposed fix into a table `temp_fix`&lt;/span&gt;
+&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;fixed_homsf_id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;temp&lt;/span&gt; &lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+  &lt;span class="k"&gt;LEFT&lt;/span&gt; &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; 
+  &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="c1"&gt;####&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We can see that MySQL proposed a valid change for 58th s35 but NULL for the rest. We can apply the proposed update, and reinstall the foreign key constraint.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+  &lt;span class="k"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;
+  &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;temp_fix&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixed_homsf_id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt;
+   &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="n"&gt;homsf_fk&lt;/span&gt;
+   &lt;span class="k"&gt;FOREIGN&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="k"&gt;REFERENCES&lt;/span&gt; &lt;span class="nf"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;  
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;At first glance, one would expect foreign key to fail agian, because we know some homsf_id was updated to NULL, which is not withinse homsf.id. However, a NULL does not constitue a violation to foregin key constraint. To illustrate in more detail:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nf"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;## returns 53&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="nf"&gt;COUNT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; 
+  &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;IS&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt; 
+  &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;## Returns 0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We see that homsf_id=NULL is indeed not considered within the homsf.id. We conclude foreign key constraint allows exception only if the expcetion is NULL.&lt;/p&gt;
+&lt;p&gt;Recall that we redirected homsf_id=2 to homsf_id=1234 when destroying the database. Note this was not fixed during the procedure above. We can compare entries from s35 and from homsf&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;
+   &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;
+   &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Result:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;homsf_id&lt;/span&gt;
+    &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;    &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;s35&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;54&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;55&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;56&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;    &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;57&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;1330&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;7906&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+------+----------+&lt;/span&gt;
+&lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="k"&gt;DISTINCT&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt;
+    &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;    &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Class&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;topo&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;homsf_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;1330&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="mi"&gt;1234&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-------+------+------+-------+----------+&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;01&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Some homsf_id is clearly pointing to the wrong homsf entry, without breaking the foregin key constraint, which render the foregin key meaningless. Think about it, if we want to access the homsf_index of a given s35 (id=54), should we:
+    1. query the s35 table at (Class,arch,topo,homsf) or
+    2. query the homsf entry as specified homsf_id '1234' ?  &lt;/p&gt;
+&lt;p&gt;With the first approach , query returns 1.10.8.20, whereas with the second approach, query returns 2.60.40.1330. How should we resolve such conflict? Obviously, if we were to enjoy the privlege of foreign key, we should keep the result from second approach. Why? Because we don't even need foreign key in the first approach! &lt;/p&gt;
+&lt;p&gt;In reality, however, one would prefer to avoid generating such conflict in the first place, which can be achieved by dropping the (Class, arch, topo, homsf) columns from s35 table, effectively rendering first approach inviable and forcing the second approach. We will not expand the full implementation here and please feel free to practice it.&lt;/p&gt;
+&lt;h4&gt;Sidenotes:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;NULL or NOT NULL, this is a question:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​Recall we updated some homsf_id to NULL in s35 when attempting the fix. This is only possible if the homsf_id column is nullable. We can check the column property by calling
+  &lt;code&gt;sql
+  SHOW COLUMNS FROM s35;&lt;/code&gt;
+  And check the "Null" column of the output.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DROP TABLE IF NOT EXISTS: 
+  This command may not work on some version of SQL. It is quite handy to append "if not exists" to avoid error, but unfortunately it is not available for commands like ADD COLUMN, DROP COLUMN.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cross database FOREIGN KEY error:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When attempting to drop a database that is referred by other database, one would raise ERROR 1217 (23000) at line xxx: Cannot delete or update a parent row: a foreign key constraint fails. Two options availabe:
+  1. Inspect the violated foreign key and attempt manual fix by checking "LATEST FOREIGN KEY ERROR" from the output of :
+  &lt;code&gt;mysql
+  SHOW ENGINE INNODB STATUS;&lt;/code&gt;
+  2. Disable foreign key constraint and force a drop (only if you are confident this won't break anything.)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mysql
+  SET foreign_key_checks = 0;
+  DROP DATABASE ...
+  SET foreign_key_checks = 1;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CUSTOM PROCEDURE: 
+  Custom functions in SQL is called procedures, but beginners like me should avoid writing custom functions whenever possible, because they are very difficult to write correctly!&lt;/li&gt;
+&lt;li&gt;Version Control:
+  To make sure results are reproducible, one should always write purposeful codes stored in files, preferably ending with ".sql". To avoid having to write SQL procedures, one may consider defining bash function that execute a designated ".sql" file instead and writing corresponding tests in bash. Another workaround is to store SQL code in Django migration files and execute using &lt;a href="https://docs.djangoproject.com/en/1.11/ref/migration-operations/#runsql"&gt;django.db.migrations.RunSQL()&lt;/a&gt;. By keeping a track of data source flatfiles,".sql" files and ".py" migration files and even ".json" &lt;a href="https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata"&gt;fixtures&lt;/a&gt;, we can restore to any state we want.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Feng Geng&lt;br&gt;
+Summer Student&lt;br&gt;
+ISMB,UCL&lt;/p&gt;
+&lt;p&gt;at line xxx: Cannot delete or update a parent row: a foreign key constraint fails. Two options availabe:
+  1. Inspect the violated foreign key and attempt manual fix by checking "LATEST FOREIGN KEY ERROR" from the output of :
+  &lt;code&gt;mysql
+  SHOW ENGINE INNODB STATUS;&lt;/code&gt;
+  2. Disable foreign key constraint and force a drop (only if you are confident this won't break anything.)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mysql
+  SET foreign_key_checks = 0;
+  DROP DATABASE ...
+  SET foreign_key_checks = 1;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CUSTOM PROCEDURE: 
+  Custom functions in SQL is called procedures, but beginners like me should avoid writing custom functions whenever possible, because they are very difficult to write correctly!&lt;/li&gt;
+&lt;li&gt;Version Control:
+  To make sure results are reproducible, one should always write purposeful codes stored in files, preferably ending with ".sql". To avoid having to write SQL procedures, one may consider defining bash function that execute a designated ".sql" file instead and writing corresponding tests in bash. Another workaround is to store SQL code in Django migration files and execute using &lt;a href="https://docs.djangoproject.com/en/1.11/ref/migration-operations/#runsql"&gt;django.db.migrations.RunSQL()&lt;/a&gt;. By keeping a track of data source flatfiles,".sql" files and ".py" migration files and even ".json" &lt;a href="https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata"&gt;fixtures&lt;/a&gt;, we can restore to any state we want.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Feng Geng&lt;br&gt;
+Summer Student&lt;br&gt;
+ISMB,UCL&lt;/p&gt;</content><category term="program"></category><category term="program"></category><category term="english"></category></entry><entry><title>Writing Python modularly // Python模块化初步</title><link href="http://www.newflaw.com/blog/articles/program/writing-python-modularly-pythonmo-kuai-hua-chu-bu/" rel="alternate"></link><published>2017-06-30T18:35:00+01:00</published><updated>2017-06-30T18:35:00+01:00</updated><author><name>F. Geng</name></author><id>tag:www.newflaw.com,2017-06-30:/blog/articles/program/writing-python-modularly-pythonmo-kuai-hua-chu-bu/</id><summary type="html">&lt;p&gt;First published &lt;a href="http://orengogroup.info/?p=401"&gt;here&lt;/a&gt; for my intern at UCL-ISMB-CATH.
+[markdown]&lt;/p&gt;
+&lt;h4&gt;Brief:&lt;/h4&gt;
+&lt;p&gt;Having the privilege of joining Orengo's group as a summer student, I feel urged to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;First published &lt;a href="http://orengogroup.info/?p=401"&gt;here&lt;/a&gt; for my intern at UCL-ISMB-CATH.
+[markdown]&lt;/p&gt;
+&lt;h4&gt;Brief:&lt;/h4&gt;
+&lt;p&gt;Having the privilege of joining Orengo's group as a summer student, I feel urged to improve my coding as well as documentation skills. Thus I intend to log my coding and thinking in a series of blog posts, on a weekly basis.&lt;/p&gt;
+&lt;p&gt;Today's blog post will cover some basics of organising Python code, in the hope of easing future maintenance. We will go through:&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;ol&gt;
+&lt;li&gt;How to import python modules.&lt;/li&gt;
+&lt;li&gt;Comparing alternative implementations&lt;/li&gt;
+&lt;li&gt;How to write importable python modules.&lt;/li&gt;
+&lt;li&gt;Simplistic approach "&lt;code&gt;.py&lt;/code&gt;"&lt;/li&gt;
+&lt;li&gt;How to structure your python modules.&lt;/li&gt;
+&lt;li&gt;How does import work anyway?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;1. How to import python modules.&lt;/h4&gt;
+&lt;p&gt;In Python, importing a module is common and useful. For example, "&lt;code&gt;numpy&lt;/code&gt;" is a widespread module with handy matrix operations. If numpy is not installed on your machine. Try "&lt;code&gt;pip install numpy&lt;/code&gt;".&lt;/p&gt;
+&lt;p&gt;For example, in python do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
+&lt;span class="n"&gt;rd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random number&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; is generated&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can also use your own alias when importing a module&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="n"&gt;rd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random number&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; is generated&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can even import a submodule on its own&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy.random&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+
+&lt;span class="c1"&gt;#### Which is the right one to do now?&lt;/span&gt;
+&lt;span class="n"&gt;rd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;rd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random number&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; is generated&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Question 1:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#### Modify the import statement to make the code work&lt;/span&gt;
+
+&lt;span class="c1"&gt;# import numpy.random as random&lt;/span&gt;
+
+&lt;span class="n"&gt;rd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random number&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; is generated&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can also do "&lt;code&gt;help(np)&lt;/code&gt;" or "&lt;code&gt;help(np.random)&lt;/code&gt;" to read the manual, which would hopefully tell you about the submodules available for call. The above should remind you of how to import a installed module. Note I did not talk about what "&lt;code&gt;import&lt;/code&gt;" does exactly, but this won't affect your usage of the command -- you know how it should look like.&lt;/p&gt;
+&lt;p&gt;Now, developers not only need to import installed modules, but also to actually write an importable module. To make it in context, we need a toy example. My favourite toy is cellular automata so I will just outline it here.&lt;/p&gt;
+&lt;p&gt;Imagine you got a circular peptide chain of a fixed length, say 12 amino-acid(aa) residues(res). At every residue position, it can have one of the 20 universally-encoded amino acid. Now this protein has some strange behaviour. Every time it is passed from parent to progeny, its sequence change in a deterministic way. Each residue would look at the residue adjacent to it, and decide what aa it become in the next round. We call this process one round of evolution.&lt;/p&gt;
+&lt;p&gt;There are 20*20*20 = 8000 possible permutations that could happen, and we need to specify the resultant residue from each of the 8000 permutations. First let's assume the rule is simple, every of them become an Ala (aa_id:1)&lt;/p&gt;
+&lt;p&gt;Let's create a python script "&lt;code&gt;main.py&lt;/code&gt;" with the following commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="c1"&gt;### We fill the rule array with loads of 1&amp;#39;s&lt;/span&gt;
+&lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;old&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[:];&lt;/span&gt; &lt;span class="c1"&gt;## Create a independent copy.&lt;/span&gt;
+&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;i_lef&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;### numpy handle -1th entry swiftly as expected&lt;/span&gt;
+    &lt;span class="n"&gt;i_rig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="c1"&gt;## We do not want to access 13th entry from a 12-entry array.&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# res = old[ i ]; ### from definition&lt;/span&gt;
+    &lt;span class="n"&gt;res_lef&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;i_lef&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="n"&gt;res_rig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;i_rig&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+
+    &lt;span class="c1"&gt;### Look up the rule array&lt;/span&gt;
+    &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;res_lef&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res_rig&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Due to the simplistic rule, we would expect a simple result.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Okay this code is functional. But we feel the updating process is a bit lengthy. It'd be great if we can achieve some condensation, and that's where modules come in.&lt;/p&gt;
+&lt;h4&gt;2. How to write importable python modules.&lt;/h4&gt;
+&lt;h5&gt;Before making a module, make a function first:&lt;/h5&gt;
+&lt;p&gt;Let's forget about modules and functions for a moment, just imagine you could tell python to do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="c1"&gt;### We fill the rule array with loads of 1&amp;#39;s&lt;/span&gt;
+&lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;old&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+&lt;span class="c1"&gt;#### One line looks much simpler&lt;/span&gt;
+&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;evolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;### Magic happens&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This one-liner will become handy if we'd like to see the result after 1000 rounds, it will just be&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="c1"&gt;### We fill the rule array with loads of 1&amp;#39;s, and use a predefined starting sequence&lt;/span&gt;
+&lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;evocount&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;new_seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;evolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_seq&lt;/span&gt;
+
+&lt;span class="c1"&gt;### both should work&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_seq&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This code obviously is not functional yet. Running it throws "&lt;code&gt;NameError: name 'evolve' is not defined&lt;/code&gt;", which makes sense, for we did not define "&lt;code&gt;evolve&lt;/code&gt;" anywhere at all. Define a function in python is straight forward. Let's define this magic called "&lt;code&gt;evolve()&lt;/code&gt;":&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;evolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[:];&lt;/span&gt; &lt;span class="c1"&gt;## Create a independent copy. &lt;/span&gt;
+    &lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;i_lef&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;### numpy handle -1th entry swiftly as expected&lt;/span&gt;
+        &lt;span class="n"&gt;i_rig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="c1"&gt;## We do not want to access 13th entry from a 12-entry array.&lt;/span&gt;
+
+        &lt;span class="c1"&gt;# res = old[ i ]; ### from definition&lt;/span&gt;
+        &lt;span class="n"&gt;res_lef&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;i_lef&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+        &lt;span class="n"&gt;res_rig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;i_rig&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+
+        &lt;span class="c1"&gt;### Look up the rule array&lt;/span&gt;
+        &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;res_lef&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res_rig&lt;/span&gt;  &lt;span class="p"&gt;];&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;### we return the output of the function to global namespace. &lt;/span&gt;
+
+&lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;evocount&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;new_seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;evolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_seq&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Swift! The error was no more, at the expense of introducing a "&lt;code&gt;def&lt;/code&gt;" statement. This "&lt;code&gt;def&lt;/code&gt;" spans 14 lines, which is Okay, but sometimes it can get very lengthy and it destroys the effect of our simplification. Thus it'd be good to replace the "&lt;code&gt;def&lt;/code&gt;" even further with "&lt;code&gt;import&lt;/code&gt;".&lt;/p&gt;
+&lt;h5&gt;So let's do some import magic&lt;/h5&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;evolve&lt;/span&gt; &lt;span class="c1"&gt;#### Magic happens&lt;/span&gt;
+
+&lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;evocount&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;new_seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;evolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_seq&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As the module "&lt;code&gt;evolve&lt;/code&gt;" is not defined yet (no magic yet), we'd expect "&lt;code&gt;ImportError: No module named evolve&lt;/code&gt;". So, how on earth do we pack "&lt;code&gt;def&lt;/code&gt;" into a module? A python module is essentially a "&lt;code&gt;.py&lt;/code&gt;" script or a &lt;strong&gt;directory&lt;/strong&gt; containing "&lt;code&gt;.py&lt;/code&gt;" scripts.&lt;/p&gt;
+&lt;p&gt;To create a "&lt;code&gt;evolve&lt;/code&gt;" module, let's make a "&lt;code&gt;evolve.py&lt;/code&gt;" under the &lt;strong&gt;same&lt;/strong&gt; directory as "&lt;code&gt;main.py&lt;/code&gt;" created earlier.&lt;/p&gt;
+&lt;p&gt;"&lt;code&gt;evolve.py&lt;/code&gt;"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;evolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[:];&lt;/span&gt; &lt;span class="c1"&gt;## Create a independent copy.&lt;/span&gt;
+&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;i_lef&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;### numpy handle -1th entry swiftly as expected&lt;/span&gt;
+    &lt;span class="n"&gt;i_rig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="c1"&gt;## We do not want to access 13th entry from a 12-entry array.&lt;/span&gt;
+
+&lt;span class="c1"&gt;# res = old[ i ]; ### from definition&lt;/span&gt;
+&lt;span class="n"&gt;res_lef&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;i_lef&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="n"&gt;res_rig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;i_rig&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Look up the rule array&lt;/span&gt;
+&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;res_lef&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;res_rig&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;### return the output of the function to global namespace&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Remember to always save your changes in text editor!&lt;/p&gt;
+&lt;p&gt;Let's run "&lt;code&gt;main.py&lt;/code&gt;" again. Unfortunately, it still throws an error. "&lt;code&gt;TypeError: 'module' object is not callable&lt;/code&gt;" If you look at the line reported, you should find the "&lt;code&gt;evolve( seq, rule)&lt;/code&gt;" statement in "&lt;code&gt;main.py&lt;/code&gt;". Generally, to "call" "&lt;code&gt;foo&lt;/code&gt;", just means running "&lt;code&gt;foo()&lt;/code&gt;".&lt;/p&gt;
+&lt;p&gt;If you remember &lt;strong&gt;Question 1&lt;/strong&gt; from earlier with "&lt;code&gt;random.random()&lt;/code&gt;", you should come up with "&lt;code&gt;evolve.evolve( seq, rule)&lt;/code&gt;" as a solution. To make it clearer, let's change the name of "&lt;code&gt;evolve.py&lt;/code&gt;" to "&lt;code&gt;lib.py&lt;/code&gt;". Correspondingly "&lt;code&gt;main.py&lt;/code&gt;" should change to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;lib&lt;/span&gt;
+&lt;span class="c1"&gt;# from lib import evolve #### Alternative solution&lt;/span&gt;
+
+&lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;evocount&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;new_seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;evolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;# new_seq = evolve( seq, rule) #### Alternative solution&lt;/span&gt;
+    &lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new_seq&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Generally, it is good practice to keep the module name different from the submodules (like "&lt;code&gt;def&lt;/code&gt;" within the script) contained within. e.g.: Do not place "&lt;code&gt;def evolve():&lt;/code&gt;" in "&lt;code&gt;evolve.py&lt;/code&gt;" to avoid confusing statement like "&lt;code&gt;evolve.evolve()&lt;/code&gt;".&lt;/p&gt;
+&lt;h5&gt;3. Organising your modules&lt;/h5&gt;
+&lt;p&gt;At the moment everything is under the same directory "&lt;code&gt;.&lt;/code&gt;" . However as your programme get bigger, more and more "&lt;code&gt;.py&lt;/code&gt;" will be popping up, when it would be useful to separate modules for different purposes into different folders, so that you don't go through: "Okay I am gonna run a test suite, but which "&lt;code&gt;.py&lt;/code&gt;" files should I run? Hmm let me have a browse..."&lt;/p&gt;
+&lt;p&gt;Too keep things simple, lets assign some names. We don't really care what the root directory "&lt;code&gt;.&lt;/code&gt;" is called , but let's call it "&lt;code&gt;toy&lt;/code&gt;". So at the moment there are two files "&lt;code&gt;toy/main.py&lt;/code&gt;" and "&lt;code&gt;toy/lib.py&lt;/code&gt;".&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Conventionally, we store all easily importable modules into a directory "&lt;code&gt;lib/&lt;/code&gt;" instead of a script. So let's do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;
+&lt;span class="n"&gt;mv&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;libA&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;
+&lt;span class="err"&gt;│  &lt;/span&gt; &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;libA&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Runing "&lt;code&gt;main.py&lt;/code&gt;" throws "&lt;code&gt;ImportError: No module named lib&lt;/code&gt;". Python does not automatically recognise directory as importable. We need to flag a directory by placing "__init__.py" under it. Just do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;
+&lt;span class="err"&gt;│  &lt;/span&gt; &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;│  &lt;/span&gt; &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;libA&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now "&lt;code&gt;main.py&lt;/code&gt;" throws "&lt;code&gt;ImportError: cannot import name evolve&lt;/code&gt;". Yah yah, nothing in "&lt;code&gt;lib/&lt;/code&gt;" has the name "&lt;code&gt;evolve&lt;/code&gt;". We need to update the "&lt;code&gt;main.py&lt;/code&gt;" with "&lt;code&gt;from lib.libA import evolve&lt;/code&gt;". Note "&lt;code&gt;import lib.libA.evolve&lt;/code&gt;" would not work because "&lt;code&gt;evolve&lt;/code&gt;" is defined as "&lt;code&gt;def&lt;/code&gt;" and not a script "&lt;code&gt;.py&lt;/code&gt;".&lt;/p&gt;
+&lt;p&gt;Cool, now we even have a decent "lib/" folder! Another common directory in Test-Driven-Development (TDD) is "tests/". Let's create some look-alike structure with `&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;tests&lt;/span&gt;
+&lt;span class="n"&gt;cp&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;tests&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;test1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;
+&lt;span class="err"&gt;│  &lt;/span&gt; &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;│  &lt;/span&gt; &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;libA&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;tests&lt;/span&gt;
+&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;test1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now in "&lt;code&gt;test1.py&lt;/code&gt;", can we still import normally? Running "&lt;code&gt;tests1.py&lt;/code&gt;" give "&lt;code&gt;ImportError: No module named lib.libA&lt;/code&gt;". By default, "&lt;code&gt;import&lt;/code&gt;" only search the directory where the running script exists, and then any directory on env variable $PYTHONPATH, which itself is default to $PATH if unset.&lt;/p&gt;
+&lt;p&gt;Remember the "&lt;code&gt;main.py&lt;/code&gt;" and "&lt;code&gt;test1.py&lt;/code&gt;" are essentially identical, except in different directories. There are many possible fiexes here:
+1. include the root directory ("&lt;code&gt;toy/&lt;/code&gt;") on $PATH, allowing "&lt;code&gt;test1.py&lt;/code&gt;" to also access it.
+2. Adding a statement in "&lt;code&gt;test1.py&lt;/code&gt;" to alter the $PATH variable on the fly
+3. Some other module-based approach (still exploring)&lt;/p&gt;
+&lt;p&gt;Approach 2: OTF change to $PATH. See "&lt;code&gt;branch:orig2_tests_opt2&lt;/code&gt;"
+Let's add the following to "&lt;code&gt;test1.py&lt;/code&gt;"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;..&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Great! Above concludes my initial effort in organising my Python code, and hopefully reveal the magic behind "&lt;code&gt;import&lt;/code&gt;" a little bit. I believe every python user is familiar with "&lt;code&gt;pip install&lt;/code&gt;", and the frustration where this command fails (Or a worse case: it appears successful, but still shouting up "&lt;code&gt;ImportError&lt;/code&gt;"). After understanding importing, installing a module boils down to place the importable modules on a suitable $PATH. And if your $PATH don't contain your installed module, it is expected to fail. There is also other issue like syntax difference between python2 and python3, but I hope the gist is clear.&lt;/p&gt;
+&lt;p&gt;Feng Geng&lt;br /&gt;
+Summer Student&lt;br /&gt;
+ISMB,UCL&lt;/p&gt;
+&lt;p&gt;[/markdown]&lt;/p&gt;</content><category term="program"></category><category term="program"></category><category term="english"></category><category term="python"></category></entry></feed>
