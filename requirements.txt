@@ -1,8 +1,0 @@
-pelican==4.2.0
-jinja2
-Markdown
-#numpy==1.15.2
-#git+git://github.com/shouldsee/pymisca.git@master
-#git+git://github.com/shouldsee/htseq_ext.git@master
-#pandas==0.24.2
-

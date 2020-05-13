@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://newflaw.com/blog/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 29 Apr 2020 04:21:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://newflaw.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Barking Group Meeting 0x0001</title>
+      <link>http://newflaw.com/blog/posts/0031_meeting/</link>
+      <pubDate>Wed, 29 Apr 2020 04:21:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0031_meeting/</guid>
+      <description>Feng和Xingyu讨论了若干有关程序语言和笔记本的问题</description>
+    </item>
+    
+    <item>
+      <title>Upgrading Linux Kernel to fix graphical driver issues</title>
+      <link>http://newflaw.com/blog/posts/0029_linux-kernel-upgrade/</link>
+      <pubDate>Tue, 28 Apr 2020 22:43:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0029_linux-kernel-upgrade/</guid>
+      <description>故障症状: 打开zoom会议视频后10秒内弹出,</description>
+    </item>
+    
+    <item>
+      <title>Github-graph</title>
+      <link>http://newflaw.com/blog/posts/0025_github-graph/</link>
+      <pubDate>Tue, 31 Mar 2020 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0025_github-graph/</guid>
+      <description>&lt;p&gt;仓库-&amp;gt;用户-&amp;gt;仓库&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>learning javascript by site construction</title>
+      <link>http://newflaw.com/blog/posts/0026_frontend/</link>
+      <pubDate>Tue, 31 Mar 2020 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0026_frontend/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Selecting the right package for the right purpose, read the best documentation, with the best speed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;chart.js / d3.js&lt;/li&gt;
+&lt;li&gt;handsontable.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;XMLHttpRequest for making a request. Be careful with CORS restriction&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NCBI efetch, equery, elink interface as old perl endpoints&amp;hellip; Better docs!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;BigQuery for NCBI SRA metadata is available on GCP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I have not found npm essential yet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mounting a sub-application in fastapi is still confusing. Manually managing prefix at the moment&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;auto-docstring is great!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;frps, frpc for content delivery&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vultr instance is great!!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Javascript is a very state-oriented and not object oriented. The restriction on scope and type is very weak.
+Checkout Typescript if time available&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;github and git: making an auto PR is not easy! refs? heads? commit? branch? what is the difference?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lesson from using a file system as database: don&amp;rsquo;t trust the speed of a program that is not designed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lesson from hosting web applications: cloud ECs were not created equal:  1-vCPU != 1-vCPU 1GB!=1GB if on
+different platform.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;web dev is impatient by nature.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>thoughts on bioinformatic/general pipelines</title>
+      <link>http://newflaw.com/blog/posts/0027_pipeline-program/</link>
+      <pubDate>Tue, 31 Mar 2020 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0027_pipeline-program/</guid>
+      <description>“NA”</description>
+    </item>
+    
+    <item>
+      <title>流型学习还是流行学习?</title>
+      <link>http://newflaw.com/blog/posts/0024_manifold-learning/</link>
+      <pubDate>Tue, 31 Mar 2020 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0024_manifold-learning/</guid>
+      <description>&lt;p&gt;tsne由于有谷歌的支持一路吃香喝辣地入侵了单细胞RNA测序领域scRNA-Seq,
+造成的后果呢就是Nividia开心地卖显卡,Illumina开心地卖测序耗材,微流体开心地卖耗材
+tSNE作为流型学习的一种算法实际上在单核系统上运行的速度是很让人望而却步的. 比较快的非线性替代品有 isomap 和 umap, 两者都是
+基于用k近邻对测地线长度的估算. 线性替代品自然是古老的pca了,但是pca的线性假设实在是跟不上时代了.&lt;/p&gt;
+&lt;p&gt;tSNE的是随着神经网络+大数据的浪潮兴起的,这个浪潮信奉的哲学是:数据就是资本,算力就是权力.
+但实际上这个信条在生物领域是有点举步维艰: 数据资本是受到生物伦理管制的,算力在没有合适算法的情况下
+也不能转化成权力. 因此大家最后就只好测一测单细胞RNA和FACS然后做tSNE标一标细胞亚型就完事了. 但问题是,
+这样真的能推动生物学的发展吗?&lt;/p&gt;
+&lt;p&gt;生物信息的另一条脉络是沿着基因组测序发展的.这个流派专注于研究基因组在各种情况下的演化,因此
+衍生出了很多专注于测序领域专精(Domain-specific)的程序和理念,包括samtools,bwa,bowtie等一系列
+跟图模型联系紧密的概念.这一流派是有自己的学术主权而很难被机器学习的浪潮所殖民的.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://umap-learn.readthedocs.io/en/latest/_images/performance_14_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;(From: umap-learn docs)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.researchgate.net/profile/Hao_Chen91/publication/308546668/figure/fig2/AS:410491240370184@1474880147183/Assessing-ISOMAP-diffusion-map-and-t-SNE-for-inference-of-subset-relationship-Three.png&#34; alt=&#34;tsne_isomap_diffmap&#34;&gt;&lt;/p&gt;
+&lt;p&gt;(From: &lt;a href=&#34;https://www.researchgate.net/profile/Hao_Chen91/publication/308546668/figure/fig2/AS:410491240370184@1474880147183/Assessing-ISOMAP-diffusion-map-and-t-SNE-for-inference-of-subset-relationship-Three.png&#34;&gt;https://www.researchgate.net/profile/Hao_Chen91/publication/308546668/figure/fig2/AS:410491240370184@1474880147183/Assessing-ISOMAP-diffusion-map-and-t-SNE-for-inference-of-subset-relationship-Three.png&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;See also:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0098299717300493&#34;&gt;https://www.sciencedirect.com/science/article/pii/S0098299717300493&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·渣渣</title>
+      <link>http://newflaw.com/blog/posts/0022_windcity-scums/</link>
+      <pubDate>Wed, 27 Sep 2017 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0022_windcity-scums/</guid>
+      <description>&lt;p&gt;“我到底是不是一个渣渣？”&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_1021&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;548&amp;rdquo;]&lt;img src=&#34;{static}/wp-content/uploads/2017/09/set2-1024x768.jpg&#34; alt=&#34;&#34; width=&#34;548&#34; class=&#34;size-large wp-image-1021&#34; /&gt; 简单的交集操作：&amp;ldquo;我 &amp;amp; 你&amp;rdquo;[/caption]&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DoReMiDo // 哆来咪哆</title>
+      <link>http://newflaw.com/blog/posts/0021_doremido/</link>
+      <pubDate>Wed, 09 Aug 2017 11:52:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0021_doremido/</guid>
+      <description>Probably the first proper song I made so far.</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·偶遇</title>
+      <link>http://newflaw.com/blog/posts/0020_windcity-unexpected-meet/</link>
+      <pubDate>Sun, 16 Jul 2017 21:30:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0020_windcity-unexpected-meet/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;{static}/wp-content/uploads/2017/07/doodles1-1024x703.jpg&#34; alt=&#34;&#34; width=&#34;584&#34; height=&#34;401&#34; class=&#34;alignnone size-large wp-image-975&#34; /&gt;&lt;/p&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;http://music.163.com/outchain/player?type=2&amp;id=39227637&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;80&#34; scrolling=&#34;no&#34; frameborder=&#34;no&#34; src=&#34;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226899942&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;艾玛正气定神闲地坐在维多利亚式复古电车里欣赏着窗外的云雾，不巧恶魔闯了进来。&lt;/p&gt;
+&lt;p&gt;恶魔：艾玛，你在哪里？
+艾玛：我在曼恩岛上的火车里
+恶魔：再好好想想，你在哪里？
+艾玛：我在一节摇晃的维多利亚式的复古车厢里。
+恶魔：真的吗？你到底在哪里呀？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to fail your deadline? - Starting learning MySQL thinking you can master it in one day! // 想超时完成任务？来学MySQL就好！</title>
+      <link>http://newflaw.com/blog/posts/0019_first-touch-on-mysql/</link>
+      <pubDate>Mon, 10 Jul 2017 18:55:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0019_first-touch-on-mysql/</guid>
+      <description>&lt;p&gt;First published &lt;a href=&#34;http://orengogroup.info/2017/07/10/how-to-fail-your-deadline-starting-learning-mysql-and-think-you-can-master-it-in-one-day/&#34;&gt;here&lt;/a&gt;.
+[#### 1. How to fail your deadline? - Starting learning MySQL thinking you can master it in one day!]&lt;/p&gt;
+&lt;p&gt;Recently, I touched upon MySQL because I wanted it to be the backend for my incoming Django-based data browser. After 4 days of prolonged fiddling I finally manage to make some notes of its functionality. It is very fast, but equally importantly, very different from Python! The other lesson is that one should allocate enough time for learning when starting a new language (depending on &lt;a href=&#34;https://en.wikipedia.org/wiki/Single-linkage_clustering&#34;&gt;single linkage distance&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Today&amp;rsquo;s blog will go through:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Loading a table into MySQL, be it fixed-width or regularly delimited.&lt;/li&gt;
+&lt;li&gt;Create relations between entries.&lt;/li&gt;
+&lt;li&gt;How to deal with errors, and fix your relationship:&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·暗黑</title>
+      <link>http://newflaw.com/blog/posts/0018_windcity-dark/</link>
+      <pubDate>Wed, 05 Jul 2017 06:59:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0018_windcity-dark/</guid>
+      <description>（全文虚构，名词与现实并不完全对应）
+我和母亲在法国旅游，有两个火车站，它们互相之间遥相互应，但是又有一条复古的轨道连接其中，大约是为了运输换乘的旅客。我们旅游到此地，寻思着要不要去另一个火车站赶去下一个景点的火车。
+“呜～～～～～”，换乘列车拖着长长的气笛声开动了。心中传来了阵阵失落————这班车恐怕是赶不上了！我和母亲商量：另一个车站看起来并不是很远，我们应该可以步行过去。奇怪的是，换乘列车好像和行人共用一个隧道,
+隧道上面有个信号灯，为了不撞上火车，我们选择在信号灯熄灭的时候进入隧道，没曾想，刚进隧道就遇上了迎面而来的火车，我们赶紧向左拐入了旅店，才没有被撞上。
+迎面碰上了旅店的前台老板（娘），他走来的时候嘴里居然正念叨着上海话，我怒不可遏地质询他：“农个的哪能搞伐啦子额啦？一啦胡粗开股来弄灯哪能哈额嘛？脏到宁哪能办法子？搞撒子搞啦？……”（译：你这里搞得什么鬼东西啊？它火车开过来你这灯怎么也是黑的啦？撞到人怎么办啊？搞什么搞啊？……）
+预想中的赔礼道歉全然没有出现，老板居然理直气壮地骂道：“侬伐要过则子噶慧德港桑还艾唔就哪能噶了，无帮侬刚个的思法股！弄刚桑还艾唔没宁听呃懂额！哦！伐要哈刚巴刚哦！”（译：你不要觉得自己会讲上海话就怎么样了！我告诉你哦这里是法国！你讲上海话可是没人听得懂的！哦！不要瞎讲八讲哦！）
+这一瘪真是吃的实实在在，被无语和愤怒裹携着，我进入了旅馆的一个房间，一个面若冰霜/死灰的姑娘正望着墙上的画出神，好像是她自己的作品。不知什么原因，我们讨论起了”法国的上海人“这个话题。
+她说，你们上海人都是被卖的命，在这里都会被作为“可爱.魅惑红”卖出去————没有希望的，这个社会就是这样的黑暗，你们上海人就是这样被卖成奴隶的命……我跟她争辩，我们还可以是“可爱.理性蓝”，“可爱.深沉黑”，我们上海人，不止是被卖的命啊！
+姑娘无动于衷，喃喃道，”是黑暗的，是黑暗的……我只能被卖为奴，没有别的路的……“。我听不下去了，告诉她无论什么在哪里调用都一定要加上”&amp;ndash;冷淡 &amp;ndash;偶尔的热情“这两个参数。之后，我和母亲便离开了房间。大约是第二天，姑娘在我们前往的那个火车站拦下了我，眼里好像有了光彩，叫我再去那个房间里。
+可是一进入房间，她又回到了开始的那个状态，无所谓地呢喃着……我的情绪快要爆炸，大声向她吼：
+The only darkness, is the darkness in yourself! （译：你心中的黑暗，才是惟一的黑暗！）她稍稍一惊，我却已然离开现场。
+离开那里以后，我琢磨着，自己怎么会吼出这样的句子？我想着，反复念着……然后我就醒了，发现我正戴着降噪耳机，口中念念有词。
+一七年七月五日晨 伦敦</description>
+    </item>
+    
+    <item>
+      <title>Ruin your childhood memory -- From Digimons to colonialism // 毁童年之后殖民数码宝贝</title>
+      <link>http://newflaw.com/blog/posts/0017_from-digimons-to-clonialism/</link>
+      <pubDate>Tue, 04 Jul 2017 23:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0017_from-digimons-to-clonialism/</guid>
+      <description>&lt;p&gt;原文来自：&lt;a href=&#34;http://mp.weixin.qq.com/profile?src=3&amp;timestamp=1499208439&amp;ver=1&amp;signature=W8L2NaGfEqNtX2Iy5bjarDYGtXbXvMjouGWwEFDg0yhVCxN7lbTKJ7*zCdLtyCf9D3Yt3fTKWiGd8dEr2NLofw==&#34;&gt;我在牛津读文学&lt;/a&gt;，微信号：oxfordlit&lt;/p&gt;
+&lt;p&gt;前言：聪明的你，请猜猜“海文斯那可尔”是哪个数码宝贝的绝招呢？&lt;/p&gt;
+&lt;div id=&#34;js_content&#34; class=&#34;rich_media_content &#34;&gt;
+在学院内看各类文学经典，各大家名作，再以它们为原材料来学习和反思人文理论，大概就是文学专业学生在体制内要做的事。经典固然是一定要看的，因为它们是文化资本的&lt;span style=&#34;color: red;&#34;&gt;固体沉积物&lt;/span&gt;，承载着联系人群和区分文化品位等重要作用。但是人文理论和文本分析的&lt;span style=&#34;color: red;&#34;&gt;能力&lt;/span&gt;本身却是不必要限制在经典或者所谓的文艺文本中的，我反而更享受用它们去重新反思流行文化的过程。一方面，流行文化因为市场的需要的确容易暴露出社会的主流意识形态的种种倾向。另一方面，流行文化却也不是一味迎合市场才能“流行”起来，其中内容也许也经得起人文理论的抽丝剥茧，反映出不同社会思潮之间的碰撞。这篇闲文就想用数码宝贝（Digimonデジモン又，数码暴龙）这部我童年最喜欢的日本动画片为例，来讨论一下我们最习以为常的大众文本中暗藏着的複杂的&lt;span style=&#34;color: #00b0f0;&#34;&gt;权力关系&lt;/span&gt;。</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·取代</title>
+      <link>http://newflaw.com/blog/posts/0016_windcity-replacement/</link>
+      <pubDate>Sun, 02 Jul 2017 21:33:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0016_windcity-replacement/</guid>
+      <description>&lt;p&gt;多少次我们以为自己的世界是唯一的，多少次我们领悟到他人的世界却可以和我们的一样丰满。可是这些之于我们又有多大的意义？&lt;/p&gt;
+&lt;p&gt;我们怕不怕自己被取代？猫做老虎的老师时，留了一手没教他上树。这个寓言极形象地刻画了对于被取代的恐惧。“彼可取而代之！”不可取代性，看来是建构身份的一条途径。联想物理中的对易性，在很多的操作下，一个特定元素的某些性质是无关紧要的，但是在另一些操作下，该元素的某些状态会影响操作的结果。例子包括手性等。又比如说取平方这个操作，其结果是不取决于输入的正负号的，也就是说，正号负号可以相互被取代。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>轨迹，签证，熵</title>
+      <link>http://newflaw.com/blog/posts/0001_traj-visa-entropy/</link>
+      <pubDate>Fri, 30 Jun 2017 21:37:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0001_traj-visa-entropy/</guid>
+      <description>想来我需要写一点成块的文章，光罗列点可不行，这样取出的永远是语义*的（semantic）碎片。
+人的生命大概可以用轨迹（trajectory）来很好地描述，轨迹是经典物理的经典概念，考虑一个决定性的经典粒子，其轨迹可以完全被上一时刻的条件所预测。建模与预测，这是物理学的发源之地（天文学以预测为基石）。（另，量子力学对薛定谔方程的解释方法不能完全满足定域性，决定性，因果性。也就是说，不存在一个定域的，决定性的，因果的理论能介绍薛定谔方程（但是薛定谔方程不可能是“错”的）。）
+讲讲今天签证的事儿吧，周五晚上本想打印一份学生证明，跑到办公室时却刚好到下班时间，有两位顾客走出门外我却忘记鼓起勇气冲进去麻烦工作人员。当他把门锁上时我知道已经晚了。签证的问题其实还不在这，等我认认真真准备了材料，跑到法签中心排完队，刚开始过第一关，前台就告诉我，由于两次入境国家不一样，且第一入境国不是法国，法签不能受理我的申请。她告诉我两个补救措施：1.去意大利领馆申请 2.把行程改成连续的 被吓懵的我选择了第二条路，跑到网咖里做了个伪（Pseudo）行程，花掉了25EUR+22EUR+(70EUR，可能还可以退)。还好网咖不远，环境也好，老板也有风度，倒让我有一种写论文的冲动（对比法签中心，简直人山人海，纸醉金迷，胆战心惊，人云亦云，气氛实在不对）。
+说到底，申根签的审核就是个笑话，根据木桶原理，最短的那根板是限制因素（limiting process）：最松的申根国家就贡献了最大的流量。申根的怪圈就在于，其他国家越严，签证过程价值就越高，于是木桶的短板就漏过更多的漏网之鱼。边境管制是一句空话，申根牺牲了安全性换取了流动性。但我最想吐槽的是，我想要老老实实申报真实行程，却遭到简简单单一句“不予受理”，最后虚报行程，反而顺风顺水。这使得我严重怀疑申根签证的逻辑——事实上，这种官僚体制会逼迫人们说假话，做假事。我今天突然理解了小时候经常看到的“办证”广告，那是因为在官僚体制的逻辑下，价值可以独立于真相存在——“我不在乎这句话是对是错，我只在乎这句话是谁说的。”
+最近人好像变得越来越犹豫，一方面觉得自信的生活不应该游移，一方面为了最大化回报的期望又苦苦思索最优解。正如神经网络的Explore-Exploit难题，一方面需要最小化消耗函数，一方面又要考虑时间本身的价值，真是难上加难。其实回到轨迹的类比上来，哪会有什么最优解（尽管这回导致我会被学过优化的人们喷死）。隐性地说，人的决策是不可能找到一个最优解的，因为计算最优解的过程常常是一个停机程序/不可计算程序。身处动态的世界里，哪有什么不变的测度（尽管不变性是物理的一个基本直觉）。如果想要走到那条最为宽阔的坦途上（回报率最高），就必然要抛弃大量的计算资源，因而造成时间的流逝，然而时间一旦流逝，坦途的宽度就又得重新计算了，如此往复，好似会走上流数/微积分的思路，但我仍然不认为这个迭代操作会给出一个最优化的解。或者也可以这样说，最优解轨迹往往伴随着熵的降低，从玻尔兹曼热动力学的角度来讲，是极小概率的事件;若想要按照最优解行进，就必然需要耦合一个熵增/放热过程，以符合热力学第二定律的约束。所以反过来推，就像测不准定律一样，人对自己的轨迹只能施加有限的约束，而不能保证绝对的服从，这和熵增定律是类似的。
+当然也会有一些奇妙的情况，也就是不能用热力学第二定律理解的情况——复杂性的涌现。或者说，尽管在微观上人不可能完全约束自己的轨迹，整个世界的宏观轨迹却反而诡异的紧——约束并没有显得更少，或者说，大系统并不显现出缺乏约束的特质，而是反而显现出能被很好预测的轨迹，也就是说，一群被热二限制住的不能走最优轨迹的粒子，反而组成了一个总是走最优轨迹的系统。这种诡异的涌现特质，使得整个世界根本不可能陷入热寂。当然我们可以强调这个大系统以摄取能量/排出熵的代价降低了自己的熵（普利高津的结论），但这走的是隔离法的路线了（也是热学的经典直觉），但是我更想考虑这个熵的减少是不是耦合在了从微观映射到宏观这个过程本身，也就是说，是不是尺度的变化本身导致了熵的显变化？
+最后让我们讨论一下隐性的（Implicit）含义，譬如我现在要写这篇文章，我会假设一个隐性的语境（比如中文就是一个隐性假设），在许许多多个隐性假设下，我才能够有效地传达一些信息。如果抛弃各个隐性假设，那么文章将变得不可接受的冗长，于是反推可得，隐性假设起到的是压缩信息的作用，这些被压缩的信息于是可以获得更快的传播速度，但同时也不再通用（Universal）。比如说一篇科研论文就会假设读者拥有相当多的储备知识，再比如政治喜剧会假设听众有一定的政治常识，再比如一篇假文凭/假行程会假设采信机构&amp;hellip;&amp;hellip;是个傻逼。显然，假行程不是通用的，但是在官僚体制这个隐性假设下，它很有效地传达了递签者迫切的求签心态和端正的求签态度。“见人说人话，见鬼说鬼话”也是一个道理，采用恰当的隐性假设，就能最大化信息的传输效率。
+12/12/2016 圣瓶
+*： 一些语义性陈述（Semantic Statements）：
+1.医生的无能令病人恼怒。
+ 回忆（Reflection）令人笑。
+  梦是快乐的。
+  4.新西兰和机器人是遥远的过去。
+5.过去是美的。
+6.现在是混乱的。
+7.回头是不可能的。
+ 少年是低熵的。
+  纯洁是困难的。
+  理想是碎的。
+  理想是需要拼死拼活拼起来的。
+  君子需要慎独。
+  电脑不能过量。
+  君子+电脑游戏=病毒
+  数学是深奥的。
+  数学是简单的。
+  实验是主观的。
+  模拟是耗脑的。
+  胜利是不存在的。
+  故事是需要整理的。
+  人际鸿沟是深的。
+  低级趣味不是低级的。</description>
+    </item>
+    
+    <item>
+      <title>Writing Python modularly // Python模块化初步</title>
+      <link>http://newflaw.com/blog/posts/0015_writing-python-modularly/</link>
+      <pubDate>Fri, 30 Jun 2017 18:35:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0015_writing-python-modularly/</guid>
+      <description>&lt;p&gt;First published &lt;a href=&#34;http://orengogroup.info/?p=401&#34;&gt;here&lt;/a&gt; for my intern at UCL-ISMB-CATH.
+[markdown]&lt;/p&gt;
+&lt;h4 id=&#34;brief&#34;&gt;Brief:&lt;/h4&gt;
+&lt;p&gt;Having the privilege of joining Orengo&amp;rsquo;s group as a summer student, I feel urged to improve my coding as well as documentation skills. Thus I intend to log my coding and thinking in a series of blog posts, on a weekly basis.&lt;/p&gt;
+&lt;p&gt;Today&amp;rsquo;s blog post will cover some basics of organising Python code, in the hope of easing future maintenance. We will go through:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·偏见</title>
+      <link>http://newflaw.com/blog/posts/0014_windcity-prejudice/</link>
+      <pubDate>Wed, 28 Jun 2017 22:21:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0014_windcity-prejudice/</guid>
+      <description>&lt;p&gt;“便使我千刀万剐，永劫不复，又有谁会在意呢？”我猜这句话应该符合一个抑郁患者的语气。&lt;/p&gt;
+&lt;p&gt;中心化的下一阶段，是与他者共同构成一个更大的中心，其核心前提在于相互的评价和影响。这种评价，即是这里所谓的“偏见”。最简单的偏见，当然是主体对主体自身的偏见。前述的弥赛亚态，就可以认为是一种自指的偏见。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·骤雨</title>
+      <link>http://newflaw.com/blog/posts/0013_windcity-suddenrain/</link>
+      <pubDate>Fri, 02 Jun 2017 15:56:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0013_windcity-suddenrain/</guid>
+      <description>&lt;p align=&#34;left&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;刚坐下来，黑压压的云就下起了毫无情面的大雨。还好我出门前备了雨披，不然可真是“问君能有几多愁”了。我在伦敦大学学院（&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;UCL&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;）图书馆的会员还有七天就要到期了，要归还的书还真是不少，不过如若明年仍在这里读书，那么这次离别也就没那么真诚。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·中心</title>
+      <link>http://newflaw.com/blog/posts/0012_windcity-center/</link>
+      <pubDate>Tue, 30 May 2017 10:58:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0012_windcity-center/</guid>
+      <description>&lt;p&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;我常常迷惑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;, &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;偏见和思想的区别到底在哪里呢&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;? &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;如王小波所言：&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #262626;&#34;&gt;“&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;。……我觉得自己会永远生猛下去，什么也锤不了我。”（《黄金时代》）&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;这种唯我独尊的，弥赛亚式的自觉，大家大概都熟悉。在这种精神状态下，人是不会质疑自己的判断和选择的，让我们暂且称这种状态为“弥赛亚”态。与之比较流行的相关概念，大概是“中二”症侯，不过&lt;/span&gt;&lt;span style=&#34;color: #262626;&#34;&gt;“中二”的贬义和偏见太强，就不直接拿来了。但是弥赛亚和中二的共同之处，就是自我的中心化&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;(Centralisation)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;。这种中心化，不必是糟糕的，甚至可能是人极为基本的&lt;/span&gt;&lt;span style=&#34;color: #262626;&#34;&gt;一种性质。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Calc_Temp: A pragmatic algorithm to classify 2D-NTCA // Calc_Temp:一个实用性的2D-NTCA 分类器</title>
+      <link>http://newflaw.com/blog/posts/0011_calc-temp-release/</link>
+      <pubDate>Wed, 22 Mar 2017 13:55:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0011_calc-temp-release/</guid>
+      <description>I recently integrated my understanding of spatial fluctuation to produce a automatic classifier for 2D non-totalistic cellular automata. It&amp;rsquo;s now available as a git repository. I am seeking to implement it on a web server in the near future.
+github repo
+An example of output is shown here(link broken)</description>
+    </item>
+    
+    <item>
+      <title>A simple method to classify CA // 一个简单的CA分类方法</title>
+      <link>http://newflaw.com/blog/posts/0010_a-simple-method-to-classify-ca/</link>
+      <pubDate>Sat, 18 Mar 2017 15:42:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0010_a-simple-method-to-classify-ca/</guid>
+      <description>&lt;p&gt;Recall a CA rule $rule$ project a circular-boundary state space $S$ back to it self, that is&lt;/p&gt;
+&lt;p&gt;$rule: S\rightarrow S, aka, x_{t+1}=rule(x_t), x_t \in S, x_{t+1} \in S $&lt;/p&gt;
+&lt;p&gt;where $S = { 0, 1 }^n$, and more strictly $x_t: [1,2,&amp;hellip;,n] \rightarrow {0,1} .$, for simplicity we let $\phi = [1,2,&amp;hellip;,n]$, thus $x = x(\phi) $&lt;/p&gt;
+&lt;p&gt;In practical, we take n=20^2=400;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is Information in biology? // 生物中的信息是什么</title>
+      <link>http://newflaw.com/blog/posts/0009_what-is-information-in-biology/</link>
+      <pubDate>Wed, 08 Mar 2017 01:46:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0009_what-is-information-in-biology/</guid>
+      <description>写这篇文章的起因是：失眠，想了太多。主要在想密度涨落如何能够应用到实际生物研究中
+有几个点：
+ 能不能对CA建构一个自指，或者说，能不能建造出一个能够改变自身规则的CA？ CA规则的一个有趣之处就在于，两个东西之间的互动是完全由这两个东西自身决定的。也就是说，它们的互动不需要借助一个更加基础的规则(Fundmental Law，典型的还原论)，而仅仅取决于这两个东西自身的性质。往宽了讲，两个蛋白质的相互作用，也不应该取决于其结构内部的细节，而应该取决于这两个蛋白质本身所蕴含的信息。 基于我目前的实验，我想做一个比较宽泛的陈述：信息存在于时空的涨落/不均匀性。这个命题还可以换种方式陈述：一个完全均匀的时空是不包任何含信息的。 虽然说科学界公认的遗传物质是DNA，但是很难说这个论点对我们解释生命起到了多大帮助。相反的，越来越多的非DNA调控方式正在被发现，以至于到了需要修改中心法则的时候。 我比较期待的一些事：  RNA生命的复活：也就是说不使用蛋白质进行新陈代谢，而是只使用RNA和DNA作为工具传宗接代。 更加高效且逼真的生命模拟器：这需要我们把生命行为的信息组分高度抽象出来。 以信息交流为基础的新医疗模式：因为生命的本质其实是信息的传递，任何化学组分或者蛋白质都仅仅是信息的载体，那么任何疾病都可以看作是信息处理的结果，那么也应当通过建构适当的信息载体进行干涉。   死或生？  生命的本征特性是什么？ 什么样的东西是死的？什么样的东西是活的？我给出的答案仍然基于我对CA的理解：不能接受外界信息的东西是死的，能对外界信息作出反应的是活的。考虑这样一个思想实验：你手上有一个细菌，现在让你杀死它，你有哪些方法可以达成这个目标？(a)在细胞膜上打个洞（可以是用Ampicillin），细菌因物质泄漏而死 (b) 给细菌吃点毒素，阻挠它的蛋白质生产，细菌失去自我调控能力而死 (c) 将细菌加温到1000摄氏度，细菌因细胞膜破裂而死（其实这个死法比较难分析）。（注意这里我们可以重新定义生命：生命就是，可以死去的东西，这个定义可以和信息定义做一个比较） 我最喜欢的方法其实是（b）喂毒药。原因是这样的，你只能给生命喂毒药。比如说石头没有生命，我让你给石头喂毒药，你就算拿石头砸自己的脑袋也想不出来。毒药之所以为毒，是因为它具备调控这个系统的信息。 也就是说，毒药是能和生命进行有趣的互动的，而进行这种互动的能力本身，就是生命的一个特征。我想把这种互动能力看作是这个生命系统的记忆（注意我这里引入了两个新的概念：系统和记忆）。 那么现在问题就好办多了，生命的定义就是，能对特定刺激作出特定反应的东西，更特定地说，是这个从“刺激”到“反应”的映射。 虽然这个定义看起来真的一点都不起眼，但我想提它所隐含的内容：这个映射是由某种时空不均性所刻画的。比如说一个细菌想要分裂增殖，怎么分裂呢？它得去查自己的DNA，然后按照DNA合成出mRNA，再转录成蛋白质，然后这些蛋白质在合适的信号调节下可以组织出一场分裂增殖事件。着眼于这个过程，信息都在哪里呢？ DNA的序列铁定是信息没错了，但是细胞又怎么知道如何翻译DNA呢？这有点像鸡和蛋的问题，但我想简单地回答：翻译方法蕴含在RNA合成酶里（RNAP,负责把DNA翻译成RNA）。也就是说，RNAP本身蕴含了把DNA翻译成RNA的方法。而这个方法是有一定限制的：RNAP只知道在原料充足，信号正常的情况下翻译传统的DNA，如果我们把DNA换成XNA，RNAP是不知道怎么翻译它的。类似的，核糖体也只知道如何把mRNA翻译成蛋白质，而不知道怎么把mRNA做成核糖酶(Ribozyme)以建构RNA生命。 回到毒药问题，显然核糖体和RNAP的工作都需要大量调控，因为在不同的情况下细胞会需要用不同的方式读取不同的信息。 这些信息大部分是要通过化学信号的方式传递的。那么毒素起的作用大概是：给这些玩意儿传递错误的信息。（如何定义“错误”又是一个大题目） 那么究竟如何定义毒药所蕴含的信息呢？显然我们最好不要用毒药对生命的结果作为定义毒药的方法，因为这将导致循环论证。当今的结构/分子生物学认为，毒药可以结合到某些受体上，使它们失去原本的生物学活性。这相当于在说，毒药会阻断信息流，比如毒药结合到了核糖体上，使它稳定在了关闭状态，我们就可以说，毒药阻断了核糖体对启动信息作出反应的能力。 鉴于目前分子生物学是完全基于分子结构的，接下来的问题就是，如何通过毒药的共性推导出信息的形式？这就要提到涨落问题了，因为涨落其实是信息的一种基本表现形式，我猜想，毒药阻断信息流的过程在某种程度上改变了某个涨落的性质，而这应该是可以被观测到的。 我不喜欢用化学平衡来解释生物现象，尤其是用平衡来解释毒药和核糖体的结合，因为取平衡态的过程显然是丢失了信息的，然而自然选择告诉我们，生命必然会尽一切机会构造各种信息流。但是把涨落加进来也不是件容易的事，我们可以考虑核糖体浓度的涨落，也可以考虑单个核糖体电子密度的涨落。现在问题的关键，就在于建立一个通用的联系涨落和信息的办法，而我相信这正是元胞自动机存在的意义。更具体的，什么样的涨落系统可以储存和沟通更多的信息？涨落在哪些方面上是脆弱的？毒药有没有改变涨落的这些性质？ 在这个过程中，我们或许还可以顺带解决生命的不确定性。或者说我们可以预测任何操作成功的概率，因为这应该是涨落最擅长处理的。 待续   发现这个问题前人稍微有探讨过 QuantaMag/环球科学译文 </description>
+    </item>
+    
+    <item>
+      <title>On the discovery of density fluctuation in Cellular Automata//写在发现元胞自动机密度涨落之际</title>
+      <link>http://newflaw.com/blog/posts/0008_on-the-discovery-of-density-fluctuation-in-cellular-automata/</link>
+      <pubDate>Tue, 07 Mar 2017 13:52:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0008_on-the-discovery-of-density-fluctuation-in-cellular-automata/</guid>
+      <description>这个想法是在2017年3月7日凌晨，在伦敦的一台HP_Z600上初步实现的。整个发现的过程还是挺戏剧性的。
+背景：
+在这之前的一个月里我在MATLAB上断断续续从转移矩阵(transfer matrix)开始编起，发现没啥卵结果，然后在一篇文献上重新看到了Derrida Plot，也就是离散版本的Lyapunov Exponent，然后心中暗骂“Derrida这死脑筋干嘛要取平均值啊?&amp;quot;，并且在这样的心情中编写了derrida_general.m架构出了一个面向对象的流程结构，并且用协方差作为一个伪距离函数替代了平均值，获得了更多的信息。 这个时候的算法还是给了我一点小惊喜的，这直接导致我花了一个星期浏览它生成的Profile图片，大概收集了500条左右的有趣CA规则。但是浏览久了发现不对劲啊，这到底是我在筛选CA还是我的程序在筛选CA啊擦。（当然这个问题从我开始写算法时就一直有，也就是说算法的敏感度不错，真阳性基本都能检测到，但是假阳性也一堆一堆的，只有靠人工筛除）。
+思维跳跃如我，结合信息学最近上课学的多序列对齐（Multiple Sequence Alignment）猜想，能不能把CA的规则看成一条遗传信息，并且比较小的变异对其动力学性质的影响？ 一方面也希望能把MSA的想法应用进来，给出一个隐马尔可夫Profile，将会是一个非常漂亮的结果。随机变异过程倒是比较容易写，一两天就写完了，难在控制Alignment的深度，因为有些CA规则对变异一点都不敏感，18个比特你变掉三个它都无所谓，导致生成了巨大的团状Alignment，这个必须用算法进行控制。另一方面对这个树状图进行操作也需要一些新的编程技巧，以达到比较好的并行计算优化。 同时还花了三天帮室友修他的外星人，在EFI引导上栽了个大跟头，不过好在最后总算修好了Windows/Linux双系统。修系统无聊时就在琢磨把树状图显示出来，因为节点和连边一多起来Matlab的可视化就变得很慢，最后用vis.js做出了“毛毛毛球”。
+然后我兴致冲冲地就去做随机测试了，结果&amp;hellip;&amp;hellip;没卵用&amp;hellip;&amp;hellip;仅仅发现了一些小的结论，比如B3/S23的18个比特里面有4个比特的变异是不太影响它的动力学的，其中两个的影响大一点(B7，S7的变异)，另外两个的变异几乎不产生影响（B8,S8），我称之为a2b2型。有趣/糟糕的是，a2b2型简直满地都是，但是和B3/S23的动力学性质没有半毛钱关系，我只好太息而弃。
+但是这里的另一个观察是，有一些强稳定的动力学可以经受7-8个比特的变异，给出～128左右的团簇。 我据此写了一个专门探测这些强稳规则的团簇边界，再找出混沌团簇的边界，以期在这两个团簇的交界处找到复杂的动力学性质，但是目前来看效果并不是特别好。
+故事：
+周一（03/06）早上正在改进团簇边界的算法，最后发现效果并不好，下午四点赶去上了一节动力系统的课程，结果老师貌似心情也不好一直在讲浅显/糟糕的废话，介绍了极限环理论，但是估计没有一个人听懂。他是学物理出身的，结果讲的时候一直在提系统论的概念，比如负反馈啊，延迟反馈啊，非线性啊，结果在座的这群生物狗估计一句都没听进去。。。然后老师提了个总结性问题：动力系统的极限环振荡解和谐振动的区别是？在座一片死机。 正解是：极限环震荡解的性质不依赖系统的初始状态，但是谐振子解的性质是虽初始状态而改变的，往深了讲是因为谐振子作为线性系统是保守的(Conservative)，而极限环往往是耗散(Dissipative)系统的渐进解，这本来是鲁棒性的一个极好体现，结果他对着生物狗强调了半天内部的数学结构。。。但是吧，非线性和生物之间到底有啥关系，的确也很难说请，老师对Hill Function的介绍还是很到位的，虽然他没能解释Hill的非线性和系统的鲁棒性到底有啥关系。
+上完了课肚子饿，不想回家，图书馆(Sci-Lib)浓浓的新生气息，编程没结果，死线就在周三，缺乏睡眠，你大概可以想像我到了一个多糟的境地。 为了防止把更多的时间浪费在方向不明的Coding上，我强迫自己在外面走走，恰巧ULU Student Hub 三楼在排练爵士乐，我就爬上去听了听，站在窗口看楼下过往的行人，放松放松：信号的本质是什么呢？伦敦的夜景我很少这样观察，远处WellcomeTrust的大楼闪烁着现代性，近处King&amp;rsquo;s Church沉默在黑暗里。第一次，我站在这个高度俯瞰天天走过的Malet Street。 不断地搜索记忆，我想找出一丝线索： DerridaPlot之所以有用，FamilyTree之所以能被建构，背后靠的都是相关性函数，更进一步，FamilyTree比较的是同样的初始条件在两条相似的规则下的结果，并合并大量样本取一个协方差，但这个过程中所有的比特位都没有区别了。联想之前实践的平均场近似，只把0/1密度提取出来作为参数，而不关心具体的排列方式，这样处理CA显然是不妥当的，而且根据我之前的实验，如果把CA不断重新随机混合，得到的结果是非常符合平均场给出的结果的，但是一旦我去掉随机混合这个过程，平均场给出的近似和CA本身的动力学就没有半毛钱关系，这说明CA的空间不均匀性是非常核心的东西。同样的，如果对二维Ising不断进行混合/重排，其能量显然也不是不变的。取极端例子，本来是随机白噪音，假设重排成了一堆0和一堆1，显然能量有很大改变，所以Ising模型也是对空间不均匀性很敏感的。
+接下来就想怎么把CA的空间不均匀性抽象出来，于是想到了对同一个比特取一个延时摄影，并且取其平均为密度。本来这个操作的目的是移除闪光（Strobing）和高频闪烁的，但是很凑巧的是在真正Implement的过程中这个操作居然真的记录了空间不均性，也就是涨落。或者说，得到这个密度参数以后，只要观察这个密度在时间和空间上的统计行为，就能反映CA的动力学性质，而不取密度参直接用0/1（应该）是得不到这样的结果的，或者说会出一些别的问题。 当然这个算法也不完美，取0/1平均是有一定问题的，因为不同顺序相同密度的0/1序列蕴含的信息不一定相等，但是取0/1密度再做协方差的确是最简单最快的Implementation（相比共信息而言）。
+先写到这里，写完作业再来补。
+  </description>
+    </item>
+    
+    <item>
+      <title>comment-board</title>
+      <link>http://newflaw.com/blog/posts/0007_comment-board/</link>
+      <pubDate>Sun, 19 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0007_comment-board/</guid>
+      <description>shouldsee,feng.geng.14&amp;quot;AT&amp;quot;ucl.ac.uk : wordpress revived after a ton of tinkering.
+  shouldsee,feng.geng.14&amp;quot;AT&amp;quot;ucl.ac.uk : What works for biologists, may not work for computer scientists.
+  shouldsee,feng.geng.14&amp;quot;AT&amp;quot;ucl.ac.uk : In reply to Bullet51. BTW, I don’t seems to get email on this blog. Maybe github is a better place to talk if you can reach it. (https://github.com/MathAndAlgo/DiscussionBoard/issues).
+  shouldsee,feng.geng.14&amp;quot;AT&amp;quot;ucl.ac.uk : In reply to Bullet51. That video looks really intriguing. You know what, the protein structure people was doing exactly the same thing!</description>
+    </item>
+    
+    <item>
+      <title>两种0/1序列的熵</title>
+      <link>http://newflaw.com/blog/posts/0006_two-definitions-of-zero-one-entropy/</link>
+      <pubDate>Sat, 18 Feb 2017 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0006_two-definitions-of-zero-one-entropy/</guid>
+      <description>两种定义方法
+1.考虑 s=[0,1]^d 如果d位里有a位为1,则考虑p=a/d H(S)=p*log(p)+(1-p)log(p).
+2.考虑同样的s, 令 x=a/d, p=p(x), H(S)=sum(p*log(p), for all s).
+受了张江老师的“两种熵”启发
+毛毛毛球 思维跳跃如我，结合信息学最近上课学的多序列对齐（Multiple Sequence Alignment）猜想，能不能把CA的规则看成一条遗传信息，并且比较小的变异对其动力学性质的影响？ 一方面也希望能把MSA的想法应用进来，给出一个隐马尔可夫Profile，将会是一个非常漂亮的结果。随机变异过程倒是比较容易写，一两天就写完了，难在控制Alignment的深度，因为有些CA规则对变异一点都不敏感，18个比特你变掉三个它都无所谓，导致生成了巨大的团状Alignment，这个必须用算法进行控制。另一方面对这个树状图进行操作也需要一些新的编程技巧，以达到比较好的并行计算优化。 同时还花了三天帮室友修他的外星人，在EFI引导上栽了个大跟头，不过好在最后总算修好了Windows/Linux双系统。修系统无聊时就在琢磨把树状图显示出来，因为节点和连边一多起来Matlab的可视化就变得很慢，最后用vis.js做出了“毛毛毛球”。</description>
+    </item>
+    
+    <item>
+      <title>应用_用回归图对符号动力学进行半系统的分类_论可测变换或动力系统与度量函数的耦合暨微扰论的拓展</title>
+      <link>http://newflaw.com/blog/posts/0005_applied-classification-of-symbolic-dynamics-with-recurrence-plot/</link>
+      <pubDate>Wed, 15 Feb 2017 11:35:00 +0800</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0005_applied-classification-of-symbolic-dynamics-with-recurrence-plot/</guid>
+      <description>以相关性(correlation)为度量的回归图忠实地反映了基础元胞自动机(ECA)的动力学性质，可以很好地区分稳态和混沌态。
+我对Logistic Mapping做了简单的耦合推广，并应用回归图找到了处在混沌边界的参数，有趣的是这种推广系统也处在混沌边界。
+讨论：二维元胞自动机是一个幻象，它并不比一维元胞高明到哪里去，对于Glider和Pattern的分类看起来没有发展壮大的希望。CA和物理学的联系目前还是太弱了，需要一些契机把CA爱好者引导到更有建设性的道路上。Wolfram对Rule110的阐释是很有insight的，但是他本人最后也认识到CA有一些内在的缺陷使其不能模拟神经网络。我希望Derrida Plot的复兴可以改变这一情况，这一工具允许人们更加系统地对自动机的动力学性质进行分类，而且和微扰论有很深的联系，希望有更多的人参与到这个研究里来。
+这里用一个二维BS元胞自动机为例子(B013468/S23,生命游戏是B3/S23),大致介绍一下Covariance Profile的具体操作办法，用一个常值分布随机取两个初始状态，计算它们的距离H(0),接下来用CA规则将两个初态分别迭代T次，并记录它们的轨迹。这样我们可以得到H(1),H(2),H(3)&amp;hellip;.H(T). 然后把上述操作重复N次。想象[H(1),H(2)]在平面内确定一个点，由于有N个样本，我们可以确定N个点，这时候我们可以计算H(1),H(2)的统计学关系(一开始我用的是相关性(Pearson Correlation),后面发现不够灵敏，于是换成了协方差(Covariance)
+对于任选的H(t_a),H(t_b),我们都可以确定一个分布并且抽象成一个单值。将这些单值集合起来之后，我们就的到了刚刚看到的热相图。
+(这里的单值用的都是协方差。)
+我的观察是，热相图的凹凸性可以很好地刻画原系统的动力学性质。可以看到这个热相图的对角线有一个凹扩散，这一般对应复杂的动力学（complex,相对于混沌 chaotic，稳定 stable而言）
+待续
+Comments:
+  Yanbo Zhang zhangyb1&amp;quot;AT&amp;quot;mail.ustc.edu.cn: Logistic Mapping 的想法非常有意思，似乎只用一个参数k就出现了Wolfram的四个基本类型。我在想，是否可以对离散元胞自动机做逆向的工作，从时空图直接反推到k，从而得到一个意义非常明确的序参量。
+  shouldsee: 我现在的想法是完全用密度涨落来描述动力学性质，而不是用DerridaPlot。 把密度涨落抽象成几个Scalar的序参量应该是可行的，但是我还没有仔细考虑什么样的抽取办法是推广性最好的，因为目前这个抽取办法挺初等的，还缺少很多形式上的工作，只是从实用的角度发现还挺有用。
+  </description>
+    </item>
+    
+    <item>
+      <title>记录_论可测变换或动力系统与度量函数的耦合_暨微扰论的拓展_1</title>
+      <link>http://newflaw.com/blog/posts/0004_on-the-coupling-between-a-measurable-transformation-or-dynamical-system-and-measure-function/</link>
+      <pubDate>Tue, 14 Feb 2017 16:57:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0004_on-the-coupling-between-a-measurable-transformation-or-dynamical-system-and-measure-function/</guid>
+      <description>2017/02/14 L，叁，F
+首先F抛出关于H1,H2和Derrida Plot的问题，询问在使用图论时原集合一般会内嵌在哪些度量空间(metric space)。
+L：抛出了对图论联通性和拓扑联通性之间的区别。L指出联通图可以自然导出一个最短路径（通过广度优先搜索），从而定义一个有离散拓扑的度量空间，但是图之联通不能导出最短路径对应的离散拓扑之联通。原因在于，由于这个拓扑是离散拓扑，所以这个拓扑对应的图显然不连通（只要图中的元素大于等于两个），而且由于道路/路径联通蕴含连通性，所以图也就不道路联通了。
+叁：单单给出一个集合(Set)并不能唯一地确定一个度量空间。额外地，我们需要赋予这个集合某些结构，比如说把它们按某种方法排成一排，计算距离就行了，但单单给出一个集合是不能确定度量空间的。
+L：总之，图论中最完全的信息，由边和顶点共同提供，可以人为地给图定义一些度量空间，但是这个度量在使用时要当心（叁：估计刘大师的意思是，图里的metric（比如由连接两点的最少的边的数量决定）并不是一个真正的metric space里的metric）。或者说是在套用metric space的结论时，要小心图论和拓扑空间之间术语的区别。
+叁：虽然我没有完全听懂，不过问题应该出在三角不等式 ，而不是连通性上吧？因为就算是真正的度量空间里面的开球也不一定是联通的。
+L：嗯其实是个metric，主要是连通性不一致可能会出错。譬如图论中的道路和拓扑空间就有点不一样。
+F：让我重新表述一下我的问题： 假设一个有限集合S 有一个测度 $\mu(S)$，（L:为严谨，S的$\sigma$代数是S的power set，$\mu: \sigma(S) \rightarrow [0,1]$，而且$\mu$满足并集相加），那么给定一个转移矩阵（Transition matrix ，也就是带强度的Edge matrix），令为 $\pi$ 。那令 $\mu_2=\pi * \mu_1$，则$\pi$是一个可测变换（这里的乘法定义是矩阵乘法）。根据马尔可夫链基本定理(THE FUNDAMENTAL THEOREM OF MARKOV CHAINS），如果 $\pi$ 的性质足够好，那么 $\pi$ 重复作用之后测度 $\mu$ 的是驻定的，但驻定这个条件还并不是最重要的。 现在有趣的是，S本身有一个内构的度量是汉明距离：$H(S_a,S_b)$，（附：两条长度为n的有x个字符是不同的序列之间的汉明距离 $H=\frac{x}{n}$ ，当然除以n 不是必要的，只是一步正规化）。现在如果 $\pi$ 应一个有向图（directed graph），也就是说每个元素只能有一个下家，且定义这条边强度为1,那么给出 $ a_2=\pi(a_1)$, $b_2=\pi(b_2)$，现在我们考察 $H(a_1,b_1), H(a_2,b_2)$ 之间的关系 （简称 $H_1,H_2$ ）。 联系微扰理论(perturbation theory)，讨论同一个微分方程 $\frac{dx}{dt} = f(x)$，从x0开始会给出一条轨迹x(t)，从x0+e会给出另一条轨迹x’(t)，通过考察 $\frac{d(|x&amp;rsquo; - x|)}{dt} =g(|x&amp;rsquo; -x|)$ 可以得出系统的复杂度/渐进稳定性（这里g可以从f和x0导出）。注意到我们使用了一个度量|x’-x|，在微分动力系统中这个度量常常是L2-norm，也就是欧几里得距离，也就是说，我们考察的是L2度量在微分动力系统下的行为，以理解该动力系统的混沌性。相应的，在前一个例子中，我们考察的是汉明度量在可测变换下的行为，理论上这可以体现出该可测变换的混沌性。但是需要注意的是，经典微扰理论关心的是|x’-x|极小时的行为，离散扰动理论却被迫关心H1和H2之间的统计联系，因为对H1取极小并不是一个极为自然的选择。</description>
+    </item>
+    
+    <item>
+      <title>重整化，基态， 黑帆</title>
+      <link>http://newflaw.com/blog/posts/0003_renorm-base-black-sails/</link>
+      <pubDate>Wed, 08 Feb 2017 23:38:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0003_renorm-base-black-sails/</guid>
+      <description>-Don&amp;rsquo;t deem a paper incorrect just because you don&amp;rsquo;t understand it.
+-讨论了《黑帆》里的一些寓意
+-讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。
+最近的娱乐活动主要是在看黑帆(Black Sails)这部剧，亚马逊Prime上有免费看所以追的很勤快。对比权利的游戏和西部世界，黑帆的叙事更加古典，加之海盗的叙事线对我比较新颖，所以看得异常入迷。这部剧的好处在于张力极强，在一个极小的格局中浓缩进了高强度的冲突。与权利的游戏随意杀主角形成对比的是，黑帆的人物有明显的层级性，随之赋予了一定的英雄主义情节。但这不妨碍它呈现人性的冲突——是取岛屿的整体大义，还是取报仇的一己之快？是领导船员走一条风险大的道路，还是做一些稳稳当当但是不会亏本的买卖？当船员与船长的目标相脱节，矛盾冲突又将如何调和？短线和长线相互博弈，期望和务实前后矛盾。黑帆给我们展现是一个赤裸裸的罗生门，在这里所有人都自以为掌控着命运，最终又陷入冲突而失去一切反抗的资源。
+这些道理被巧妙地隐藏在黑帆的叙事里：第一季Flint船长在追击Andromache时与Billy进行的讨论尤其精要：我们以为猎物是在北边的，所以我们朝着北边前进以期猎杀，但是猎物的选择我们是不知道的，它甚至可能调转航向以其与我们错身而过;它甚至也可能不在北边，到时候我们将面对一片空荡荡的海面。（大意）当然最后这些更差的情况都没有发生，而Andromache确实走了最普通的一个选择。但Flint作为船长，其远见和策划的能力都是远高于当时的Billy的，但这个能力也需要有船员来执行，否则再多的推断也无法保证Flint自己的生存。换句话说，仓禀足而知礼节，但知礼节本身不能解决吃饭问题，随时面临挨饿的危险。但知礼节者之所以不再陷入挨饿的困境，是因为他能够调控饿肚子人的行为来解决自己的吃饭问题，而一旦饿肚子的人顿悟了礼节的重要性，那么两者必然陷入权利的争夺。
+ 
+(Pictures from &amp;ldquo;Black Sails&amp;rdquo;)
+道理说起来都是简单的，家家却都有本难念的经。冲突来自于各个琐碎的方面而不遵从任一统一的名字。每个人会基于自己的背景作出自己的判断，却又被迫与他人协调以取得成果。没有任何判断是准确且必然的，人们所能控制的仅仅是尽量减少前后矛盾的判断。然而，每个人对待矛盾的态度又是由其背景决定的。
+剧中还用到了一些有意思的叙事手法。在Flint还在海军服役的时候，有一件意外极大地影响了他的前程：Nassau的执政官被当地民众颠覆了，导致Flint和Hamilton赦免Nassau的计划彻底泡汤。然而，当Flint自己执掌海盗的时候，他与执政者的关系也是糟糕得丝毫不容赦免的可能。这个循环的叙事导致Flint既是颠覆的实施者（之后）又是颠覆的受难者（之前）。滴水不漏的叙事硬生生地刻画出了生存的艰难，文明的艰难。赦免的初衷是好的，但却失去了支配的力量。文明的初衷是好的，但代价是拱手让出那些更现实的利益，并承担更大的风险，而这风险只有通过必要的恶才能解除。
+学术方面在接触作为一种数值模拟方法的DMRG，糟糕的是几乎所有的文献都是用bra-ket和线性代数写就的，对于只会用偏微分处理热力学模型的我是一个比较大的挑战。DMRG的最大应用在于寻找系统在大尺度上的一个基态，而且其效果和蒙特卡洛有得一拼。这应该是我第一次实战接触统计物理了，希望在解决这个问题后能够把微观-&amp;gt;宏观的这套哲学运用到其他的问题上。
+简要介绍一下DMRG，多体系统可以用一个波函数（即一个联合概率分布）来描述，概率最大的那个波函数即是系统的基态。但是与其NRG直接寻找子系统的基态不同的是，DMRG寻找 子系统+少量微观元素 的联合系统的一个基态，再将原来的子系统投射到这个基态中占主导的那些子系统波函数组分上。具体的算法还在钻研，希望能够尽快重复出Nishino_1995做出的2D伊辛的结果。
+（摘自Nishino 1995, DMRG method for 2D classical Models）
+这个由小见大的过程真的是很有意思。还需要注意的是，在相变临界点附近，DMRG的精度会下降很多，因为这个时候很难找到占“主导”的子系统波函数，也就是说，几乎所有波函数都是可能的。或许可以通过某些数学来解出这种本征值均等的状况何时出现，以期严格解出相变点，但是这要等到彻底理解算法以后了。
+一些别的碎碎念：两个蛋白质结合，是否意味着他们降落到一个基态上了呢？那么在结合之前，他们岂不是在亚稳态？如何用DMRG处理生物中明显的层级特征呢？蛋白质相互作用能不能用算符来建模呢？更确切地说，如何建模才能收集不同层次的信息？在缺乏对称性的情况下，如何改良原来的方法呢？
+路漫漫其修远兮，但这不成为停下脚步的理由。
+2017/02/08 瓶子
+PS: 有一个跟生物研究相关的小游戏Phylo，觉得好玩的可以在楼下讨论。
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://newflaw.com/blog/pages/0001_about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/pages/0001_about/</guid>
+      <description>Title: About Me Date: 2016-11-25
+Overview I am a computational biologist interested in applying machine learning to functional genomics datasets. Using Python2 as my primary language, I developed a expectation-maximisation program to auto-classify genes into synergistic groups.
+I am also broadly interested in structural biology and molecular dynamics, including:
+ cellular automata renormalisation / coarse-graining inverse-ising problem  On days outside coding, I spend my time playing music and building electronic devices.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://newflaw.com/blog/posts/0023_next/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0023_next/</guid>
+      <description>  The coding machine
+  Teaching neural network to code: by optimising the unittest outcome. a quick google gives: https://becominghuman.ai/how-to-train-a-neural-network-to-code-by-itself-a432e8a120df https://hackernoon.com/how-artificial-neural-networks-can-code-smarter-than-gui-programmer-1cdfaecb4851
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://newflaw.com/blog/posts/0028_job/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0028_job/</guid>
+      <description>buffer = &#39;&amp;rsquo;&amp;rsquo; Centre for PanorOmic Sciences (CPOS) - HKU, - 25000-35000hkd, WGS and scRNA?
+&#39;&amp;rsquo;&amp;rsquo;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://newflaw.com/blog/posts/0030_covid-hist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0030_covid-hist/</guid>
+      <description>03/02-03/06: 本科生放春假,去欧洲玩耍,带回来了很多病毒 03/09-03/13: 校长命令停止所有课程一周 03/09: 课程全部转入线上,预计三月底恢复 03/11: 校内有病例出现 03/18~: 实验室关停,教学楼禁止人员出入   04/29:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://newflaw.com/blog/posts/my-first-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/my-first-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://newflaw.com/blog/posts/pages/0001_about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/pages/0001_about/</guid>
+      <description>Title: About Me Date: 2016-11-25
+Overview I am a computational biologist interested in applying machine learning to functional genomics datasets. Using Python2 as my primary language, I developed a expectation-maximisation program to auto-classify genes into synergistic groups.
+I am also broadly interested in structural biology and molecular dynamics, including:
+ cellular automata renormalisation / coarse-graining inverse-ising problem  On days outside coding, I spend my time playing music and building electronic devices.</description>
+    </item>
+    
+  </channel>
+</rss>

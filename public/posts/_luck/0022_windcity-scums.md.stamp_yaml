@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/posts/0022_windcity-scums.md
+    - 1589385172.6794991
+    - 6620

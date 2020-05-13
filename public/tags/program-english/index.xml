@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>program, english on My New Hugo Site</title>
+    <link>http://newflaw.com/blog/tags/program-english/</link>
+    <description>Recent content in program, english on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Mon, 10 Jul 2017 18:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://newflaw.com/blog/tags/program-english/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to fail your deadline? - Starting learning MySQL thinking you can master it in one day! // 想超时完成任务？来学MySQL就好！</title>
+      <link>http://newflaw.com/blog/posts/0019_first-touch-on-mysql/</link>
+      <pubDate>Mon, 10 Jul 2017 18:55:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0019_first-touch-on-mysql/</guid>
+      <description>&lt;p&gt;First published &lt;a href=&#34;http://orengogroup.info/2017/07/10/how-to-fail-your-deadline-starting-learning-mysql-and-think-you-can-master-it-in-one-day/&#34;&gt;here&lt;/a&gt;.
+[#### 1. How to fail your deadline? - Starting learning MySQL thinking you can master it in one day!]&lt;/p&gt;
+&lt;p&gt;Recently, I touched upon MySQL because I wanted it to be the backend for my incoming Django-based data browser. After 4 days of prolonged fiddling I finally manage to make some notes of its functionality. It is very fast, but equally importantly, very different from Python! The other lesson is that one should allocate enough time for learning when starting a new language (depending on &lt;a href=&#34;https://en.wikipedia.org/wiki/Single-linkage_clustering&#34;&gt;single linkage distance&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Today&amp;rsquo;s blog will go through:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Loading a table into MySQL, be it fixed-width or regularly delimited.&lt;/li&gt;
+&lt;li&gt;Create relations between entries.&lt;/li&gt;
+&lt;li&gt;How to deal with errors, and fix your relationship:&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

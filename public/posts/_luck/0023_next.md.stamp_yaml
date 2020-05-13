@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/posts/0023_next.md
+    - 1589384286.7545455
+    - 315

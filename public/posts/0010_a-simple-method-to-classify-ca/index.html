@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.71.0-DEV" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A simple method to classify CA // 一个简单的CA分类方法 &middot; My New Hugo Site</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="http://newflaw.com/blogcss/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://newflaw.com/blogcss/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://newflaw.com/blogcss/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://newflaw.com/blogcss/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://newflaw.com/blog"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="http://newflaw.com/blog">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>A simple method to classify CA // 一个简单的CA分类方法</h1>
+  <time datetime=2017-03-18T15:42:00Z class="post-date">Sat, Mar 18, 2017</time>
+  <p>Recall a CA rule $rule$ project a circular-boundary state space $S$ back to it self, that is</p>
+<p>$rule: S\rightarrow S, aka, x_{t+1}=rule(x_t), x_t \in S, x_{t+1} \in S $</p>
+<p>where $S = { 0, 1 }^n$, and more strictly $x_t: [1,2,&hellip;,n] \rightarrow {0,1} .$, for simplicity we let $\phi = [1,2,&hellip;,n]$, thus $x = x(\phi) $</p>
+<p>In practical, we take n=20^2=400;</p>
+<p>Consider $x_S(\phi_S)$ where $\phi_S=[1, 2, &hellip;, n] \times [1, 2, &hellip;, card(S)], \ x_S:\phi_S \rightarrow {0,1}$</p>
+<p>In practical, we sought a big enough representative subset, $S_r$ from $S$, so that</p>
+<p>$x_S(\phi_S)\approx x_{S_r}(\phi_{S_r})$</p>
+<p>Denote $rule(rule(x))=rule^2(x)$, we have</p>
+<p>$rule(rule^t(x))=rule^{n+1}(x)$,</p>
+<p>We then define a profile $\lambda: [0, 1, 2, 3, &hellip;&hellip;] \rightarrow [0, 1]$ with Pearson correlation so that</p>
+<p>$\lambda(t) =( \rho[x_S,y^t_S]) ^2= ({Cov[x_S, \ y^t_S]\over\sigma[x_S] \cdot \sigma[y^t_S]})^2[/latex], where $y^t_S=rule^n(x_S)$, $\sigma[X]$ denotes standard deviation of X and Cov[X,Y] denotes covariance between X and Y.</p>
+<p>We assert that $\lambda(t)$ classify the dynamics of the CA rule by capturing the periodic behavior in the underlying dynamics.</p>
+<p>Importantly, we can find a good $S_r$ by taking a random $S_{r0}$ and obtain</p>
+<p>$S_r = rule^T(S_{r0})$ where T is a variable parameter.</p>
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

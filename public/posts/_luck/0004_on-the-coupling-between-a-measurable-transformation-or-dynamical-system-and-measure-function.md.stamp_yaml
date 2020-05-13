@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/posts/0004_on-the-coupling-between-a-measurable-transformation-or-dynamical-system-and-measure-function.md
+    - 1589384286.7345452
+    - 3956

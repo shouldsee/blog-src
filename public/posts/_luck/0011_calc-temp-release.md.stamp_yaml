@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/posts/0011_calc-temp-release.md
+    - 1589384789.3901389
+    - 625

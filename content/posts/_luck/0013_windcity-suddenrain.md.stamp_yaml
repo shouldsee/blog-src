@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/posts/0013_windcity-suddenrain.md
+    - 1589384850.3704078
+    - 3746

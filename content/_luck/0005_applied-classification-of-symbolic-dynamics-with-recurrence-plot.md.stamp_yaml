@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/0005_applied-classification-of-symbolic-dynamics-with-recurrence-plot.md
+    - 1589384072.7317667
+    - 3654

@@ -1,0 +1,29 @@
+---
+title: 风城纪事·中心
+tags: chinese, thoughts
+category: thoughts
+date: 2017-05-30T10:58:00
+---
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN">我常常迷惑</span></span></span><span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;">, </span></span><span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN">偏见和思想的区别到底在哪里呢</span></span></span><span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;">? </span></span><span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN">如王小波所言：</span></span></span>
+
+<span style="color: #262626;">“<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN">那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云</span></span></span><span style="font-family: Helvetica, sans-serif;">。……我觉得自己会永远生猛下去，什么也锤不了我。”（《黄金时代》）</span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">这种唯我独尊的，弥赛亚式的自觉，大家大概都熟悉。在这种精神状态下，人是不会质疑自己的判断和选择的，让我们暂且称这种状态为“弥赛亚”态。与之比较流行的相关概念，大概是“中二”症侯，不过</span><span style="color: #262626;">“中二”的贬义和偏见太强，就不直接拿来了。但是弥赛亚和中二的共同之处，就是自我的中心化</span></span></span></span><span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span style="color: #262626;">(Centralisation)</span></span></span><span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">。这种中心化，不必是糟糕的，甚至可能是人极为基本的</span><span style="color: #262626;">一种性质。</span></span></span></span>
+
+<!--more-->
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">中心化，最突出的效果就是确定了“我”。这就好像在物理中一旦选取了一个坐标系</span></span></span><span style="font-size: medium;">/</span><span style="font-size: medium;"><span lang="zh-CN">参照系，世间一切万物就突然都有了度量（当然还需要确定一个单位长度）。从实用的角度来说，中心化为归纳提供了一个前提（“归纳”此处指对万物的分类和组织），在这种前提下生成的认识和推论，是不能离开这个前提而存在的。允许高效的归纳和处理，自然就成了中心化的一大优势（此处表述模糊）。我想把这个概念和“心流”（</span></span><span style="font-size: medium;">Mind Flow</span><span style="font-size: medium;"><span lang="zh-CN">）联系起来，也就是说在心流状态下，中心化是一个本质。</span></span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">然而中心化在中二现象中</span><span style="color: #262626;">显然是造成了负面效果的。这是为什么呢？中二者被诟病，大多是因为它不能考虑别人的处境和想法，一意孤行，唯我独尊，顺我者昌逆我者亡（这些词带了点帝王气，但是注意这里只讨论国中二年级现象，帝王不在范围内）。要解释中心化和这个效果的关系，我们需要引入“决策”。在中二者的决策中，他者的利益是全然不在考虑范围内的，只有中心的利益是重要的，这里利益可以是各个方面的，如经济利益，社交利益，心理</span></span></span></span><span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span style="color: #262626;">/</span></span><span style="font-size: medium;"><span lang="zh-CN">情感利益。当然，鉴于中二时常伴随价值观的紊乱，我们有理由怀疑有些中二现象实际上源于对他对利益的定义迥异于主流，所以尽管他们考虑决策时会考虑他者的利益（有同理心），但是他所考虑的利益并不符合他者所考虑的利益。无论如何，我们认为中二现象并不是中心化的必然产物，但中心化是中二现象的前提。只要主体在中二的基础上改进其决策准则并考虑他者的利益，那么中二就自然</span></span><span style="color: #262626;">消失了，但这并不伴随中心化的消失。</span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">刚刚讨论到了中心化和心流之间的关系，那先聊一下我所了解的心流吧。心流有这样三个特征：</span></span></span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">第一是其连续性：一旦中途被打断，需要很长时间恢复。比如大家所熟知的学术写作或者阅读过程，如果你读文献的时候断断续续，一会儿回回邮件，一会儿刷刷社交，那么进展将是缓慢的，反复多了人就容易沮丧并且放弃。</span></span></span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">第二是全神贯注：进入心流态的人是不怎么注意时间的流逝的。这点在沉浸于游戏中的玩家，沉浸于音乐中的乐手（包括演奏者或者作曲家），沉浸于推导中的数学家，沉浸于博弈中的商人政客，都是存在的。在沉浸状态中，人从来不会感到无聊，也不会为等待而感到焦急，常常是“山中方一日，世上已千年”，这也导致了前述的连续性。</span></span></span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">第三是无我性：心流态下的人很少关注自己的生理或者社交（心理）需求。所以玩家和乐手们常常一玩起来就忘记了睡觉，推导者忘记了走路和吃饭，博弈者忘记了对道德的遵守，也就导致了表象的废寝忘食和礼崩乐坏。需要注意，无我性可以视作中心化的一种特例，这时中心化对归纳的加成是被保留了的，但是在决策上被心流的目标所取代，也就显现出了无我的状态。无我也是全神贯注的一个结果。</span></span></span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">讨论到这里，中心化的基本效果大致明了了，那么又是怎么联系到“偏见”和“思想”上面的呢</span><span style="color: #262626;">？这时候，我们需要切换到“他者”的视角</span><span style="color: #262626;">，来评价“主体”的一切决策和言论。这种评价和互动的能力，是形成一</span><span style="color: #262626;">个更大的思维共同体的基础。</span></span></span></span>
+
+<span style="font-family: Helvetica, sans-serif;"><span style="font-size: medium;"><span lang="zh-CN"><span style="color: #262626;">这时候的中心</span><span style="color: #262626;">，就更庞大了。</span></span></span></span>

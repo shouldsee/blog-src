@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/posts/0019_first-touch-on-mysql.md
+    - 1589385172.6914992
+    - 34192

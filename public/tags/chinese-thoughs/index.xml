@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chinese, thoughs on My New Hugo Site</title>
+    <link>http://newflaw.com/blog/tags/chinese-thoughs/</link>
+    <description>Recent content in chinese, thoughs on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 02 Jun 2017 15:56:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://newflaw.com/blog/tags/chinese-thoughs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>风城纪事·骤雨</title>
+      <link>http://newflaw.com/blog/posts/0013_windcity-suddenrain/</link>
+      <pubDate>Fri, 02 Jun 2017 15:56:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0013_windcity-suddenrain/</guid>
+      <description>&lt;p align=&#34;left&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;刚坐下来，黑压压的云就下起了毫无情面的大雨。还好我出门前备了雨披，不然可真是“问君能有几多愁”了。我在伦敦大学学院（&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;UCL&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;）图书馆的会员还有七天就要到期了，要归还的书还真是不少，不过如若明年仍在这里读书，那么这次离别也就没那么真诚。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

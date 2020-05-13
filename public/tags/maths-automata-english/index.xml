@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maths, automata, english on My New Hugo Site</title>
+    <link>http://newflaw.com/blog/tags/maths-automata-english/</link>
+    <description>Recent content in maths, automata, english on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 18 Mar 2017 15:42:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://newflaw.com/blog/tags/maths-automata-english/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A simple method to classify CA // 一个简单的CA分类方法</title>
+      <link>http://newflaw.com/blog/posts/0010_a-simple-method-to-classify-ca/</link>
+      <pubDate>Sat, 18 Mar 2017 15:42:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0010_a-simple-method-to-classify-ca/</guid>
+      <description>&lt;p&gt;Recall a CA rule $rule$ project a circular-boundary state space $S$ back to it self, that is&lt;/p&gt;
+&lt;p&gt;$rule: S\rightarrow S, aka, x_{t+1}=rule(x_t), x_t \in S, x_{t+1} \in S $&lt;/p&gt;
+&lt;p&gt;where $S = { 0, 1 }^n$, and more strictly $x_t: [1,2,&amp;hellip;,n] \rightarrow {0,1} .$, for simplicity we let $\phi = [1,2,&amp;hellip;,n]$, thus $x = x(\phi) $&lt;/p&gt;
+&lt;p&gt;In practical, we take n=20^2=400;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

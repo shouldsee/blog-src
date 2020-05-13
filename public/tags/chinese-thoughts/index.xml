@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chinese, thoughts on My New Hugo Site</title>
+    <link>http://newflaw.com/blog/tags/chinese-thoughts/</link>
+    <description>Recent content in chinese, thoughts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 29 Apr 2020 04:21:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://newflaw.com/blog/tags/chinese-thoughts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Barking Group Meeting 0x0001</title>
+      <link>http://newflaw.com/blog/posts/0031_meeting/</link>
+      <pubDate>Wed, 29 Apr 2020 04:21:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0031_meeting/</guid>
+      <description>Feng和Xingyu讨论了若干有关程序语言和笔记本的问题</description>
+    </item>
+    
+    <item>
+      <title>Upgrading Linux Kernel to fix graphical driver issues</title>
+      <link>http://newflaw.com/blog/posts/0029_linux-kernel-upgrade/</link>
+      <pubDate>Tue, 28 Apr 2020 22:43:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0029_linux-kernel-upgrade/</guid>
+      <description>故障症状: 打开zoom会议视频后10秒内弹出,</description>
+    </item>
+    
+    <item>
+      <title>Github-graph</title>
+      <link>http://newflaw.com/blog/posts/0025_github-graph/</link>
+      <pubDate>Tue, 31 Mar 2020 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0025_github-graph/</guid>
+      <description>&lt;p&gt;仓库-&amp;gt;用户-&amp;gt;仓库&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>learning javascript by site construction</title>
+      <link>http://newflaw.com/blog/posts/0026_frontend/</link>
+      <pubDate>Tue, 31 Mar 2020 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0026_frontend/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Selecting the right package for the right purpose, read the best documentation, with the best speed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;chart.js / d3.js&lt;/li&gt;
+&lt;li&gt;handsontable.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;XMLHttpRequest for making a request. Be careful with CORS restriction&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NCBI efetch, equery, elink interface as old perl endpoints&amp;hellip; Better docs!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;BigQuery for NCBI SRA metadata is available on GCP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I have not found npm essential yet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mounting a sub-application in fastapi is still confusing. Manually managing prefix at the moment&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;auto-docstring is great!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;frps, frpc for content delivery&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vultr instance is great!!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Javascript is a very state-oriented and not object oriented. The restriction on scope and type is very weak.
+Checkout Typescript if time available&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;github and git: making an auto PR is not easy! refs? heads? commit? branch? what is the difference?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lesson from using a file system as database: don&amp;rsquo;t trust the speed of a program that is not designed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lesson from hosting web applications: cloud ECs were not created equal:  1-vCPU != 1-vCPU 1GB!=1GB if on
+different platform.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;web dev is impatient by nature.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>thoughts on bioinformatic/general pipelines</title>
+      <link>http://newflaw.com/blog/posts/0027_pipeline-program/</link>
+      <pubDate>Tue, 31 Mar 2020 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0027_pipeline-program/</guid>
+      <description>“NA”</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·渣渣</title>
+      <link>http://newflaw.com/blog/posts/0022_windcity-scums/</link>
+      <pubDate>Wed, 27 Sep 2017 22:39:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0022_windcity-scums/</guid>
+      <description>&lt;p&gt;“我到底是不是一个渣渣？”&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;quot;attachment_1021&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;548&amp;rdquo;]&lt;img src=&#34;{static}/wp-content/uploads/2017/09/set2-1024x768.jpg&#34; alt=&#34;&#34; width=&#34;548&#34; class=&#34;size-large wp-image-1021&#34; /&gt; 简单的交集操作：&amp;ldquo;我 &amp;amp; 你&amp;rdquo;[/caption]&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·偶遇</title>
+      <link>http://newflaw.com/blog/posts/0020_windcity-unexpected-meet/</link>
+      <pubDate>Sun, 16 Jul 2017 21:30:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0020_windcity-unexpected-meet/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;{static}/wp-content/uploads/2017/07/doodles1-1024x703.jpg&#34; alt=&#34;&#34; width=&#34;584&#34; height=&#34;401&#34; class=&#34;alignnone size-large wp-image-975&#34; /&gt;&lt;/p&gt;
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;http://music.163.com/outchain/player?type=2&amp;id=39227637&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;80&#34; scrolling=&#34;no&#34; frameborder=&#34;no&#34; src=&#34;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226899942&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;艾玛正气定神闲地坐在维多利亚式复古电车里欣赏着窗外的云雾，不巧恶魔闯了进来。&lt;/p&gt;
+&lt;p&gt;恶魔：艾玛，你在哪里？
+艾玛：我在曼恩岛上的火车里
+恶魔：再好好想想，你在哪里？
+艾玛：我在一节摇晃的维多利亚式的复古车厢里。
+恶魔：真的吗？你到底在哪里呀？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>轨迹，签证，熵</title>
+      <link>http://newflaw.com/blog/posts/0001_traj-visa-entropy/</link>
+      <pubDate>Fri, 30 Jun 2017 21:37:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0001_traj-visa-entropy/</guid>
+      <description>想来我需要写一点成块的文章，光罗列点可不行，这样取出的永远是语义*的（semantic）碎片。
+人的生命大概可以用轨迹（trajectory）来很好地描述，轨迹是经典物理的经典概念，考虑一个决定性的经典粒子，其轨迹可以完全被上一时刻的条件所预测。建模与预测，这是物理学的发源之地（天文学以预测为基石）。（另，量子力学对薛定谔方程的解释方法不能完全满足定域性，决定性，因果性。也就是说，不存在一个定域的，决定性的，因果的理论能介绍薛定谔方程（但是薛定谔方程不可能是“错”的）。）
+讲讲今天签证的事儿吧，周五晚上本想打印一份学生证明，跑到办公室时却刚好到下班时间，有两位顾客走出门外我却忘记鼓起勇气冲进去麻烦工作人员。当他把门锁上时我知道已经晚了。签证的问题其实还不在这，等我认认真真准备了材料，跑到法签中心排完队，刚开始过第一关，前台就告诉我，由于两次入境国家不一样，且第一入境国不是法国，法签不能受理我的申请。她告诉我两个补救措施：1.去意大利领馆申请 2.把行程改成连续的 被吓懵的我选择了第二条路，跑到网咖里做了个伪（Pseudo）行程，花掉了25EUR+22EUR+(70EUR，可能还可以退)。还好网咖不远，环境也好，老板也有风度，倒让我有一种写论文的冲动（对比法签中心，简直人山人海，纸醉金迷，胆战心惊，人云亦云，气氛实在不对）。
+说到底，申根签的审核就是个笑话，根据木桶原理，最短的那根板是限制因素（limiting process）：最松的申根国家就贡献了最大的流量。申根的怪圈就在于，其他国家越严，签证过程价值就越高，于是木桶的短板就漏过更多的漏网之鱼。边境管制是一句空话，申根牺牲了安全性换取了流动性。但我最想吐槽的是，我想要老老实实申报真实行程，却遭到简简单单一句“不予受理”，最后虚报行程，反而顺风顺水。这使得我严重怀疑申根签证的逻辑——事实上，这种官僚体制会逼迫人们说假话，做假事。我今天突然理解了小时候经常看到的“办证”广告，那是因为在官僚体制的逻辑下，价值可以独立于真相存在——“我不在乎这句话是对是错，我只在乎这句话是谁说的。”
+最近人好像变得越来越犹豫，一方面觉得自信的生活不应该游移，一方面为了最大化回报的期望又苦苦思索最优解。正如神经网络的Explore-Exploit难题，一方面需要最小化消耗函数，一方面又要考虑时间本身的价值，真是难上加难。其实回到轨迹的类比上来，哪会有什么最优解（尽管这回导致我会被学过优化的人们喷死）。隐性地说，人的决策是不可能找到一个最优解的，因为计算最优解的过程常常是一个停机程序/不可计算程序。身处动态的世界里，哪有什么不变的测度（尽管不变性是物理的一个基本直觉）。如果想要走到那条最为宽阔的坦途上（回报率最高），就必然要抛弃大量的计算资源，因而造成时间的流逝，然而时间一旦流逝，坦途的宽度就又得重新计算了，如此往复，好似会走上流数/微积分的思路，但我仍然不认为这个迭代操作会给出一个最优化的解。或者也可以这样说，最优解轨迹往往伴随着熵的降低，从玻尔兹曼热动力学的角度来讲，是极小概率的事件;若想要按照最优解行进，就必然需要耦合一个熵增/放热过程，以符合热力学第二定律的约束。所以反过来推，就像测不准定律一样，人对自己的轨迹只能施加有限的约束，而不能保证绝对的服从，这和熵增定律是类似的。
+当然也会有一些奇妙的情况，也就是不能用热力学第二定律理解的情况——复杂性的涌现。或者说，尽管在微观上人不可能完全约束自己的轨迹，整个世界的宏观轨迹却反而诡异的紧——约束并没有显得更少，或者说，大系统并不显现出缺乏约束的特质，而是反而显现出能被很好预测的轨迹，也就是说，一群被热二限制住的不能走最优轨迹的粒子，反而组成了一个总是走最优轨迹的系统。这种诡异的涌现特质，使得整个世界根本不可能陷入热寂。当然我们可以强调这个大系统以摄取能量/排出熵的代价降低了自己的熵（普利高津的结论），但这走的是隔离法的路线了（也是热学的经典直觉），但是我更想考虑这个熵的减少是不是耦合在了从微观映射到宏观这个过程本身，也就是说，是不是尺度的变化本身导致了熵的显变化？
+最后让我们讨论一下隐性的（Implicit）含义，譬如我现在要写这篇文章，我会假设一个隐性的语境（比如中文就是一个隐性假设），在许许多多个隐性假设下，我才能够有效地传达一些信息。如果抛弃各个隐性假设，那么文章将变得不可接受的冗长，于是反推可得，隐性假设起到的是压缩信息的作用，这些被压缩的信息于是可以获得更快的传播速度，但同时也不再通用（Universal）。比如说一篇科研论文就会假设读者拥有相当多的储备知识，再比如政治喜剧会假设听众有一定的政治常识，再比如一篇假文凭/假行程会假设采信机构&amp;hellip;&amp;hellip;是个傻逼。显然，假行程不是通用的，但是在官僚体制这个隐性假设下，它很有效地传达了递签者迫切的求签心态和端正的求签态度。“见人说人话，见鬼说鬼话”也是一个道理，采用恰当的隐性假设，就能最大化信息的传输效率。
+12/12/2016 圣瓶
+*： 一些语义性陈述（Semantic Statements）：
+1.医生的无能令病人恼怒。
+ 回忆（Reflection）令人笑。
+  梦是快乐的。
+  4.新西兰和机器人是遥远的过去。
+5.过去是美的。
+6.现在是混乱的。
+7.回头是不可能的。
+ 少年是低熵的。
+  纯洁是困难的。
+  理想是碎的。
+  理想是需要拼死拼活拼起来的。
+  君子需要慎独。
+  电脑不能过量。
+  君子+电脑游戏=病毒
+  数学是深奥的。
+  数学是简单的。
+  实验是主观的。
+  模拟是耗脑的。
+  胜利是不存在的。
+  故事是需要整理的。
+  人际鸿沟是深的。
+  低级趣味不是低级的。</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·偏见</title>
+      <link>http://newflaw.com/blog/posts/0014_windcity-prejudice/</link>
+      <pubDate>Wed, 28 Jun 2017 22:21:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0014_windcity-prejudice/</guid>
+      <description>&lt;p&gt;“便使我千刀万剐，永劫不复，又有谁会在意呢？”我猜这句话应该符合一个抑郁患者的语气。&lt;/p&gt;
+&lt;p&gt;中心化的下一阶段，是与他者共同构成一个更大的中心，其核心前提在于相互的评价和影响。这种评价，即是这里所谓的“偏见”。最简单的偏见，当然是主体对主体自身的偏见。前述的弥赛亚态，就可以认为是一种自指的偏见。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>风城纪事·中心</title>
+      <link>http://newflaw.com/blog/posts/0012_windcity-center/</link>
+      <pubDate>Tue, 30 May 2017 10:58:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0012_windcity-center/</guid>
+      <description>&lt;p&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;我常常迷惑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;, &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;偏见和思想的区别到底在哪里呢&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;? &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;如王小波所言：&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #262626;&#34;&gt;“&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;那一天我二十一岁，在我一生的黄金时代，我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;。……我觉得自己会永远生猛下去，什么也锤不了我。”（《黄金时代》）&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;这种唯我独尊的，弥赛亚式的自觉，大家大概都熟悉。在这种精神状态下，人是不会质疑自己的判断和选择的，让我们暂且称这种状态为“弥赛亚”态。与之比较流行的相关概念，大概是“中二”症侯，不过&lt;/span&gt;&lt;span style=&#34;color: #262626;&#34;&gt;“中二”的贬义和偏见太强，就不直接拿来了。但是弥赛亚和中二的共同之处，就是自我的中心化&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;(Centralisation)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: Helvetica, sans-serif;&#34;&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;&lt;span lang=&#34;zh-CN&#34;&gt;&lt;span style=&#34;color: #262626;&#34;&gt;。这种中心化，不必是糟糕的，甚至可能是人极为基本的&lt;/span&gt;&lt;span style=&#34;color: #262626;&#34;&gt;一种性质。&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>重整化，基态， 黑帆</title>
+      <link>http://newflaw.com/blog/posts/0003_renorm-base-black-sails/</link>
+      <pubDate>Wed, 08 Feb 2017 23:38:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0003_renorm-base-black-sails/</guid>
+      <description>-Don&amp;rsquo;t deem a paper incorrect just because you don&amp;rsquo;t understand it.
+-讨论了《黑帆》里的一些寓意
+-讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。
+最近的娱乐活动主要是在看黑帆(Black Sails)这部剧，亚马逊Prime上有免费看所以追的很勤快。对比权利的游戏和西部世界，黑帆的叙事更加古典，加之海盗的叙事线对我比较新颖，所以看得异常入迷。这部剧的好处在于张力极强，在一个极小的格局中浓缩进了高强度的冲突。与权利的游戏随意杀主角形成对比的是，黑帆的人物有明显的层级性，随之赋予了一定的英雄主义情节。但这不妨碍它呈现人性的冲突——是取岛屿的整体大义，还是取报仇的一己之快？是领导船员走一条风险大的道路，还是做一些稳稳当当但是不会亏本的买卖？当船员与船长的目标相脱节，矛盾冲突又将如何调和？短线和长线相互博弈，期望和务实前后矛盾。黑帆给我们展现是一个赤裸裸的罗生门，在这里所有人都自以为掌控着命运，最终又陷入冲突而失去一切反抗的资源。
+这些道理被巧妙地隐藏在黑帆的叙事里：第一季Flint船长在追击Andromache时与Billy进行的讨论尤其精要：我们以为猎物是在北边的，所以我们朝着北边前进以期猎杀，但是猎物的选择我们是不知道的，它甚至可能调转航向以其与我们错身而过;它甚至也可能不在北边，到时候我们将面对一片空荡荡的海面。（大意）当然最后这些更差的情况都没有发生，而Andromache确实走了最普通的一个选择。但Flint作为船长，其远见和策划的能力都是远高于当时的Billy的，但这个能力也需要有船员来执行，否则再多的推断也无法保证Flint自己的生存。换句话说，仓禀足而知礼节，但知礼节本身不能解决吃饭问题，随时面临挨饿的危险。但知礼节者之所以不再陷入挨饿的困境，是因为他能够调控饿肚子人的行为来解决自己的吃饭问题，而一旦饿肚子的人顿悟了礼节的重要性，那么两者必然陷入权利的争夺。
+ 
+(Pictures from &amp;ldquo;Black Sails&amp;rdquo;)
+道理说起来都是简单的，家家却都有本难念的经。冲突来自于各个琐碎的方面而不遵从任一统一的名字。每个人会基于自己的背景作出自己的判断，却又被迫与他人协调以取得成果。没有任何判断是准确且必然的，人们所能控制的仅仅是尽量减少前后矛盾的判断。然而，每个人对待矛盾的态度又是由其背景决定的。
+剧中还用到了一些有意思的叙事手法。在Flint还在海军服役的时候，有一件意外极大地影响了他的前程：Nassau的执政官被当地民众颠覆了，导致Flint和Hamilton赦免Nassau的计划彻底泡汤。然而，当Flint自己执掌海盗的时候，他与执政者的关系也是糟糕得丝毫不容赦免的可能。这个循环的叙事导致Flint既是颠覆的实施者（之后）又是颠覆的受难者（之前）。滴水不漏的叙事硬生生地刻画出了生存的艰难，文明的艰难。赦免的初衷是好的，但却失去了支配的力量。文明的初衷是好的，但代价是拱手让出那些更现实的利益，并承担更大的风险，而这风险只有通过必要的恶才能解除。
+学术方面在接触作为一种数值模拟方法的DMRG，糟糕的是几乎所有的文献都是用bra-ket和线性代数写就的，对于只会用偏微分处理热力学模型的我是一个比较大的挑战。DMRG的最大应用在于寻找系统在大尺度上的一个基态，而且其效果和蒙特卡洛有得一拼。这应该是我第一次实战接触统计物理了，希望在解决这个问题后能够把微观-&amp;gt;宏观的这套哲学运用到其他的问题上。
+简要介绍一下DMRG，多体系统可以用一个波函数（即一个联合概率分布）来描述，概率最大的那个波函数即是系统的基态。但是与其NRG直接寻找子系统的基态不同的是，DMRG寻找 子系统+少量微观元素 的联合系统的一个基态，再将原来的子系统投射到这个基态中占主导的那些子系统波函数组分上。具体的算法还在钻研，希望能够尽快重复出Nishino_1995做出的2D伊辛的结果。
+（摘自Nishino 1995, DMRG method for 2D classical Models）
+这个由小见大的过程真的是很有意思。还需要注意的是，在相变临界点附近，DMRG的精度会下降很多，因为这个时候很难找到占“主导”的子系统波函数，也就是说，几乎所有波函数都是可能的。或许可以通过某些数学来解出这种本征值均等的状况何时出现，以期严格解出相变点，但是这要等到彻底理解算法以后了。
+一些别的碎碎念：两个蛋白质结合，是否意味着他们降落到一个基态上了呢？那么在结合之前，他们岂不是在亚稳态？如何用DMRG处理生物中明显的层级特征呢？蛋白质相互作用能不能用算符来建模呢？更确切地说，如何建模才能收集不同层次的信息？在缺乏对称性的情况下，如何改良原来的方法呢？
+路漫漫其修远兮，但这不成为停下脚步的理由。
+2017/02/08 瓶子
+PS: 有一个跟生物研究相关的小游戏Phylo，觉得好玩的可以在楼下讨论。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

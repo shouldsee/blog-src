@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - src.content.posts/0027_pipeline-program.md
+    - 1589385159.7354636
+    - 359

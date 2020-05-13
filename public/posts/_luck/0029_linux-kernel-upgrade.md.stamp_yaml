@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - content/posts/0029_linux-kernel-upgrade.md
+    - 1589385096.403282
+    - 1488

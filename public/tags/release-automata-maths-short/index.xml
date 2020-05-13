@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>release, automata, maths, short on My New Hugo Site</title>
+    <link>http://newflaw.com/blog/tags/release-automata-maths-short/</link>
+    <description>Recent content in release, automata, maths, short on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 22 Mar 2017 13:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://newflaw.com/blog/tags/release-automata-maths-short/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Calc_Temp: A pragmatic algorithm to classify 2D-NTCA // Calc_Temp:一个实用性的2D-NTCA 分类器</title>
+      <link>http://newflaw.com/blog/posts/0011_calc-temp-release/</link>
+      <pubDate>Wed, 22 Mar 2017 13:55:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0011_calc-temp-release/</guid>
+      <description>I recently integrated my understanding of spatial fluctuation to produce a automatic classifier for 2D non-totalistic cellular automata. It&amp;rsquo;s now available as a git repository. I am seeking to implement it on a web server in the near future.
+github repo
+An example of output is shown here(link broken)</description>
+    </item>
+    
+  </channel>
+</rss>

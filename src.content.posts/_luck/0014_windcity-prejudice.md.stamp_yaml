@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - src.content.posts/0014_windcity-prejudice.md
+    - 1589384877.1585186
+    - 3727

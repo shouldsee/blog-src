@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - src.content.posts/0016_windcity-replacement.md
+    - 1589384887.3025591
+    - 2081

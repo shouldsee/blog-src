@@ -1,0 +1,15 @@
+
+baseURL = "http://newflaw.com/blog"
+languageCode = "en-gb"
+title = "My New Hugo Site"
+theme = "hyde"
+#defaultMarkdownHandler = "blackFriday"
+
+[markup.goldmark.parser]
+  attribute = true
+  autoHeadingID = true
+  autoHeadingIDType = "github"
+[markup.goldmark.renderer]
+  hardWraps = false
+  unsafe = true
+  xhtml = false

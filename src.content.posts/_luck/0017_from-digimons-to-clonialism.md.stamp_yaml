@@ -1,0 +1,8 @@
+- - __version__
+  - 0.0.7
+- - __class__.__name__
+  - TimeSizeStampRule
+- - to_ident
+  - - src.content.posts/0017_from-digimons-to-clonialism.md
+    - 1589384902.5386193
+    - 32140
