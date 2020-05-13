@@ -9,9 +9,49 @@ ns = RNS()
 ctx = DNS()
 p = DNS()
 
+# ctx.BaseUrl = 'http://localhost:1313/blog'
+# ctx.BaseUrl = 'http://localhost:8001/blog'
+ctx.BaseUrl = "http://newflaw.com/blog/"
+ctx.Port = '8000'
+NCR.M(ns,'add_config',None,lambda c:
+write_close(
+'config.toml',
+f'''
+baseURL = "{ctx.BaseUrl}"
+languageCode = "en-gb"
+title = "Newflaw"
+theme = "hyde"
+#defaultMarkdownHandler = "blackFriday"
+[params]
+  description ="Nature is never flawless"
 
+[menu]  
+  [[menu.main]]
+    # identifier = "About"
+    name = "About"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/about/"
+    weight = -110
 
-ctx.BaseUrl = 'http://localhost:1313/blog'
+  [[menu.main]]
+    name = "Posts"
+    post = "<span class='alert'>New!</span>"
+    pre = "<i class='fa fa-road'></i>"
+    url = "/posts/"
+    weight = -100
+
+[markup.goldmark.parser]
+  attribute = true
+  autoHeadingID = true
+  autoHeadingIDType = "github"
+[markup.goldmark.renderer]
+  hardWraps = false
+  unsafe = true
+  xhtml = false
+
+'''.encode()
+))
+
 
 # MFP.M(p, 'output/%.html')
 
@@ -55,39 +95,30 @@ for k in src_files.split():
 	src_outputs.append(of)
 
 NCR.M(ns, 'contents', ' '.join(src_outputs))
-NCR.M(ns, 'build', 'contents add_theme add_config  install_deps', lambda c:LSC('hugo -D'))
+NCR.M(ns, 'build', 'contents add_theme add_config  bin/hugo', lambda c:LSC(f'''
+	bin/hugo -D -b {ctx.BaseUrl}
+	'''))
 
 TSSR.M(ns, 'themes/hyde')
 NCR.M(ns, 'add_theme', 'themes/hyde', lambda c: (LSC('''
-git clone -f https://github.com/spf13/hyde.git themes/hyde 
+git clone https://github.com/spf13/hyde.git themes/hyde 
 ''')if not os.path.isdir(c.i[0]) else None ))
 
-NCR.M(ns, 'install_deps',None,lambda c:LSC('''
-# go get github.com/gohugoio/hugo
+TSSR.M(ns, 'bin/hugo',None,lambda c:LSC('''
+	mkdir -p bin
+curl -sL https://github.com/gohugoio/hugo/releases/download/v0.70.0/hugo_0.70.0_Linux-64bit.tar.gz | tar -xvzf- -C bin/
+hugo version'''
+	))
+NCR.M(ns,'serve', 'build', lambda c:LSC(f'''
+ln -sf public blog;
+python3 -m http.server {ctx.Port}
 	'''))
 
-NCR.M(ns,'add_config',None,lambda c:
-write_close(
-'config.toml',
+
 '''
-baseURL = "http://newflaw.com/blog"
-languageCode = "en-gb"
-title = "My New Hugo Site"
-theme = "hyde"
-#defaultMarkdownHandler = "blackFriday"
-
-[markup.goldmark.parser]
-  attribute = true
-  autoHeadingID = true
-  autoHeadingIDType = "github"
-[markup.goldmark.renderer]
-  hardWraps = false
-  unsafe = true
-  xhtml = false
-'''.encode()
-)
-)
-
+# eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme | GIMME_GO_VERSION=1.14.2 bash)"
+# go get github.com/gohugoio/hugo
+'''
 
 # # yaml_src_files = for k in yaml
 # yaml_src_files  =[]

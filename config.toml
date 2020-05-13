@@ -1,9 +1,26 @@
 
-baseURL = "http://newflaw.com/blog"
+baseURL = "http://newflaw.com/blog/"
 languageCode = "en-gb"
-title = "My New Hugo Site"
+title = "Newflaw"
 theme = "hyde"
 #defaultMarkdownHandler = "blackFriday"
+[params]
+  description ="Nature is never flawless"
+
+[menu]  
+  [[menu.main]]
+    # identifier = "About"
+    name = "About"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/about/"
+    weight = -110
+
+  [[menu.main]]
+    name = "Posts"
+    post = "<span class='alert'>New!</span>"
+    pre = "<i class='fa fa-road'></i>"
+    url = "/posts/"
+    weight = -100
 
 [markup.goldmark.parser]
   attribute = true
@@ -13,3 +30,4 @@ theme = "hyde"
   hardWraps = false
   unsafe = true
   xhtml = false
+
