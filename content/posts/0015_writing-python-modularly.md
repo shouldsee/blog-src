@@ -3,16 +3,17 @@ title: Writing Python modularly // Python模块化初步
 date: 2017-06-30T18:35:00
 category: program
 tags: program, english, python
+draft: 0
 ---
 
 First published <a href="http://orengogroup.info/?p=401">here</a> for my intern at UCL-ISMB-CATH.
-[markdown]
+
+<!--more-->
 
 #### Brief:
 Having the privilege of joining Orengo's group as a summer student, I feel urged to improve my coding as well as documentation skills. Thus I intend to log my coding and thinking in a series of blog posts, on a weekly basis.
 
 Today's blog post will cover some basics of organising Python code, in the hope of easing future maintenance. We will go through:
-
 <!--more-->
 1. How to import python modules.
 * Comparing alternative implementations
@@ -287,11 +288,12 @@ touch lib/__init__;.py
 
 Now "``main.py``" throws "``ImportError: cannot import name evolve``". Yah yah, nothing in "``lib/``" has the name "``evolve``". We need to update the "``main.py``" with "``from lib.libA import evolve``". Note "``import lib.libA.evolve``" would not work because "``evolve``" is defined as "``def``" and not a script "``.py``".
 
-Cool, now we even have a decent "lib/" folder! Another common directory in Test-Driven-Development (TDD) is "tests/". Let's create some look-alike structure with `
+Cool, now we even have a decent "lib/" folder! Another common directory in Test-Driven-Development (TDD) is "tests/". Let's create some look-alike structure with 
 ```
 mkdir tests
 cp main.py tests/test1.py
 ```
+
 
 ```
 .

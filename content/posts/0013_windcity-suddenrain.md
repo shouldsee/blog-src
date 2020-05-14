@@ -1,5 +1,6 @@
 ---
 title: 风城纪事·骤雨
+draft: 0
 tags: chinese, thoughs
 category: thoughts
 date: 2017-06-02T15:56:00

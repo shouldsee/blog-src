@@ -1,8 +1,0 @@
-- - __version__
-  - 0.0.7
-- - __class__.__name__
-  - TimeSizeStampRule
-- - to_ident
-  - - content/0007_comment-board.md
-    - 1589384072.7757673
-    - 7695

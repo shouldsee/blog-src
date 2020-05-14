@@ -6,7 +6,6 @@ tags: program, english
 ---
 
 First published [here](http://orengogroup.info/2017/07/10/how-to-fail-your-deadline-starting-learning-mysql-and-think-you-can-master-it-in-one-day/).
-[#### 1. How to fail your deadline? - Starting learning MySQL thinking you can master it in one day!]
 
 Recently, I touched upon MySQL because I wanted it to be the backend for my incoming Django-based data browser. After 4 days of prolonged fiddling I finally manage to make some notes of its functionality. It is very fast, but equally importantly, very different from Python! The other lesson is that one should allocate enough time for learning when starting a new language (depending on [single linkage distance](https://en.wikipedia.org/wiki/Single-linkage_clustering))
 
@@ -16,6 +15,7 @@ Today's blog will go through:
 3. How to deal with errors, and fix your relationship:
 
 <!--more-->
+
 #### Overview:
 MySQL is a SQL(standard query language), that is specialised for:
 1. database management: To create and maintain the structure of a database  

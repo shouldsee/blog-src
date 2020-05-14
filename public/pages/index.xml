@@ -6,20 +6,30 @@
     <description>Recent content in Pages on Newflaw</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
+    <lastBuildDate>Fri, 25 Nov 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://newflaw.com/blog/pages/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
+      <title>About Me</title>
       <link>http://newflaw.com/blog/pages/0001_about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://newflaw.com/blog/pages/0001_about/</guid>
-      <description>Title: About Me Date: 2016-11-25
-Overview I am a computational biologist interested in applying machine learning to functional genomics datasets. Using Python2 as my primary language, I developed a expectation-maximisation program to auto-classify genes into synergistic groups.
-I am also broadly interested in structural biology and molecular dynamics, including:
- cellular automata renormalisation / coarse-graining inverse-ising problem  On days outside coding, I spend my time playing music and building electronic devices.</description>
+      <description>&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
+&lt;p&gt;I am a computational biologist interested in applying machine learning to functional genomics datasets. Using Python2 as my primary language, I developed a expectation-maximisation program to auto-classify genes into synergistic groups.&lt;/p&gt;
+&lt;p&gt;I am also broadly interested in structural biology and molecular dynamics, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cellular automata&lt;/li&gt;
+&lt;li&gt;renormalisation / coarse-graining&lt;/li&gt;
+&lt;li&gt;inverse-ising problem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On days outside coding, I spend my time playing music and building electronic devices. My favourite creation so far is a dispersive spectrometer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;a href=&#34;mailto:fg368@protonmail.com&#34;&gt;fg368@protonmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a href=&#34;http://github.com/shouldsee&#34;&gt;github.com/shouldsee&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

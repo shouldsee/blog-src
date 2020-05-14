@@ -1,8 +1,0 @@
-- - __version__
-  - 0.0.7
-- - __class__.__name__
-  - TimeSizeStampRule
-- - to_ident
-  - - content/0024_manifold-learning.md
-    - 1589384072.7957675
-    - 2673

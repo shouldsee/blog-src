@@ -1,8 +1,0 @@
-- - __version__
-  - 0.0.7
-- - __class__.__name__
-  - TimeSizeStampRule
-- - to_ident
-  - - content/0030_covid-hist.md
-    - 1589384072.815768
-    - 278

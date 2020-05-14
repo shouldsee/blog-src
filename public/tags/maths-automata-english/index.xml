@@ -17,10 +17,44 @@
       <pubDate>Sat, 18 Mar 2017 15:42:00 +0000</pubDate>
       
       <guid>http://newflaw.com/blog/posts/0010_a-simple-method-to-classify-ca/</guid>
-      <description>&lt;p&gt;Recall a CA rule $rule$ project a circular-boundary state space $S$ back to it self, that is&lt;/p&gt;
-&lt;p&gt;$rule: S\rightarrow S, aka, x_{t+1}=rule(x_t), x_t \in S, x_{t+1} \in S $&lt;/p&gt;
-&lt;p&gt;where $S = { 0, 1 }^n$, and more strictly $x_t: [1,2,&amp;hellip;,n] \rightarrow {0,1} .$, for simplicity we let $\phi = [1,2,&amp;hellip;,n]$, thus $x = x(\phi) $&lt;/p&gt;
-&lt;p&gt;In practical, we take n=20^2=400;&lt;/p&gt;</description>
+      <description>&lt;style type=&#34;text/css&#34;&gt;
+	code.has-jax {font: inherit;
+              font-size: 100%;
+              background: inherit;
+              border: inherit;
+              color: #515151;}
+&lt;/style&gt;
+&lt;script type=&#34;text/javascript&#34;
+  src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt;
+&lt;/script&gt;
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],
+    displayMath: [[&#39;$$&#39;,&#39;$$&#39;] ],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
+    TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },
+         extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }
+  }
+});
+
+  MathJax.Hub.Queue(function() {
+    // Fix &lt;code&gt; tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += &#39; has-jax&#39;;
+    }
+});
+&lt;/script&gt;
+&lt;ul&gt;
+&lt;li&gt;Recall a CA rule $rule$ project a circular-boundary state space $S$ back to it self, that is&lt;/li&gt;
+&lt;li&gt;$rule: S\rightarrow$&lt;/li&gt;
+&lt;li&gt;aka $x_{t+1}=rule(x_t), x_t \in S, x_{t+1} \in S $&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

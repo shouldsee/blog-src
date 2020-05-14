@@ -40,7 +40,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://newflaw.com/blog/">Home</a> </li>
-        <li><a href="/blog/about/"> About </a></li><li><a href="/blog/posts/"> Posts </a></li>
+        <li><a href="/blog/pages/0001_about/"> About </a></li><li><a href="/blog/posts/"> Posts </a></li><li><a href="/blog/projects/"> Projects </a></li>
       </ul>
     </nav>
 
@@ -63,14 +63,24 @@
 假设一个有限集合S 有一个测度 $\mu(S)$，（L:为严谨，S的$\sigma$代数是S的power set，$\mu: \sigma(S) \rightarrow [0,1]$，而且$\mu$满足并集相加），那么给定一个转移矩阵（Transition matrix ，也就是带强度的Edge matrix），令为 $\pi$ 。那令 $\mu_2=\pi * \mu_1$，则$\pi$是一个可测变换（这里的乘法定义是矩阵乘法）。根据马尔可夫链基本定理(THE FUNDAMENTAL THEOREM OF MARKOV CHAINS），如果 $\pi$ 的性质足够好，那么 $\pi$ 重复作用之后测度 $\mu$ 的是驻定的，但驻定这个条件还并不是最重要的。
 现在有趣的是，S本身有一个内构的度量是汉明距离：$H(S_a,S_b)$，（附：两条长度为n的有x个字符是不同的序列之间的汉明距离 $H=\frac{x}{n}$ ，当然除以n 不是必要的，只是一步正规化）。现在如果 $\pi$ 应一个有向图（directed graph），也就是说每个元素只能有一个下家，且定义这条边强度为1,那么给出 $ a_2=\pi(a_1)$, $b_2=\pi(b_2)$，现在我们考察 $H(a_1,b_1), H(a_2,b_2)$ 之间的关系 （简称 $H_1,H_2$ ）。
 联系微扰理论(perturbation theory)，讨论同一个微分方程 $\frac{dx}{dt} = f(x)$，从x0开始会给出一条轨迹x(t)，从x0+e会给出另一条轨迹x’(t)，通过考察 $\frac{d(|x&rsquo; - x|)}{dt} =g(|x&rsquo; -x|)$ 可以得出系统的复杂度/渐进稳定性（这里g可以从f和x0导出）。注意到我们使用了一个度量|x’-x|，在微分动力系统中这个度量常常是L2-norm，也就是欧几里得距离，也就是说，我们考察的是L2度量在微分动力系统下的行为，以理解该动力系统的混沌性。相应的，在前一个例子中，我们考察的是汉明度量在可测变换下的行为，理论上这可以体现出该可测变换的混沌性。但是需要注意的是，经典微扰理论关心的是|x’-x|极小时的行为，离散扰动理论却被迫关心H1和H2之间的统计联系，因为对H1取极小并不是一个极为自然的选择。</p>
-
 </div>
+
+
+<h2>Comments</h2>
+<script src="https://utteranc.es/client.js"
+        repo="shouldsee/blog-src"
+        issue-term="pathname"
+        label="utterances"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
 
 
     </main>
 
-    
-      
     
   </body>
 </html>

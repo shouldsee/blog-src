@@ -40,7 +40,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://newflaw.com/blog/">Home</a> </li>
-        <li><a href="/blog/about/"> About </a></li><li><a href="/blog/posts/"> Posts </a></li>
+        <li><a href="/blog/pages/0001_about/"> About </a></li><li><a href="/blog/posts/"> Posts </a></li><li><a href="/blog/projects/"> Projects </a></li>
       </ul>
     </nav>
 
@@ -52,19 +52,21 @@
     <div class="post">
   <h1>重整化，基态， 黑帆</h1>
   <time datetime=2017-02-08T23:38:00Z class="post-date">Wed, Feb 8, 2017</time>
-  <p>-Don&rsquo;t deem a paper incorrect just because you don&rsquo;t understand it.</p>
-<p>-讨论了《黑帆》里的一些寓意</p>
-<p>-讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。</p>
+  <ul>
+<li>Don&rsquo;t deem a paper incorrect just because you don&rsquo;t understand it.</li>
+<li>讨论了《黑帆》里的一些寓意</li>
+<li>讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。</li>
+</ul>
 <p>最近的娱乐活动主要是在看黑帆(Black Sails)这部剧，亚马逊Prime上有免费看所以追的很勤快。对比权利的游戏和西部世界，黑帆的叙事更加古典，加之海盗的叙事线对我比较新颖，所以看得异常入迷。这部剧的好处在于张力极强，在一个极小的格局中浓缩进了高强度的冲突。与权利的游戏随意杀主角形成对比的是，黑帆的人物有明显的层级性，随之赋予了一定的英雄主义情节。但这不妨碍它呈现人性的冲突——是取岛屿的整体大义，还是取报仇的一己之快？是领导船员走一条风险大的道路，还是做一些稳稳当当但是不会亏本的买卖？当船员与船长的目标相脱节，矛盾冲突又将如何调和？短线和长线相互博弈，期望和务实前后矛盾。黑帆给我们展现是一个赤裸裸的罗生门，在这里所有人都自以为掌控着命运，最终又陷入冲突而失去一切反抗的资源。</p>
 <p>这些道理被巧妙地隐藏在黑帆的叙事里：第一季Flint船长在追击Andromache时与Billy进行的讨论尤其精要：我们以为猎物是在北边的，所以我们朝着北边前进以期猎杀，但是猎物的选择我们是不知道的，它甚至可能调转航向以其与我们错身而过;它甚至也可能不在北边，到时候我们将面对一片空荡荡的海面。（大意）当然最后这些更差的情况都没有发生，而Andromache确实走了最普通的一个选择。但Flint作为船长，其远见和策划的能力都是远高于当时的Billy的，但这个能力也需要有船员来执行，否则再多的推断也无法保证Flint自己的生存。换句话说，仓禀足而知礼节，但知礼节本身不能解决吃饭问题，随时面临挨饿的危险。但知礼节者之所以不再陷入挨饿的困境，是因为他能够调控饿肚子人的行为来解决自己的吃饭问题，而一旦饿肚子的人顿悟了礼节的重要性，那么两者必然陷入权利的争夺。</p>
-<p><img width="45%" src="{static}/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-40-53.png" alt="Pictures from Black Sails"></img>
-<img width="45%" src="{static}/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-41-08.png" alt="Pictures from Black Sails"></img></p>
+<p><img width="45%" src="http://newflaw.com/blog//static/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-40-53.png" alt="Pictures from Black Sails"></img>
+<img width="45%" src="http://newflaw.com/blog//static/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-41-08.png" alt="Pictures from Black Sails"></img></p>
 <p>(Pictures from &ldquo;Black Sails&rdquo;)</p>
 <p>道理说起来都是简单的，家家却都有本难念的经。冲突来自于各个琐碎的方面而不遵从任一统一的名字。每个人会基于自己的背景作出自己的判断，却又被迫与他人协调以取得成果。没有任何判断是准确且必然的，人们所能控制的仅仅是尽量减少前后矛盾的判断。然而，每个人对待矛盾的态度又是由其背景决定的。</p>
 <p>剧中还用到了一些有意思的叙事手法。在Flint还在海军服役的时候，有一件意外极大地影响了他的前程：Nassau的执政官被当地民众颠覆了，导致Flint和Hamilton赦免Nassau的计划彻底泡汤。然而，当Flint自己执掌海盗的时候，他与执政者的关系也是糟糕得丝毫不容赦免的可能。这个循环的叙事导致Flint既是颠覆的实施者（之后）又是颠覆的受难者（之前）。滴水不漏的叙事硬生生地刻画出了生存的艰难，文明的艰难。赦免的初衷是好的，但却失去了支配的力量。文明的初衷是好的，但代价是拱手让出那些更现实的利益，并承担更大的风险，而这风险只有通过必要的恶才能解除。</p>
 <p>学术方面在接触作为一种数值模拟方法的DMRG，糟糕的是几乎所有的文献都是用bra-ket和线性代数写就的，对于只会用偏微分处理热力学模型的我是一个比较大的挑战。DMRG的最大应用在于寻找系统在大尺度上的一个基态，而且其效果和蒙特卡洛有得一拼。这应该是我第一次实战接触统计物理了，希望在解决这个问题后能够把微观-&gt;宏观的这套哲学运用到其他的问题上。</p>
 <p>简要介绍一下DMRG，多体系统可以用一个波函数（即一个联合概率分布）来描述，概率最大的那个波函数即是系统的基态。但是与其NRG直接寻找子系统的基态不同的是，DMRG寻找 子系统+少量微观元素 的联合系统的一个基态，再将原来的子系统投射到这个基态中占主导的那些子系统波函数组分上。具体的算法还在钻研，希望能够尽快重复出Nishino_1995做出的2D伊辛的结果。</p>
-<p><img class="alignnone size-full wp-image-176" src="{static}/wp-content/uploads/2017/02/dmrg_nishino1995.png" alt="dmrg_nishino1995.png" width="599" height="449" /></p>
+<p><img class="alignnone size-full wp-image-176" src="http://newflaw.com/blog//static/wp-content/uploads/2017/02/dmrg_nishino1995.png" alt="dmrg_nishino1995.png" width="599" height="449" /></p>
 <p>（摘自Nishino 1995, DMRG method for 2D classical Models）</p>
 <p>这个由小见大的过程真的是很有意思。还需要注意的是，在相变临界点附近，DMRG的精度会下降很多，因为这个时候很难找到占“主导”的子系统波函数，也就是说，几乎所有波函数都是可能的。或许可以通过某些数学来解出这种本征值均等的状况何时出现，以期严格解出相变点，但是这要等到彻底理解算法以后了。</p>
 <p>一些别的碎碎念：两个蛋白质结合，是否意味着他们降落到一个基态上了呢？那么在结合之前，他们岂不是在亚稳态？如何用DMRG处理生物中明显的层级特征呢？蛋白质相互作用能不能用算符来建模呢？更确切地说，如何建模才能收集不同层次的信息？在缺乏对称性的情况下，如何改良原来的方法呢？</p>
@@ -73,14 +75,24 @@
 瓶子</p>
 <p>PS: 有一个跟生物研究相关的小游戏<a href="http://phylo.cs.mcgill.ca/">Phylo</a>，觉得好玩的可以在楼下讨论。</p>
 <p> </p>
-
 </div>
+
+
+<h2>Comments</h2>
+<script src="https://utteranc.es/client.js"
+        repo="shouldsee/blog-src"
+        issue-term="pathname"
+        label="utterances"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
 
 
     </main>
 
-    
-      
     
   </body>
 </html>

@@ -15,39 +15,39 @@ ctx.BaseUrl = "http://newflaw.com/blog/"
 ctx.Port = '8000'
 NCR.M(ns,'add_config',None,lambda c:
 write_close(
-'config.toml',
+'config.yaml',
+
 f'''
-baseURL = "{ctx.BaseUrl}"
-languageCode = "en-gb"
-title = "Newflaw"
-theme = "hyde"
-#defaultMarkdownHandler = "blackFriday"
-[params]
-  description ="Nature is never flawless"
-
-[menu]  
-  [[menu.main]]
-    # identifier = "About"
-    name = "About"
-    pre = "<i class='fa fa-heart'></i>"
-    url = "/about/"
-    weight = -110
-
-  [[menu.main]]
-    name = "Posts"
-    post = "<span class='alert'>New!</span>"
-    pre = "<i class='fa fa-road'></i>"
-    url = "/posts/"
-    weight = -100
-
-[markup.goldmark.parser]
-  attribute = true
-  autoHeadingID = true
-  autoHeadingIDType = "github"
-[markup.goldmark.renderer]
-  hardWraps = false
-  unsafe = true
-  xhtml = false
+baseURL: '{ctx.BaseUrl}'
+languageCode: en-gb
+title: Newflaw
+theme: hyde
+params:
+  description: Nature is never flawless
+menu:
+  main:
+    - name: About
+      _pre: <i class='fa fa-heart'></i>
+      url: /pages/0001_about/
+      weight: -110
+    - name: Posts
+      _pre: <i class='fa fa-road'></i>
+      url: /posts/
+      weight: -100
+    - name: Projects
+      _pre: <i class='fa fa-road'></i>
+      url: /projects/
+      weight: -100
+markup:
+  goldmark:
+    parser:
+      attribute: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
 
 '''.encode()
 ))
@@ -73,22 +73,24 @@ def yaml_src(c):
 		LSC(f'html_to_yaml.py --from html {html} -o {of}')
 
 # # TSSR.M(ns,'output_image/**.html')
-src_files = str_expand('src.content.posts/**.md')
+src_files = str_expand('src/content/**.md')
 # output_image/**.html')
 for x in src_files.split():
 	TSSR.M(ns, x)
 src_outputs = []
 for k in src_files.split():
 	# print(k)
-	d = "content.posts".replace(".","/")
-	of = '%s/%s'%(d, k.split('/',1)[-1])
+	# d = "content/"
+	of =  k.split('/',1)[-1]
+	# of = '%s/%s'%(d, k.split('/',1)[-1])
 	TSSR.MWF(ns, of, k, lambda c: [
 		print(c.i),
-		write_close(
-			c.o[0],
-			jinja2.Template(read_close(c.i[0],'r')).render(**dict(ctx=ctx))
-			.encode() 
-			),
+		LSC(f'ln -f {c.i[0]} {c.o[0]}'),
+		# write_close(
+		# 	c.o[0],
+		# 	jinja2.Template(read_close(c.i[0],'r')).render(**dict(ctx=ctx))
+		# 	.encode() 
+		# 	),
 		print(c.o),
 		]
 		)
@@ -96,7 +98,7 @@ for k in src_files.split():
 
 NCR.M(ns, 'contents', ' '.join(src_outputs))
 NCR.M(ns, 'build', 'contents add_theme add_config  bin/hugo', lambda c:LSC(f'''
-	bin/hugo -D -b {ctx.BaseUrl}
+	bin/hugo -b {ctx.BaseUrl}
 	'''))
 
 TSSR.M(ns, 'themes/hyde')

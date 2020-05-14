@@ -1,8 +1,0 @@
-- - __version__
-  - 0.0.7
-- - __class__.__name__
-  - TimeSizeStampRule
-- - to_ident
-  - - content/0006_two-definitions-of-zero-one-entropy.md
-    - 1589384072.7237666
-    - 1641

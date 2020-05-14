@@ -12,7 +12,8 @@ Probably the first proper song I made so far.
 
 Please suggest a name by commenting if you are inspired! XD
 
-//
+<!--more-->
+
 
 应给是比较正式的第一首歌。
 

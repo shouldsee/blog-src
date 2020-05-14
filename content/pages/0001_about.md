@@ -1,5 +1,7 @@
-Title: About Me
-Date: 2016-11-25
+---
+title: About Me
+date: 2016-11-25
+---
 
 ### Overview
 
@@ -13,4 +15,7 @@ I am also broadly interested in structural biology and molecular dynamics, inclu
 
 On days outside coding, I spend my time playing music and building electronic devices. My favourite creation so far is a dispersive spectrometer.
 
-Email: feng.geng.14@ucl.ac.uk
+- Email: fg368@protonmail.com
+- Github: [github.com/shouldsee](http://github.com/shouldsee)
+
+<!--more-->

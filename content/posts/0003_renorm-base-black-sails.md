@@ -5,19 +5,19 @@ tags: chinese, thoughts
 category: thoughts
 ---
 
--Don't deem a paper incorrect just because you don't understand it.
+- Don't deem a paper incorrect just because you don't understand it.
+- 讨论了《黑帆》里的一些寓意
+- 讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。
 
--讨论了《黑帆》里的一些寓意
-
--讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。
+<!--more-->
 
 最近的娱乐活动主要是在看黑帆(Black Sails)这部剧，亚马逊Prime上有免费看所以追的很勤快。对比权利的游戏和西部世界，黑帆的叙事更加古典，加之海盗的叙事线对我比较新颖，所以看得异常入迷。这部剧的好处在于张力极强，在一个极小的格局中浓缩进了高强度的冲突。与权利的游戏随意杀主角形成对比的是，黑帆的人物有明显的层级性，随之赋予了一定的英雄主义情节。但这不妨碍它呈现人性的冲突——是取岛屿的整体大义，还是取报仇的一己之快？是领导船员走一条风险大的道路，还是做一些稳稳当当但是不会亏本的买卖？当船员与船长的目标相脱节，矛盾冲突又将如何调和？短线和长线相互博弈，期望和务实前后矛盾。黑帆给我们展现是一个赤裸裸的罗生门，在这里所有人都自以为掌控着命运，最终又陷入冲突而失去一切反抗的资源。
 
 这些道理被巧妙地隐藏在黑帆的叙事里：第一季Flint船长在追击Andromache时与Billy进行的讨论尤其精要：我们以为猎物是在北边的，所以我们朝着北边前进以期猎杀，但是猎物的选择我们是不知道的，它甚至可能调转航向以其与我们错身而过;它甚至也可能不在北边，到时候我们将面对一片空荡荡的海面。（大意）当然最后这些更差的情况都没有发生，而Andromache确实走了最普通的一个选择。但Flint作为船长，其远见和策划的能力都是远高于当时的Billy的，但这个能力也需要有船员来执行，否则再多的推断也无法保证Flint自己的生存。换句话说，仓禀足而知礼节，但知礼节本身不能解决吃饭问题，随时面临挨饿的危险。但知礼节者之所以不再陷入挨饿的困境，是因为他能够调控饿肚子人的行为来解决自己的吃饭问题，而一旦饿肚子的人顿悟了礼节的重要性，那么两者必然陷入权利的争夺。
 
 
-<img width="45%" src="{static}/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-40-53.png" alt="Pictures from Black Sails"></img>
-<img width="45%" src="{static}/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-41-08.png" alt="Pictures from Black Sails"></img>
+<img width="45%" src="{{< myBase >}}/static/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-40-53.png" alt="Pictures from Black Sails"></img>
+<img width="45%" src="{{< myBase >}}/static/wp-content/uploads/2017/02/screenshot-from-2017-02-05-18-41-08.png" alt="Pictures from Black Sails"></img>
 
 (Pictures from "Black Sails")
 
@@ -29,7 +29,7 @@ category: thoughts
 
 简要介绍一下DMRG，多体系统可以用一个波函数（即一个联合概率分布）来描述，概率最大的那个波函数即是系统的基态。但是与其NRG直接寻找子系统的基态不同的是，DMRG寻找 子系统+少量微观元素 的联合系统的一个基态，再将原来的子系统投射到这个基态中占主导的那些子系统波函数组分上。具体的算法还在钻研，希望能够尽快重复出Nishino_1995做出的2D伊辛的结果。
 
-<img class="alignnone size-full wp-image-176" src="{static}/wp-content/uploads/2017/02/dmrg_nishino1995.png" alt="dmrg_nishino1995.png" width="599" height="449" />
+<img class="alignnone size-full wp-image-176" src="{{< myBase >}}/static/wp-content/uploads/2017/02/dmrg_nishino1995.png" alt="dmrg_nishino1995.png" width="599" height="449" />
 
 （摘自Nishino 1995, DMRG method for 2D classical Models）
 

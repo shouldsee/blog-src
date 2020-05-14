@@ -12,14 +12,18 @@
     
     
     <item>
-      <title>Calc_Temp: A pragmatic algorithm to classify 2D-NTCA // Calc_Temp:一个实用性的2D-NTCA 分类器</title>
-      <link>http://newflaw.com/blog/posts/0011_calc-temp-release/</link>
+      <title>github.com/shouldsee/calc_temp [Deprecated]</title>
+      <link>http://newflaw.com/blog/projects/0011_calc-temp-release/</link>
       <pubDate>Wed, 22 Mar 2017 13:55:00 +0000</pubDate>
       
-      <guid>http://newflaw.com/blog/posts/0011_calc-temp-release/</guid>
-      <description>I recently integrated my understanding of spatial fluctuation to produce a automatic classifier for 2D non-totalistic cellular automata. It&amp;rsquo;s now available as a git repository. I am seeking to implement it on a web server in the near future.
-github repo
-An example of output is shown here(link broken)</description>
+      <guid>http://newflaw.com/blog/projects/0011_calc-temp-release/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shouldsee/calc_temp&#34;&gt;https://github.com/shouldsee/calc_temp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;calc_Temp: A pragmatic algorithm to classify 2D-NTCA // Calc_Temp:一个实用性的2D-NTCA 分类器&lt;/li&gt;
+&lt;li&gt;I recently integrated my understanding of spatial fluctuation to produce a automatic classifier for 2D non-totalistic cellular automata. It&amp;rsquo;s now available as a git repository. I am seeking to implement it on a web server in the near future.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/shouldsee/calc_temp&#34;&gt;github repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An example of output is shown &lt;a href=&#34;https://flaw.000webhostapp.com/calc_temp/example.html&#34;&gt;here(link broken)&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

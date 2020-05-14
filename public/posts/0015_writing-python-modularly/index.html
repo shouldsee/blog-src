@@ -40,7 +40,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://newflaw.com/blog/">Home</a> </li>
-        <li><a href="/blog/about/"> About </a></li><li><a href="/blog/posts/"> Posts </a></li>
+        <li><a href="/blog/pages/0001_about/"> About </a></li><li><a href="/blog/posts/"> Posts </a></li><li><a href="/blog/projects/"> Projects </a></li>
       </ul>
     </nav>
 
@@ -52,11 +52,11 @@
     <div class="post">
   <h1>Writing Python modularly // Python模块化初步</h1>
   <time datetime=2017-06-30T18:35:00Z class="post-date">Fri, Jun 30, 2017</time>
-  <p>First published <a href="http://orengogroup.info/?p=401">here</a> for my intern at UCL-ISMB-CATH.
-[markdown]</p>
+  <p>First published <a href="http://orengogroup.info/?p=401">here</a> for my intern at UCL-ISMB-CATH.</p>
 <h4 id="brief">Brief:</h4>
 <p>Having the privilege of joining Orengo&rsquo;s group as a summer student, I feel urged to improve my coding as well as documentation skills. Thus I intend to log my coding and thinking in a series of blog posts, on a weekly basis.</p>
 <p>Today&rsquo;s blog post will cover some basics of organising Python code, in the hope of easing future maintenance. We will go through:</p>
+<!--more-->
 <ol>
 <li>How to import python modules.</li>
 </ol>
@@ -263,7 +263,7 @@ mv lib.py lib/libA.py
 │   └── libA.py
 └── main.py
 </code></pre><p>Now &ldquo;<code>main.py</code>&rdquo; throws &ldquo;<code>ImportError: cannot import name evolve</code>&rdquo;. Yah yah, nothing in &ldquo;<code>lib/</code>&rdquo; has the name &ldquo;<code>evolve</code>&rdquo;. We need to update the &ldquo;<code>main.py</code>&rdquo; with &ldquo;<code>from lib.libA import evolve</code>&rdquo;. Note &ldquo;<code>import lib.libA.evolve</code>&rdquo; would not work because &ldquo;<code>evolve</code>&rdquo; is defined as &ldquo;<code>def</code>&rdquo; and not a script &ldquo;<code>.py</code>&rdquo;.</p>
-<p>Cool, now we even have a decent &ldquo;lib/&rdquo; folder! Another common directory in Test-Driven-Development (TDD) is &ldquo;tests/&quot;. Let&rsquo;s create some look-alike structure with `</p>
+<p>Cool, now we even have a decent &ldquo;lib/&rdquo; folder! Another common directory in Test-Driven-Development (TDD) is &ldquo;tests/&quot;. Let&rsquo;s create some look-alike structure with</p>
 <pre><code>mkdir tests
 cp main.py tests/test1.py
 </code></pre><pre><code>.
@@ -292,10 +292,21 @@ ISMB,UCL</p>
 </div>
 
 
+<h2>Comments</h2>
+<script src="https://utteranc.es/client.js"
+        repo="shouldsee/blog-src"
+        issue-term="pathname"
+        label="utterances"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
     </main>
 
-    
-      
     
   </body>
 </html>

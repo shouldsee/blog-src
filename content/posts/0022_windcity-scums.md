@@ -8,10 +8,9 @@ summary: “我到底是不是一个渣渣？”
 
 “我到底是不是一个渣渣？”
 
-[caption id="attachment_1021" align="alignnone" width="548"]<img src="{static}/wp-content/uploads/2017/09/set2-1024x768.jpg" alt="" width="548" class="size-large wp-image-1021" /> 简单的交集操作："我 & 你"[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set2-1024x768.jpg" alt="" height="248" class="size-large wp-image-1021" /> 简单的交集操作："我 & 你"
 
 <!--more-->
-
 
 <h1>
 前言：
@@ -25,9 +24,9 @@ summary: “我到底是不是一个渣渣？”
 <li>
 联合自卑推断</li>
 
-[caption id="attachment_1019" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set1-1024x768.jpg" alt="" width="584" height="438" class="alignnone size-large wp-image-1019" /> 初始韦恩图[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set1-1024x768.jpg" alt="" width="584" height="438" class="alignnone size-large wp-image-1019" /> 初始韦恩图
 
-[caption id="attachment_1021" align="alignnone" width="548"]<img src="{static}/wp-content/uploads/2017/09/set2-1024x768.jpg" alt="" width="548" class="size-large wp-image-1021" /> 简单的交集操作："我 & 你"[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set2-1024x768.jpg" alt="" width="548" class="size-large wp-image-1021" /> 简单的交集操作："我 & 你"
 
 <h2>
 1.自负推断：“你看，我有的这些，他都没有！（看我多厉害！）”
@@ -42,17 +41,17 @@ summary: “我到底是不是一个渣渣？”
 
 也就是说基于假设： |你| 正比于 |我 & 你|，我们可以实现推断： f:|我 & 你| --> |你|， 
 
-[caption id="attachment_1025" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set7-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1025" /> 通过交集逆推”你“集[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set7-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1025" /> 通过交集逆推”你“集
 
 又因为 |我 & 你| = |我| - |我 - 你|， 所以实际操作中我们常常直接从 |我 - 你| 出发，实现对 |你| 的估算。
 
-[caption id="attachment_1028" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set10-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1028" /> | 我 - 你 | 可以导出 | 我 & 你 |[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set10-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1028" /> | 我 - 你 | 可以导出 | 我 & 你 |
 
 但是事实上，这个估算不一定成立。因为我们的假设是没有任何保证的（一厢情愿），实际情况中 |我 & 你| 和 |你| 不一定有相关性。
 
-[caption id="attachment_1026" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set8-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1026" /> 情景一： ”你“集的确很小<br />[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set8-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1026" /> 情景一： ”你“集的确很小<br />
 
-[caption id="attachment_1027" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set9-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1027" /> 情景二： 尽管交集很小，但”你“集其实很大[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set9-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1027" /> 情景二： 尽管交集很小，但”你“集其实很大
 
 <h2>
 2.自卑推断:“你看，你有的这些，我都没有！（看我多渣！）”
@@ -63,9 +62,9 @@ summary: “我到底是不是一个渣渣？”
 </h3>
 
 自卑推断基本上是自负推断的对偶，可以表示为 g:|你 - 我| -> |我|。换句话说，是对“我”的度量不确定的情况下，用“交集”来估算自身的大小。
-[caption id="attachment_1030" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set11-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1030" /> 既可以用交集估算[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set11-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1030" /> 既可以用交集估算
 
-[caption id="attachment_1031" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set12-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1031" /> 也可以用差集估算[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set12-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1031" /> 也可以用差集估算
 
 由于同样的原因，自卑推断也受限于假设 |我 & 你| 正比于 |我|。
 
@@ -79,7 +78,7 @@ summary: “我到底是不是一个渣渣？”
 
 这个推断利用了以下等式： |全集| = | 全集 - （我 + 你) |  +  |我 + 你|
 
-[caption id="attachment_1032" align="alignnone" width="584"]<img src="{static}/wp-content/uploads/2017/09/set13-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1032" /> 差集常常是我们认识世界的直觉[/caption]
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/09/set13-1024x768.jpg" alt="" width="584" height="438" class="size-large wp-image-1032" /> 差集常常是我们认识世界的直觉
 
 按理说没有地方可以出问题了，但是如果|全集|和 |我 + 你| 同时变大或者变小， 中间的差集大小是可以不变的。也就是说， | 全集 - （我 + 你) | 无法对 |我 + 你| 的大小作出任何保证。
 
@@ -102,3 +101,4 @@ summary: “我到底是不是一个渣渣？”
 
 2017年9月26日
 剑桥
+

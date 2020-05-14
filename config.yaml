@@ -1,0 +1,32 @@
+
+baseURL: 'http://newflaw.com/blog/'
+languageCode: en-gb
+title: Newflaw
+theme: hyde
+params:
+  description: Nature is never flawless
+menu:
+  main:
+    - name: About
+      _pre: <i class='fa fa-heart'></i>
+      url: /pages/0001_about/
+      weight: -110
+    - name: Posts
+      _pre: <i class='fa fa-road'></i>
+      url: /posts/
+      weight: -100
+    - name: Projects
+      _pre: <i class='fa fa-road'></i>
+      url: /projects/
+      weight: -100
+markup:
+  goldmark:
+    parser:
+      attribute: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+

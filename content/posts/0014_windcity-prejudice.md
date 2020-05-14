@@ -1,5 +1,6 @@
 ---
 title: 风城纪事·偏见
+draft: 0
 tags: chinese, thoughts
 category: thoughts
 date: 2017-06-28T22:21:00

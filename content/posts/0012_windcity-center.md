@@ -1,6 +1,7 @@
 ---
 title: 风城纪事·中心
 tags: chinese, thoughts
+draft: 0
 category: thoughts
 date: 2017-05-30T10:58:00
 ---

@@ -12,6 +12,8 @@ category: list
 1. shouldsee,feng.geng.14"AT"ucl.ac.uk : In reply to Bullet51.
 BTW, I don’t seems to get email on this blog. Maybe github is a better place to talk if you can reach it. (https://github.com/MathAndAlgo/DiscussionBoard/issues).
 
+<!--more-->
+
 1. shouldsee,feng.geng.14"AT"ucl.ac.uk : In reply to Bullet51.
 That video looks really intriguing. You know what, the protein structure people was doing exactly the same thing! They inferred a empirical force-field from a collection of proteins and applied it to get sensible protein structures. (See https://salilab.org/modeller/)
 
@@ -144,3 +146,4 @@ If you have a <code>can't iXXXrt XXX</code> error. Try use <code>disutils.core.s
 
 现在问题来了，当刿碰上范，会擦出怎样的火花呢？
 ```
+

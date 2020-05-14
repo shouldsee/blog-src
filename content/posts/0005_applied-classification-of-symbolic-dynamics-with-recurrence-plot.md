@@ -9,19 +9,22 @@ date: 2017-02-15T11:35:00+08:00
 
 我对Logistic Mapping做了简单的耦合推广，并应用回归图找到了处在混沌边界的参数，有趣的是这种推广系统也处在混沌边界。
 
-<img class="alignnone size-full wp-image-253" src="/wp-content/uploads/2017/02/demo_log_torus.jpg" alt="demo_log_torus" width="2409" height="436" />
+<!--more-->
 
-<img class="alignnone size-full wp-image-304" src="/wp-content/uploads/2017/02/logistic__3-811_corrprofile.jpg" alt="logistic__3-811_corrprofile" width="1000" height="563" />
+<img class="alignnone size-full wp-image-253" src="{{< myBase >}}/static/wp-content/uploads/2017/02/demo_log_torus.jpg" alt="demo_log_torus" width="2409" height="436" />
+
+<img class="alignnone size-full wp-image-304" src="{{< myBase >}}/static/wp-content/uploads/2017/02/logistic__3-811_corrprofile.jpg" alt="logistic__3-811_corrprofile" width="1000" height="563" />
 
 讨论：二维元胞自动机是一个幻象，它并不比一维元胞高明到哪里去，对于Glider和Pattern的分类看起来没有发展壮大的希望。CA和物理学的联系目前还是太弱了，需要一些契机把CA爱好者引导到更有建设性的道路上。Wolfram对Rule110的阐释是很有insight的，但是他本人最后也认识到CA有一些内在的缺陷使其不能模拟神经网络。我希望Derrida Plot的复兴可以改变这一情况，这一工具允许人们更加系统地对自动机的动力学性质进行分类，而且和微扰论有很深的联系，希望有更多的人参与到这个研究里来。
 
+
 这里用一个二维BS元胞自动机为例子(B013468/S23,生命游戏是B3/S23),大致介绍一下Covariance Profile的具体操作办法，用一个常值分布随机取两个初始状态，计算它们的距离H(0),接下来用CA规则将两个初态分别迭代T次，并记录它们的轨迹。这样我们可以得到H(1),H(2),H(3)....H(T). 然后把上述操作重复N次。想象[H(1),H(2)]在平面内确定一个点，由于有N个样本，我们可以确定N个点，这时候我们可以计算H(1),H(2)的统计学关系(一开始我用的是相关性(Pearson Correlation),后面发现不够灵敏，于是换成了协方差(Covariance)
 
-<img class="alignnone size-full wp-image-306" src="/wp-content/uploads/2017/02/expanded6491tca.jpg" alt="expanded6491tca" width="735" height="661" />
+<img class="alignnone size-full wp-image-306" src="{{< myBase >}}/static/wp-content/uploads/2017/02/expanded6491tca.jpg" alt="expanded6491tca" width="735" height="661" />
 
 对于任选的H(t_a),H(t_b),我们都可以确定一个分布并且抽象成一个单值。将这些单值集合起来之后，我们就的到了刚刚看到的热相图。
 
-<img class="alignnone size-full wp-image-308" src="/wp-content/uploads/2017/02/collected6491tca.jpg" alt="collected6491tca" width="497" height="416" />
+<img class="alignnone size-full wp-image-308" src="{{< myBase >}}/static/wp-content/uploads/2017/02/collected6491tca.jpg" alt="collected6491tca" width="497" height="416" />
 
 (这里的单值用的都是协方差。)
 

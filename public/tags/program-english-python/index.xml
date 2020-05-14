@@ -17,11 +17,7 @@
       <pubDate>Fri, 30 Jun 2017 18:35:00 +0000</pubDate>
       
       <guid>http://newflaw.com/blog/posts/0015_writing-python-modularly/</guid>
-      <description>&lt;p&gt;First published &lt;a href=&#34;http://orengogroup.info/?p=401&#34;&gt;here&lt;/a&gt; for my intern at UCL-ISMB-CATH.
-[markdown]&lt;/p&gt;
-&lt;h4 id=&#34;brief&#34;&gt;Brief:&lt;/h4&gt;
-&lt;p&gt;Having the privilege of joining Orengo&amp;rsquo;s group as a summer student, I feel urged to improve my coding as well as documentation skills. Thus I intend to log my coding and thinking in a series of blog posts, on a weekly basis.&lt;/p&gt;
-&lt;p&gt;Today&amp;rsquo;s blog post will cover some basics of organising Python code, in the hope of easing future maintenance. We will go through:&lt;/p&gt;</description>
+      <description>&lt;p&gt;First published &lt;a href=&#34;http://orengogroup.info/?p=401&#34;&gt;here&lt;/a&gt; for my intern at UCL-ISMB-CATH.&lt;/p&gt;</description>
     </item>
     
   </channel>

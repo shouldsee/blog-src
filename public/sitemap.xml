@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://newflaw.com/blog/tags/chinese-thoughts/</loc>
-    <lastmod>2020-04-29T04:21:00+00:00</lastmod>
+    <loc>http://newflaw.com/blog/projects/0002_html-to-yaml/</loc>
+    <lastmod>2020-05-13T23:02:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/projects/0003_luckmake/</loc>
+    <lastmod>2020-05-13T23:02:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/projects/0004_spiper/</loc>
+    <lastmod>2020-05-13T23:02:36-04:00</lastmod>
   </url>
   
   <url>
     <loc>http://newflaw.com/blog/</loc>
+    <lastmod>2020-05-13T23:02:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/projects/</loc>
+    <lastmod>2020-05-13T23:02:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/projects/0001_github-graph/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/tags/chinese-thoughts/</loc>
     <lastmod>2020-04-29T04:21:00+00:00</lastmod>
   </url>
   
@@ -30,11 +55,6 @@
   <url>
     <loc>http://newflaw.com/blog/posts/0029_linux-kernel-upgrade/</loc>
     <lastmod>2020-04-28T22:43:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/posts/0025_github-graph/</loc>
-    <lastmod>2020-03-31T22:39:00+00:00</lastmod>
   </url>
   
   <url>
@@ -148,7 +168,7 @@
   </url>
   
   <url>
-    <loc>http://newflaw.com/blog/posts/0011_calc-temp-release/</loc>
+    <loc>http://newflaw.com/blog/projects/0011_calc-temp-release/</loc>
     <lastmod>2017-03-22T13:55:00+00:00</lastmod>
   </url>
   
@@ -229,26 +249,12 @@
   
   <url>
     <loc>http://newflaw.com/blog/pages/0001_about/</loc>
+    <lastmod>2016-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://newflaw.com/blog/posts/0023_next/</loc>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/posts/0028_job/</loc>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/posts/0030_covid-hist/</loc>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/posts/my-first-post/</loc>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/posts/pages/0001_about/</loc>
+    <loc>http://newflaw.com/blog/pages/</loc>
+    <lastmod>2016-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -256,7 +262,7 @@
   </url>
   
   <url>
-    <loc>http://newflaw.com/blog/pages/</loc>
+    <loc>http://newflaw.com/blog/posts/0023_next/</loc>
   </url>
   
 </urlset>

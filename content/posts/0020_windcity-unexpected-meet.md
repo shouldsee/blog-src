@@ -7,9 +7,15 @@ summary: 艾玛正气定神闲地坐在维多利亚式复古电车里欣赏着�
 ---
 
 
-<img src="{static}/wp-content/uploads/2017/07/doodles1-1024x703.jpg" alt="" width="584" height="401" class="alignnone size-large wp-image-975" />
+<div height="200">	
+<img src="{{< myBase >}}/static/wp-content/uploads/2017/07/doodles1-1024x703.jpg" alt="" style="float:left; max-height: 100%; width:50%;" class="alignnone size-large wp-image-975" />
+<iframe width="30%"  height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226899942&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+</div>
+
+<br/>
+<!--more-->
+
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=39227637&auto=1&height=66"></iframe>
-<iframe width="100%" height="80" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226899942&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
 艾玛正气定神闲地坐在维多利亚式复古电车里欣赏着窗外的云雾，不巧恶魔闯了进来。
 

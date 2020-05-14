@@ -17,8 +17,7 @@
       <pubDate>Mon, 10 Jul 2017 18:55:00 +0000</pubDate>
       
       <guid>http://newflaw.com/blog/posts/0019_first-touch-on-mysql/</guid>
-      <description>&lt;p&gt;First published &lt;a href=&#34;http://orengogroup.info/2017/07/10/how-to-fail-your-deadline-starting-learning-mysql-and-think-you-can-master-it-in-one-day/&#34;&gt;here&lt;/a&gt;.
-[#### 1. How to fail your deadline? - Starting learning MySQL thinking you can master it in one day!]&lt;/p&gt;
+      <description>&lt;p&gt;First published &lt;a href=&#34;http://orengogroup.info/2017/07/10/how-to-fail-your-deadline-starting-learning-mysql-and-think-you-can-master-it-in-one-day/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Recently, I touched upon MySQL because I wanted it to be the backend for my incoming Django-based data browser. After 4 days of prolonged fiddling I finally manage to make some notes of its functionality. It is very fast, but equally importantly, very different from Python! The other lesson is that one should allocate enough time for learning when starting a new language (depending on &lt;a href=&#34;https://en.wikipedia.org/wiki/Single-linkage_clustering&#34;&gt;single linkage distance&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;Today&amp;rsquo;s blog will go through:&lt;/p&gt;
 &lt;ol&gt;
