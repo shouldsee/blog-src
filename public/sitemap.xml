@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://newflaw.com/blog/posts/0039_python-intro/</loc>
+    <lastmod>2020-05-16T16:01:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/posts/0035_the-blog-renovation/</loc>
+    <lastmod>2020-05-15T05:16:09+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://newflaw.com/blog/posts/0033_golang-learn-1/</loc>
+    <lastmod>2020-05-15T03:16:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/posts/0034_whatislife/</loc>
     <lastmod>2020-05-15T03:16:09+00:00</lastmod>
   </url>
   
@@ -13,27 +28,7 @@
   </url>
   
   <url>
-    <loc>http://newflaw.com/blog/</loc>
-    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/posts/</loc>
-    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://newflaw.com/blog/posts/0032_period/</loc>
-    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/tags/</loc>
-    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/tags/thoughts/</loc>
     <lastmod>2020-05-14T08:36:06+00:00</lastmod>
   </url>
   
@@ -53,6 +48,11 @@
   </url>
   
   <url>
+    <loc>http://newflaw.com/blog/</loc>
+    <lastmod>2020-05-13T23:02:36-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://newflaw.com/blog/projects/</loc>
     <lastmod>2020-05-13T23:02:36-04:00</lastmod>
   </url>
@@ -68,8 +68,23 @@
   </url>
   
   <url>
+    <loc>http://newflaw.com/blog/posts/</loc>
+    <lastmod>2020-04-29T04:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/tags/</loc>
+    <lastmod>2020-04-29T04:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://newflaw.com/blog/posts/0031_meeting/</loc>
     <lastmod>2020-04-29T04:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/tags/thoughts/</loc>
+    <lastmod>2020-04-28T22:43:00+00:00</lastmod>
   </url>
   
   <url>
@@ -275,6 +290,10 @@
   <url>
     <loc>http://newflaw.com/blog/pages/</loc>
     <lastmod>2016-11-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/posts/0037_driving-notes/</loc>
   </url>
   
   <url>

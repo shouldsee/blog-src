@@ -12,6 +12,34 @@
     
     
     <item>
+      <title>Feng&#39;s Introduction to Python For Beginners</title>
+      <link>http://newflaw.com/blog/posts/0039_python-intro/</link>
+      <pubDate>Sat, 16 May 2020 16:01:03 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0039_python-intro/</guid>
+      <description>Overview Learning a language can always be broadly split into 4 parts, including two concepts and two procedures, that is
+Grammar Vocabulary Reading Writing  I will try to cover a simplest path to learn Python language in this post.
+You will need to read Reading is crucial to learner and to programmer. Read the instructions and documents carefully even if they look boring. A good tutorial is always worth a read, because it will save you many time debugging and trial-and-erroring later.</description>
+    </item>
+    
+    <item>
+      <title>[风子思传]修博客记</title>
+      <link>http://newflaw.com/blog/posts/0035_the-blog-renovation/</link>
+      <pubDate>Fri, 15 May 2020 05:16:09 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0035_the-blog-renovation/</guid>
+      <description>二零二零年, 夏将炎, 疫将休, 余于轩中做得一二项目,有感. 然博客之废已久, 无以为记. 余闻异域有一静态建站新术,曰雨果1,以构兰格2写成, 遂阅其经试使之.
+初试之,不甚解. 旧博客中有些许静态图片,以英美矩3标签引用,然余所用云器已使反向代理,不可以斜杠求根目录,需在行术时以基准路径构建绝对路径,查阅雨果经,得之替换术曰{{.Site.BaseURL}} 余试之,无用.绝径于行术前后并无异,皆为
+&amp;lt;img src=&amp;#34;{{.Site.BaseURL}/media/博客记.png&amp;#34;&amp;gt;&amp;lt;/img&amp;gt; 于是便览述雨果之经,未能解之.余怒甚,弃雨果替换术,而使派森之忍者替换术二,并以幸运美克施之.忍者术大约如下. 忍者之术既施,美积标签始得其效
+ctx = {&amp;#34;BaseURL&amp;#34;: &amp;#34;http://newflaw.com/blog/&amp;#34;} template = &amp;#39;&amp;lt;img src=&amp;#34;{{ ctx[&amp;#34;BaseURL&amp;#34;] }}media/博客记.png&amp;#34;&amp;gt;&amp;lt;/img&amp;gt;&amp;#39; import jinja2 out = jinja2.Template(template).render(**locals()) 次日朝,余退而思之,使雨果之术者五万人有余,构兰格之术更为当今异域所通行之语.异域之人岂不知此荒谬之误哉?度不然,必有异.乃又细读雨果经,得一术曰短码,试之而有效,复又阅短码之写作之术,而替换术终可用于短码之写作中矣.余喜甚,遂便读雨果之术而试行之云云. 呜呼,雨果之术疾如霹雳,然余初使之则慢如蝼蚁,岂其术实有误哉?岂吾之思实有误哉?似是而非也.虽能码矣,未能智.虽有智矣,未能学.虽能学矣,未能速. 夫阅经习术之途,非行常施之术也,所需智巧亦有不同, 切不可急功而近利, 而宜谨探而慎知. 前人所著之经, 常非习术者所愿读之经. 善习术者乃善读千万经卷而不怒,余尚不能为者也.
+风子思二零二零年于沪上思码轩
+  github.com/gohugoio/hugo &amp;#x21a9;&amp;#xfe0e;
+ github.com/golang/go &amp;#x21a9;&amp;#xfe0e;
+ &amp;lt;img&amp;gt;&amp;lt;/img&amp;gt; &amp;#x21a9;&amp;#xfe0e;
+   </description>
+    </item>
+    
+    <item>
       <title>[golang] learning note and resources</title>
       <link>http://newflaw.com/blog/posts/0033_golang-learn-1/</link>
       <pubDate>Fri, 15 May 2020 03:16:09 +0000</pubDate>
@@ -22,6 +50,17 @@
 &lt;li&gt;If you do know nothing, start from the nice CodeAcademy interactive course &lt;a href=&#34;https://www.codecademy.com/learn/learn-go/&#34;&gt;https://www.codecademy.com/learn/learn-go/&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;If you know some language already, “A Tour of Go” is of high quality &lt;a href=&#34;https://tour.golang.org/list&#34;&gt;https://tour.golang.org/list&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>[whatis] life</title>
+      <link>http://newflaw.com/blog/posts/0034_whatislife/</link>
+      <pubDate>Fri, 15 May 2020 03:16:09 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0034_whatislife/</guid>
+      <description>What is life? Is life about learning: No. Learning could be painful or rewarding. But life isnt about learning
+Is life about indulgence: Some people say that, unleash all your desire and this is life. I dont think so. 子曰: 克己复礼
+What is life about? You could learn how to live a life during your life, but this learning does not produce a definite procedure. Life is undefined and anything could happen.</description>
     </item>
     
     <item>
@@ -366,6 +405,15 @@ BTW, I don’t seems to get email on this blog. Maybe github is a better place t
 &lt;li&gt;讨论了《黑帆》里的一些寓意&lt;/li&gt;
 &lt;li&gt;讨论了DMRG（密度矩阵重整化群）作为“以小见大”的一个手法的一些特征。&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://newflaw.com/blog/posts/0037_driving-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0037_driving-notes/</guid>
+      <description> 交通标志有八种 画出 有人看守铁道 无人看守铁道 注意横风 潮汐车道 保持车距 分离式道路 禁止通行 禁止驶入 轴重和总质量 路口优先通行 国道省道县道乡道 线性诱导标???- youce 反向弯路 连续弯路 注意潮汐车道 路面不平 路面高突 减速丘 警告,禁令+指示, 指路, 旅游区+作业区, 告示,辅助 </description>
     </item>
     
     <item>
