@@ -12,6 +12,28 @@
     
     
     <item>
+      <title>[golang] learning note and resources</title>
+      <link>http://newflaw.com/blog/posts/0033_golang-learn-1/</link>
+      <pubDate>Fri, 15 May 2020 03:16:09 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0033_golang-learn-1/</guid>
+      <description>&lt;h2 id=&#34;primers&#34;&gt;Primers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;If you do know nothing, start from the nice CodeAcademy interactive course &lt;a href=&#34;https://www.codecademy.com/learn/learn-go/&#34;&gt;https://www.codecademy.com/learn/learn-go/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you know some language already, “A Tour of Go” is of high quality &lt;a href=&#34;https://tour.golang.org/list&#34;&gt;https://tour.golang.org/list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Recent updates</title>
+      <link>http://newflaw.com/blog/posts/0032_period/</link>
+      <pubDate>Thu, 14 May 2020 08:36:06 +0000</pubDate>
+      
+      <guid>http://newflaw.com/blog/posts/0032_period/</guid>
+      <description>Renovating my blogs with github.com/gohugoio/hugo: Not as easy as anticipated  newflaw.com/blog has been broken since I moved the website under a reverse-proxy. BTW reverse-proxy is great fun! Using a new tool is never too easy, because of the Babylon tower: people just don’t write documentation in the way you want to query it! Stumbled on getting {{ .Site.BaseURL }} to work on image source but it just never render in content/posts/00foo.</description>
+    </item>
+    
+    <item>
       <title>The Barking Group Meeting 0x0001</title>
       <link>http://newflaw.com/blog/posts/0031_meeting/</link>
       <pubDate>Wed, 29 Apr 2020 04:21:00 +0000</pubDate>
@@ -74,7 +96,7 @@ tSNE作为流型学习的一种算法实际上在单核系统上运行的速度�
       
       <guid>http://newflaw.com/blog/posts/0022_windcity-scums/</guid>
       <description>&lt;p&gt;“我到底是不是一个渣渣？”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://newflaw.com/blog//static/wp-content/uploads/2017/09/set2-1024x768.jpg&#34; alt=&#34;&#34; height=&#34;248&#34; class=&#34;size-large wp-image-1021&#34; /&gt; 简单的交集操作：&amp;ldquo;我 &amp;amp; 你&amp;rdquo;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://newflaw.com/blog/static/wp-content/uploads/2017/09/set2-1024x768.jpg&#34; alt=&#34;&#34; height=&#34;248&#34; class=&#34;size-large wp-image-1021&#34; /&gt; 简单的交集操作：&amp;ldquo;我 &amp;amp; 你&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -95,7 +117,7 @@ tSNE作为流型学习的一种算法实际上在单核系统上运行的速度�
       
       <guid>http://newflaw.com/blog/posts/0020_windcity-unexpected-meet/</guid>
       <description>&lt;div height=&#34;200&#34;&gt;	
-&lt;img src=&#34;http://newflaw.com/blog//static/wp-content/uploads/2017/07/doodles1-1024x703.jpg&#34; alt=&#34;&#34; style=&#34;float:left; max-height: 100%; width:50%;&#34; class=&#34;alignnone size-large wp-image-975&#34; /&gt;
+&lt;img src=&#34;http://newflaw.com/blog/static/wp-content/uploads/2017/07/doodles1-1024x703.jpg&#34; alt=&#34;&#34; style=&#34;float:left; max-height: 100%; width:50%;&#34; class=&#34;alignnone size-large wp-image-975&#34; /&gt;
 &lt;iframe width=&#34;30%&#34;  height=&#34;300&#34; scrolling=&#34;no&#34; frameborder=&#34;no&#34; src=&#34;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226899942&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;br/&gt;</description>
@@ -308,7 +330,7 @@ BTW, I don’t seems to get email on this blog. Maybe github is a better place t
 &lt;li&gt;受了张江老师的“&lt;a href=&#34;http://www.swarmagents.cn/detail.php?id=10822&#34;&gt;两种熵&lt;/a&gt;”启发&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;毛毛毛球&#34;&gt;毛毛毛球&lt;/h3&gt;
-&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-314&#34; src=&#34;http://newflaw.com/blog//static/wp-content/uploads/2017/03/fibre.png&#34; alt=&#34;fibre&#34;  height=&#34;300&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-314&#34; src=&#34;http://newflaw.com/blog/static/wp-content/uploads/2017/03/fibre.png&#34; alt=&#34;fibre&#34;  height=&#34;300&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

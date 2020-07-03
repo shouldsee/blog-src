@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://newflaw.com/blog/posts/0033_golang-learn-1/</loc>
+    <lastmod>2020-05-15T03:16:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/tags/golang/</loc>
+    <lastmod>2020-05-15T03:16:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/</loc>
+    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/posts/</loc>
+    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/posts/0032_period/</loc>
+    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/tags/</loc>
+    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://newflaw.com/blog/tags/thoughts/</loc>
+    <lastmod>2020-05-14T08:36:06+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://newflaw.com/blog/projects/0002_html-to-yaml/</loc>
     <lastmod>2020-05-13T23:02:36-04:00</lastmod>
   </url>
@@ -18,11 +53,6 @@
   </url>
   
   <url>
-    <loc>http://newflaw.com/blog/</loc>
-    <lastmod>2020-05-13T23:02:36-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://newflaw.com/blog/projects/</loc>
     <lastmod>2020-05-13T23:02:36-04:00</lastmod>
   </url>
@@ -34,16 +64,6 @@
   
   <url>
     <loc>http://newflaw.com/blog/tags/chinese-thoughts/</loc>
-    <lastmod>2020-04-29T04:21:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/posts/</loc>
-    <lastmod>2020-04-29T04:21:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://newflaw.com/blog/tags/</loc>
     <lastmod>2020-04-29T04:21:00+00:00</lastmod>
   </url>
   
