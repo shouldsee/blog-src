@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.70.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -263,7 +263,7 @@ mv lib.py lib/libA.py
 │   └── libA.py
 └── main.py
 </code></pre><p>Now &ldquo;<code>main.py</code>&rdquo; throws &ldquo;<code>ImportError: cannot import name evolve</code>&rdquo;. Yah yah, nothing in &ldquo;<code>lib/</code>&rdquo; has the name &ldquo;<code>evolve</code>&rdquo;. We need to update the &ldquo;<code>main.py</code>&rdquo; with &ldquo;<code>from lib.libA import evolve</code>&rdquo;. Note &ldquo;<code>import lib.libA.evolve</code>&rdquo; would not work because &ldquo;<code>evolve</code>&rdquo; is defined as &ldquo;<code>def</code>&rdquo; and not a script &ldquo;<code>.py</code>&rdquo;.</p>
-<p>Cool, now we even have a decent &ldquo;lib/&rdquo; folder! Another common directory in Test-Driven-Development (TDD) is &ldquo;tests/&quot;. Let&rsquo;s create some look-alike structure with</p>
+<p>Cool, now we even have a decent &ldquo;lib/&rdquo; folder! Another common directory in Test-Driven-Development (TDD) is &ldquo;tests/&rdquo;. Let&rsquo;s create some look-alike structure with</p>
 <pre><code>mkdir tests
 cp main.py tests/test1.py
 </code></pre><pre><code>.
